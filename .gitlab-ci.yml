@@ -1,0 +1,38 @@
+image: gradle:5.2.1-jdk8
+
+stages:
+  - build
+  - test
+  - lint
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - if [ ! -e ktlint ]; then curl -sSLO https://github.com/shyiko/ktlint/releases/download/0.31.0/ktlint && chmod a+x ktlint; fi
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+    - ktlint
+
+build:
+  stage: build
+  script:
+    - gradle build
+    - gradle shadowJar
+  artifacts:
+    paths:
+      - build/libs/*.jar
+    expire_in: 1 week
+  only:
+    - master
+
+test:
+  stage: test
+  script:
+    - gradle check
+
+lint:
+  stage: lint
+  script:
+    - ./ktlint "src/main/**/*.kt"

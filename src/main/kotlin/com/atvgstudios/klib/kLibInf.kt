@@ -5,8 +5,8 @@ import com.atvgstudios.klib.annotations.Author
 @Author(name = "Thomas Obernosterer")
 object kLibInf {
     const val name = "ATVG-Studios Kotlin Std Library"
-    const val versionId = 1 // A unique version number used to identify releases and to make easy requirement checks
-    const val version = "0.1.0"
+    const val versionId = 2 // A unique version number used to identify releases and to make easy requirement checks
+    const val version = "0.1.1"
     const val company = "ATVG-Studios"
     const val license = "MIT"
     val authors = arrayListOf(

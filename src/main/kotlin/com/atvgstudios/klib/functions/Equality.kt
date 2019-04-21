@@ -1,6 +1,6 @@
 package com.atvgstudios.klib.functions
 
-import com.atvgstudios.klib.annotations.*
+import com.atvgstudios.klib.annotations.Author
 
 @Author(name = "Thomas Obernosterer", email = "thomas.obernosterer@atvg-studios.com", company = "ATVG-Studios", homepage = "https://atvg-studios.com")
 fun equal(a: Any, b: Any): Boolean {
@@ -9,7 +9,7 @@ fun equal(a: Any, b: Any): Boolean {
             return true
     }
 
-    if (a == b)
+    if(a == b)
         return true
 
     return false

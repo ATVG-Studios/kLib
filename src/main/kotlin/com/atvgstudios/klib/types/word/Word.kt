@@ -1,6 +1,6 @@
 package com.atvgstudios.klib.types.word
 
-import com.atvgstudios.klib.annotations.*
+import com.atvgstudios.klib.annotations.Author
 import kotlin.experimental.xor
 
 @Author(name = "Thomas Obernosterer", email = "thomas.obernosterer@atvg-studios.com", company = "ATVG-Studios", homepage = "https://atvg-studios.com")
