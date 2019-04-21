@@ -1,0 +1,33 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.30'
+}
+
+group 'com.atvgstudios'
+version '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+jar {
+    manifest {
+        attributes 'Specification-Title': "kLib"
+        attributes 'Specification-Version': "alpha"
+        attributes 'Specification-Vendor': "ATVG-Studios"
+        attributes 'Implementation-Title': "kLib"
+        attributes 'Implementation-Version': "$version"
+        attributes 'Implementation-Vendor': "ATVG-Studios"
+    }
+}
