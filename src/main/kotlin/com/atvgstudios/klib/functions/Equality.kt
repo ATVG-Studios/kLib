@@ -9,7 +9,7 @@ fun equal(a: Any, b: Any): Boolean {
             return true
     }
 
-    if(a == b)
+    if (a == b)
         return true
 
     return false
