@@ -44,17 +44,6 @@
 
 2. Comments are only required of the Code does **NOT** speak for itself (accept in case of rule 1).
 
-### Author Declaration
-
-This is just to keep track in code about how made and modified code.  
-The first and last Author are both defined as "Owners" of that code, and are to be contacted in any event contact is required.
-
-1. A Author must mark his code with `@Author`.
-
-2. If you change the code of another Author you may add a `@ModifiedBy([Author("")])` entry at the last position to give insight of the author history.
-
-3. If you are already author of a code, (Either @Author or @ModifiedBy) do **NOT** add yourself to @ModifiedBy again.
-
 ### Usage of `var`
 
 1. If possible, do not use `var`.

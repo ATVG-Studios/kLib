@@ -1,10 +1,5 @@
 package com.atvgstudios.klib.extensions
 
-import com.atvgstudios.klib.annotations.Author
-import com.atvgstudios.klib.annotations.ModifiedBy
-
-@Author(name = "Thomas Obernosterer", email = "thomas.obernosterer@atvg-studios.com", company = "ATVG-Studios", homepage = "https://atvg-studios.com")
-@ModifiedBy([Author("")])
 infix fun Byte.mul(b: Byte): Byte {
     var tmpA = this.toInt()
     var tmpB = b.toInt()

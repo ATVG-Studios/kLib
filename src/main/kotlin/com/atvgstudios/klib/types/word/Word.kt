@@ -1,13 +1,25 @@
 package com.atvgstudios.klib.types.word
 
-import com.atvgstudios.klib.annotations.Author
 import kotlin.experimental.xor
 
-@Author(name = "Thomas Obernosterer", email = "thomas.obernosterer@atvg-studios.com", company = "ATVG-Studios", homepage = "https://atvg-studios.com")
+/**
+ * Custom implementation of Word datatype with 4 Bytes
+ */
 data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
     companion object {
+        /**
+         * Creates a empty Word
+         *
+         * @return
+         */
         fun empty() = Word(0, 0, 0, 0)
 
+        /**
+         * Converts a ByteArray to Word
+         *
+         * @param array
+         * @return
+         */
         fun fromByteArray(array: ByteArray): Word {
             return Word(
                 array[0],
@@ -18,6 +30,11 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
         }
     }
 
+    /**
+     * Custom toString
+     *
+     * @return
+     */
     override fun toString(): String {
         val h0 = String.format("%02x", w0)
         val h1 = String.format("%02x", w1)
@@ -27,6 +44,12 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
         return "$h0 $h1 $h2 $h3"
     }
 
+    /**
+     * Xor two Words
+     *
+     * @param word
+     * @return
+     */
     infix fun xor(word: Word): Word {
         return Word(
             w0 xor word.w0,
@@ -36,5 +59,11 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
         )
     }
 
+    /**
+     * Convert Word to ByteArray (Inverse of fromByteArray)
+     *
+     * @see fromByteArray
+     * @return
+     */
     fun toByteArray() = byteArrayOf(w0, w1, w2, w3)
 }

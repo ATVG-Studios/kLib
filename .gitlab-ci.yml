@@ -27,6 +27,17 @@ build:
   only:
     - master
 
+docs:
+  stage: build
+  script:
+    - gradle dokka
+  artifacts:
+    paths:
+      - build/javadoc
+    expire_in: 1 week
+  only:
+    - master
+
 test:
   stage: test
   script:
