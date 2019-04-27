@@ -7,7 +7,7 @@ Breaking versions must be in a new row!
 | ID | Version |
 |----|---------|
 | 1 - 2 | 0.1.0 - 0.1.1 |
-| 3 - 4 | 0.1.2 - 0.1.3 |
+| 3 - 5 | 0.1.2 - 0.1.4 |
 
 This means: `0.1.2` is compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
 

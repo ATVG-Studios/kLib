@@ -13,6 +13,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 0.1.4 - 27.04.2019
+
+### Added
+- `ofType` extension for Any
+- `swap` extension for MutableList
+- `replaceAll` extension for MutableList
+- `isNumeric` extension for String
+- `chop` extension for String
+- `toHex` extension for Integer
+- `popBegin` extension for MutableList
+- `popEnd` extension for MutableList
+- `prepend` extension for MutableList
+
 ## 0.1.3 - 27.04.2019
 
 ### Added
@@ -59,7 +72,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 0.1.3 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.3...master)
+* Unreleased - [Diff 0.1.4 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.4...master)
+* 0.1.3 - [Diff 0.1.3 to 0.1.4](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.3...0.1.4)
 * 0.1.3 - [Diff 0.1.2 to 0.1.3](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.2...0.1.3)
 * 0.1.2 - [Diff 0.1.1 to 0.1.2](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.1...0.1.2)
 * 0.1.1 - [Diff 0.1.0 to 0.1.1](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.0...0.1.1)

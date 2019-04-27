@@ -41,7 +41,10 @@ docs:
 test:
   stage: test
   script:
-    - gradle check
+    - gradle test
+  artifacts:
+    paths:
+      - build/reports/tests/test/index.html
 
 lint:
   stage: lint

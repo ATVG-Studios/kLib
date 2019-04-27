@@ -12,5 +12,8 @@ package:
 lint:
 	$(KTLINT) "src/main/**/*.kt"
 
+test:
+	$(GRADLE) test
+
 docs:
 	$(GRADLE) dokka

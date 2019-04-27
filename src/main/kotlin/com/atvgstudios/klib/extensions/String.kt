@@ -7,7 +7,7 @@ import com.atvgstudios.klib.objects.hash.Sha256
 /**
  * Check string is valid email
  *
- * @return
+ * @return True or False depending on if it matches a Regex
  *
  * @since 0.1.3
  * @author Thomas Obernosterer
@@ -19,7 +19,7 @@ fun String.isEmail(): Boolean {
 /**
  * Make first letter uppercase
  *
- * @return
+ * @return The string with first latter in uppercase
  *
  * @since 0.1.3
  * @author Thomas Obernosterer
@@ -31,7 +31,9 @@ fun String.toFirstLetterUpperCase(): String {
 /**
  * Make the first and every latter after a Underscore to UpperCase
  *
- * @return
+ * @param replaceWith The character to replace the underscore with (Default is space; Underscore not allowed)
+ * @return The string with first letter and every character after a underscore in uppercase
+ * @throws InvalidValueException Thrown if replaceWith contains "_"; This protects against a infinite loop
  *
  * @since 0.1.3
  * @author Thomas Obernosterer
@@ -50,7 +52,7 @@ fun String.toUpperCaseOnUnderscore(replaceWith: String = " "): String {
 /**
  * Get SHA256 value of string
  *
- * @return
+ * @return The SHA256 Hash of the string
  *
  * @since 0.1.3
  * @author Thomas Obernosterer
@@ -62,8 +64,8 @@ fun String.asSha256(): String {
 /**
  * Throw a InvalidValueException if a string contains a string
  *
- * @param str
- * @return
+ * @param str Not allowed String
+ * @throws InvalidValueException If str is inside the String
  *
  * @since 0.1.3
  * @author Thomas Obernosterer
@@ -77,8 +79,8 @@ infix fun String.deny(str: String) {
 /**
  * Throw a RequireValueException if a string does not contains a string
  *
- * @param str
- * @return
+ * @param str Required String
+ * @throws RequireValueException If str is not inside the String
  *
  * @since 0.1.3
  * @author Thomas Obernosterer
@@ -92,8 +94,8 @@ infix fun String.require(str: String) {
 /**
  * Count the occurrence of a substring
  *
- * @param sub
- * @return
+ * @param sub String to count
+ * @return Count of sub in String
  *
  * @since 0.1.3
  * @author Thomas Obernosterer
@@ -109,4 +111,32 @@ infix fun String.count(sub: String): Int {
         }
     }
     return count
+}
+
+/**
+ * Is a string a number
+ *
+ * @return True or False depending on if it matches a Regex
+ *
+ * @since 0.1.4
+ * @author Thomas Obernosterer
+ */
+fun String.isNumeric(): Boolean {
+    return Regex("\\d+").matches(this)
+}
+
+/**
+ * Chop a string from the end;
+ *  Inspired by QString::chop(int n)
+ *
+ * @param n Amount to chop from the end
+ * @return The string without n from the end; Or "" if n >= length
+ *
+ * @since 0.1.4
+ * @author Thomas Obernosterer
+ */
+infix fun String.chop(n: Int): String {
+    if (n < 0) return this
+    if (n >= length) return ""
+    return this.substring(0, length - n)
 }
