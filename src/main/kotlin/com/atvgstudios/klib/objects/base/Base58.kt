@@ -2,11 +2,26 @@ package com.atvgstudios.klib.objects.base
 
 import java.math.BigInteger
 
+/**
+ * Custom Base58 Implementation
+ *
+ * @since 0.1.2
+ * @author Thomas Obernosterer
+ */
 object Base58 {
     private const val ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     private val big0 = BigInteger.ZERO
     private val big58 = BigInteger.valueOf(58L)
 
+    /**
+     * Convert a Hash (String) to Base58
+     *
+     * @param hash
+     * @param base
+     *
+     * @since 0.1.2
+     * @author Thomas Obernosterer
+     */
     fun convert(hash: String, base: Int = 16): String {
         var x = if (base == 16 && hash.take(2) == "0x") BigInteger(hash.drop(2), 16)
         else BigInteger(hash, base)

@@ -7,15 +7,19 @@ import kotlinx.serialization.stringify
 /**
  * Custom Tiny kotlinx.serialization wrapper
  *
- * @see kotlinx.serialization
+ * @since 0.1.2
+ * @author Thomas Obernosterer
  */
+@Deprecated("This API interface will be removed; Use kotlinx.serialization instead!", ReplaceWith("Json", "kotlinx.serialization.json.Json"), DeprecationLevel.ERROR)
 object Json {
     /**
      * Convert Any to Json
      *
-     * @see kotlinx.serialization.stringify
      * @param data
      * @return
+     *
+     * @since 0.1.2
+     * @author Thomas Obernosterer
      */
     @UseExperimental(ImplicitReflectionSerializer::class)
     fun fromObject(data: Any): String {

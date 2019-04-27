@@ -18,6 +18,12 @@ kLib may contain code that was written by ATVG-Studios based on code by others.
 Copying code is strictly **NOT** allowed. Rewriting code in our in-house coding style however, may be allow as long as the
 original code is **NOT** protected by a License, Patent or Agreement.
 
+# Version Compatibility
+
+Checkout our doc about [Compatibility](Compatibility.md).  
+It contains information about which versions are compatible without issues.  
+Also what breaking changes where made when and which will come up in near future!
+
 # License
 
 kLib is distributed under the [MIT](LICENSE) License and available for everyone at any time.

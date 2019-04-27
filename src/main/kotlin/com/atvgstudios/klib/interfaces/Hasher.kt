@@ -3,7 +3,23 @@ package com.atvgstudios.klib.interfaces
 import com.atvgstudios.klib.types.hash.HashResult
 import java.security.MessageDigest
 
+/**
+ * Common Hashing Interface
+ *
+ * @since 0.1.2
+ * @author Thomas Obernosterer
+ */
 interface Hasher {
+    /**
+     * Hash byte array with algo
+     *
+     * @param data
+     * @param algo
+     * @return
+     *
+     * @since 0.1.3
+     * @author Thomas Obernosterer
+     */
     fun hash(data: ByteArray, algo: String): HashResult {
         val md = MessageDigest.getInstance(algo)
         val digest = md.digest(data)

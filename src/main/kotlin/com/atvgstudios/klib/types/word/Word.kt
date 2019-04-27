@@ -4,6 +4,14 @@ import kotlin.experimental.xor
 
 /**
  * Custom implementation of Word datatype with 4 Bytes
+ *
+ * @param w0
+ * @param w1
+ * @param w2
+ * @param w3
+ *
+ * @since 0.1.0
+ * @author Thomas Obernosterer
  */
 data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
     companion object {
@@ -11,6 +19,9 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
          * Creates a empty Word
          *
          * @return
+         *
+         * @since 0.1.0
+         * @author Thomas Obernosterer
          */
         fun empty() = Word(0, 0, 0, 0)
 
@@ -19,6 +30,9 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
          *
          * @param array
          * @return
+         *
+         * @since 0.1.0
+         * @author Thomas Obernosterer
          */
         fun fromByteArray(array: ByteArray): Word {
             return Word(
@@ -34,6 +48,9 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
      * Custom toString
      *
      * @return
+     *
+     * @since 0.1.0
+     * @author Thomas Obernosterer
      */
     override fun toString(): String {
         val h0 = String.format("%02x", w0)
@@ -49,6 +66,9 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
      *
      * @param word
      * @return
+     *
+     * @since 0.1.0
+     * @author Thomas Obernosterer
      */
     infix fun xor(word: Word): Word {
         return Word(
@@ -64,6 +84,9 @@ data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
      *
      * @see fromByteArray
      * @return
+     *
+     * @since 0.1.0
+     * @author Thomas Obernosterer
      */
     fun toByteArray() = byteArrayOf(w0, w1, w2, w3)
 }

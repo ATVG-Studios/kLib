@@ -13,6 +13,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 0.1.3 - 27.04.2019
+
+### Added
+- `kLibRequire` a function that allows you to only make the application run on a supported kLib version
+- `Json` Interface; This is for later use. (com.atvgstudios.klib.interfaces.Json)
+- `power` infix extension for Integer
+- `asSha256` extension for String
+- `toUpperCaseOnUnderscore` extension for String
+- `toFirstLetterUpperCase` extension for String
+- `isEmail` extension for String
+- `deny` extension for String
+- `require` extension for String
+- `count` infix extension for String
+- `InvalidValueException` exception
+- `RequireValueException` exception
+
+### Changed
+- `timesAs` was made a `infix`
+- Upgraded Kotlin from 1.3.30 to 1.3.31
+
+### Deprecated
+- `Json` Object (com.atvgstudios.klib.objects.json.Json)
+
 ## 0.1.2 - 23.04.2019
 ### Added
 - Integer `timesAs` Extension
@@ -36,7 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 0.1.2 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.1...master)
+* Unreleased - [Diff 0.1.3 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.3...master)
+* 0.1.3 - [Diff 0.1.2 to 0.1.3](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.2...0.1.3)
 * 0.1.2 - [Diff 0.1.1 to 0.1.2](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.1...0.1.2)
 * 0.1.1 - [Diff 0.1.0 to 0.1.1](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.0...0.1.1)
 * 0.1.0 - [0.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/tags/0.1.0)

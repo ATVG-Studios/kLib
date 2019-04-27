@@ -1,5 +1,14 @@
 package com.atvgstudios.klib.extensions
 
+/**
+ * Byte-Byte multiply
+ *
+ * @param b
+ * @return
+ *
+ * @since 0.1.0
+ * @author Thomas Obernosterer
+ */
 infix fun Byte.mul(b: Byte): Byte {
     var tmpA = this.toInt()
     var tmpB = b.toInt()
