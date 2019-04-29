@@ -1,5 +1,6 @@
 package com.atvgstudios.klib.extensions
 
+import com.atvgstudios.klib.objects.hash.Sha256
 import kotlin.experimental.xor
 
 /**
@@ -26,4 +27,32 @@ infix fun ByteArray.xor(byteArray: ByteArray): ByteArray {
     }
 
     return result
+}
+
+/**
+ * Calculates the SHA-256 hash of the array, and then hashes the resulting hash again. This is
+ * standard procedure in BitCoin.
+ *
+ * @return The doubleHash of the ByteArray
+ * @source Google BitcoinJ-Minimal
+ * @see asSha256
+ *
+ * @since 0.1.5
+ * @author Thomas Obernosterer
+ */
+fun ByteArray.doubleDigest(): String {
+    val first = this.asSha256()
+    return first.asSha256()
+}
+
+/**
+ * SHA256 Hash the byte array
+ *
+ * @return The Hash of the Array
+ *
+ * @since 0.1.5
+ * @author Thomas Obernosterer
+ */
+fun ByteArray.asSha256(): String {
+    return Sha256.hash(this).hex
 }

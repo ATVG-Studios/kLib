@@ -13,6 +13,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 0.1.5 - 29.04.2019
+
+### Added
+- `Experimental` Annotation Class
+- `Function` Type Alias
+- `Queue` Type Class (Experimental API)
+- `toObject` Function to Json Interface (Using Type and Nullable)
+- `toBase58` extension for String
+- `toBase64` extension for String
+- `fromBase64` extension for String
+- `fromBase58` extension for String
+- `doubleDigest` extension for ByteArray
+- `Base58e` Object
+
+### Deprecated
+- `toObject` Function in Json Interface (Using Any)
+- `Base58` Object (com.atvgstudios.klib.objects.base.Base58)
+
+### Removed
+- `Json` Object (com.atvgstudios.klib.objects.json.Json)
+
 ## 0.1.4 - 27.04.2019
 
 ### Added
@@ -72,7 +93,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 0.1.4 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.4...master)
+* Unreleased - [Diff 0.1.5 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.5...master)
+* 0.1.3 - [Diff 0.1.4 to 0.1.5](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.4...0.1.5)
 * 0.1.3 - [Diff 0.1.3 to 0.1.4](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.3...0.1.4)
 * 0.1.3 - [Diff 0.1.2 to 0.1.3](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.2...0.1.3)
 * 0.1.2 - [Diff 0.1.1 to 0.1.2](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.1...0.1.2)

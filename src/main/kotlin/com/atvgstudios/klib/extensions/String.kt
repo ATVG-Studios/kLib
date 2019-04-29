@@ -2,7 +2,9 @@ package com.atvgstudios.klib.extensions
 
 import com.atvgstudios.klib.exceptions.InvalidValueException
 import com.atvgstudios.klib.exceptions.RequireValueException
+import com.atvgstudios.klib.objects.base.Base58e
 import com.atvgstudios.klib.objects.hash.Sha256
+import java.util.Base64
 
 /**
  * Check string is valid email
@@ -126,11 +128,12 @@ fun String.isNumeric(): Boolean {
 }
 
 /**
- * Chop a string from the end;
- *  Inspired by QString::chop(int n)
+ * Chop a string from the end
  *
  * @param n Amount to chop from the end
  * @return The string without n from the end; Or "" if n >= length
+ *
+ * @source This feature was inspired by QString::chop() from Qt 5.12.3
  *
  * @since 0.1.4
  * @author Thomas Obernosterer
@@ -139,4 +142,52 @@ infix fun String.chop(n: Int): String {
     if (n < 0) return this
     if (n >= length) return ""
     return this.substring(0, length - n)
+}
+
+/**
+ * Convert a string into Base58
+ *
+ * @return The string as Base58
+ *
+ * @since 0.1.5
+ * @author Thomas Obernosterer
+ */
+fun String.asBase58(): String {
+    return Base58e.encode(this)
+}
+
+/**
+ * Convert Base58 into a string
+ *
+ * @return The Base58 as string
+ *
+ * @since 0.1.5
+ * @author Thomas Obernosterer
+ */
+fun String.fromBase58(): String {
+    return String(Base58e.decode(this))
+}
+
+/**
+ * Convert a string into Base64
+ *
+ * @return The string as Base64
+ *
+ * @since 0.1.5
+ * @author Thomas Obernosterer
+ */
+fun String.asBase64(): String {
+    return Base64.getEncoder().encodeToString(this.toByteArray())
+}
+
+/**
+ * Convert Base64 into a string
+ *
+ * @return The Base64 as string
+ *
+ * @since 0.1.5
+ * @author Thomas Obernosterer
+ */
+fun String.fromBase64(): String {
+    return String(Base64.getDecoder().decode(this.toByteArray()))
 }

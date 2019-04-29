@@ -38,10 +38,11 @@ fun <T> MutableList<T>.replaceAll(value: T, with: T) {
 
 /**
  * Removes and returns the last element; Mutates the List!
- *  Inspired by QList::pop_back()
  *
  * @return The poped element
  * @throws UnsupportedOperationException If the list is empty
+ *
+ * @source This feature was inspired by QList::pop_back() from Qt 5.12.3
  *
  * @since 0.1.4
  * @author Thomas Obernosterer
@@ -56,10 +57,11 @@ fun <T> MutableList<T>.popEnd(): T {
 
 /**
  * Removes and returns the first element; Mutates the List!
- *  Inspired by QList::pop_front()
  *
  * @return The poped element
  * @throws UnsupportedOperationException If the list is empty
+ *
+ * @source This feature was inspired by QList::pop_front() from Qt 5.12.3
  *
  * @since 0.1.4
  * @author Thomas Obernosterer
@@ -73,10 +75,11 @@ fun <T> MutableList<T>.popBegin(): T {
 }
 
 /**
- * Add a item to the begin of the list;
- *  Inspired by QList::prepend(const T &value)
+ * Add a item to the begin of the list
  *
  * @param value The value to prepend
+ *
+ * @source This feature was inspired by QList::prepend() from Qt 5.12.3
  *
  * @since 0.1.4
  * @author Thomas Obernosterer

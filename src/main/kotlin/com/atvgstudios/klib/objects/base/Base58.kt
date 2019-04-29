@@ -5,9 +5,14 @@ import java.math.BigInteger
 /**
  * Custom Base58 Implementation
  *
+ * @deprecated Since 0.1.5
+ * @replaced This was replaced by Base58e
+ * @see Base58e
+ *
  * @since 0.1.2
  * @author Thomas Obernosterer
  */
+@Deprecated("Replaced by Base58e", level = DeprecationLevel.ERROR)
 object Base58 {
     private const val ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     private val big0 = BigInteger.ZERO

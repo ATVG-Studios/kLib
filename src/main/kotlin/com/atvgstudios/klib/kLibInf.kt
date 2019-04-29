@@ -1,5 +1,8 @@
 package com.atvgstudios.klib
 
+import com.atvgstudios.klib.dummy.JsonHandler
+import com.atvgstudios.klib.interfaces.Json
+
 /**
  * kLib Information Center
  *
@@ -21,7 +24,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val versionId = 5 // A unique version number used to identify releases and to make easy requirement checks
+    const val versionId = 6 // A unique version number used to identify releases and to make easy requirement checks
 
     /**
      * Version String (For humans; SemVer)
@@ -29,7 +32,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val version = "0.1.4"
+    const val version = "0.1.5"
 
     /**
      * Company creating kLib
@@ -55,7 +58,8 @@ object kLibInf {
      */
     val authors = arrayListOf(
         // Format: Name <Email> (Company, Homepage)
-        "Thomas Obernosterer <thomas.obernosterer@atvg-studios.com> (ATVG-Studios, https://atvg-studios.com)"
+        "Thomas Obernosterer <thomas.obernosterer@atvg-studios.com> (ATVG-Studios, https://atvg-studios.com)",
+        "Nils Rider <night.rider@atvg-studios.at> (ATVG-Studios, https://atvg-studios.com)"
     )
 
     /**
@@ -68,4 +72,14 @@ object kLibInf {
      * @author Thomas Obernosterer
      */
     var exit: (status: Int) -> Unit = { System.exit(it) }
+
+    /**
+     * Json Handler to be used for Parsing JSON inside kLib
+     *
+     * @see Json
+     *
+     * @since 0.1.5
+     * @author Thomas Obernosterer
+     */
+    var jsonHandler: Json = JsonHandler()
 }
