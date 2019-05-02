@@ -10,7 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Deprecated
 ### Removed
+- `toObject` Function Json Interface
+- `Base58` Object
 ### Fixed
+- Removed Implementation of removed `toObject` in dummy.JsonHandler
 ### Security
 
 ## 0.1.5 - 29.04.2019
