@@ -9,6 +9,7 @@ Breaking versions must be in a new row!
 | 1 - 2 | 0.1.0 - 0.1.1 |
 | 3 - 5 | 0.1.2 - 0.1.4 |
 | 6     | 0.1.5 |
+| 7     | 0.1.6 |
 
 This means: `0.1.2` **IS** compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
 
@@ -27,6 +28,8 @@ Table created from APIs removed.
 |---------|--------|--------|
 |  0.1.2  | UniqueID was moved from `types.uuid` to `objects.uuid` | UniqueID is a Object not a Class |
 |  0.1.5  | Removal of deprecated API `Json` (`objects.json.Json`) | The used kotlinx.serialization has a easy to use API, so this is considered duplicate Code |
+|  0.1.6  | Removal of `toObject(String, Any): Any` function in Json Interface (`interfaces.Json`)| Has been replaced with `toObject(String, Type): Any?` to support nullability and any Type|
+|  0.1.6  | Removal of deprecated API `Base58` (`objects.base.Base58`) | Was replaced with `Base58e` which bases on code from Google (Supports encode+decode) |
 
 ## Upcoming Breaking Changes
 
@@ -34,8 +37,6 @@ Table created from APIs marked as Deprecated.
 
 | Version | Change | Reason |
 |---------|--------|--------|
-|  0.1.6  | Removal of `toObject(String, Any): Any` function in Json Interface (`interfaces.Json`)| Has been replaced with `toObject(String, Type): Any?` to support nullability and any Type|
-|  0.1.6  | Removal of deprecated API `Base58` (`objects.base.Base58`) | Was replaced with `Base58e` which bases on code from Google (Supports encode+decode) |
 
 ## Experimental APIs
 
