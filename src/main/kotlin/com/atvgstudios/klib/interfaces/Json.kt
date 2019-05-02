@@ -18,16 +18,6 @@ interface Json {
     fun fromObject(data: Any): String
 
     /**
-     * Convert Json to Object
-     *
-     * @deprecated since 0.1.5
-     * @since 0.1.3
-     * @author Thomas Obernosterer
-     */
-    @Deprecated("Has been replaced with toObject(String, Type): Any?", level = DeprecationLevel.ERROR)
-    fun toObject(data: String, type: Any): Any
-
-    /**
      * Convert Json to Type
      *
      * @param data The Json String
