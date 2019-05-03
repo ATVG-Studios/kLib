@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `requireOrFail` Top-Level Function
 - `requireAllOrFail` Top-Level Function
+- `or` extension for Any?
+- `orFun` extension for Any?
+- `Function_Any` Type Alias
 ### Changed
 ### Deprecated
 ### Removed
