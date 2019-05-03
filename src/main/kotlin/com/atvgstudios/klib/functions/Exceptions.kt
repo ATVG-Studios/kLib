@@ -17,3 +17,14 @@ fun exceptionHandled(block: () -> Boolean): Boolean {
         false
     }
 }
+
+/**
+ * Run code with T return inside Try-Catch
+ *
+ * @param block Code to execute in Try-Catch
+ * @return Instance of T
+ *
+ * @since 0.1.6
+ * @author Thomas Obernosterer
+ */
+inline fun <T> eHandled(block: () -> T) = try { block() } catch (e: Throwable) { e.printStackTrace() }

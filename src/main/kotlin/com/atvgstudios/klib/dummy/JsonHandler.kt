@@ -10,10 +10,6 @@ import java.lang.reflect.Type
  * @author Nils Rider
  */
 class JsonHandler : Json {
-    override fun toObject(data: String, type: Any): Any {
-        TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
-    }
-
     override fun fromObject(data: Any): String {
         TODO("not implemented") // To change body of created functions use File | Settings | File Templates.
     }

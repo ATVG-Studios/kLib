@@ -5,6 +5,8 @@ Extensions and Types.
 
 kLib works as a Standard Library at ATVG-Studios containing code that can be used across many applications in a generic way.
 
+Checkout the Homepage over [here](https://klib.atvg-studios.com).
+
 # Contributing
 
 If you want to contribute, please add your name, email, company (if any) and homepage (if any) to the Authors Array in the kLibInfo.
