@@ -10,6 +10,7 @@ Breaking versions must be in a new row!
 | 3 - 5 | 0.1.2 - 0.1.4 |
 | 6     | 0.1.5 |
 | 7     | 0.1.6 |
+| 8     | 0.2.0 |
 
 This means: `0.1.2` **IS** compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
 
@@ -30,6 +31,7 @@ Table created from APIs removed.
 |  0.1.5  | Removal of deprecated API `Json` (`objects.json.Json`) | The used kotlinx.serialization has a easy to use API, so this is considered duplicate Code |
 |  0.1.6  | Removal of `toObject(String, Any): Any` function in Json Interface (`interfaces.Json`)| Has been replaced with `toObject(String, Type): Any?` to support nullability and any Type|
 |  0.1.6  | Removal of deprecated API `Base58` (`objects.base.Base58`) | Was replaced with `Base58e` which bases on code from Google (Supports encode+decode) |
+|  0.2.0  | Rename package from `com.atvgstudios.klib.*` to `klib.*` | Making the use of kLib simpler and pulling it of from ATVG-Studios |
 
 ## Upcoming Breaking Changes
 
@@ -37,7 +39,6 @@ Table created from APIs marked as Deprecated.
 
 | Version | Change | Reason |
 |---------|--------|--------|
-|  0.2.0  | Rename package from `com.atvgstudios.klib.*` to `klib.*` | Making the use of kLib simpler and pulling it of from ATVG-Studios |
 
 ## Experimental APIs
 

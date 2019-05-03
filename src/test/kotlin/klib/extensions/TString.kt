@@ -1,10 +1,5 @@
 package klib.extensions
 
-import com.atvgstudios.klib.exceptions.InvalidValueException
-import com.atvgstudios.klib.exceptions.RequireValueException
-import com.atvgstudios.klib.extensions.asSha256
-import com.atvgstudios.klib.extensions.deny
-import com.atvgstudios.klib.extensions.require
 import org.junit.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
@@ -12,7 +7,7 @@ import kotlin.test.assertTrue
 class TString {
     @Test
     fun deny(){
-        assertFailsWith(InvalidValueException::class) {
+        assertFailsWith(klib.exceptions.InvalidValueException::class) {
             "This is a very invalid test string containing a §" deny "§"
         }
 
@@ -24,7 +19,7 @@ class TString {
 
     @Test
     fun require(){
-        assertFailsWith(RequireValueException::class) {
+        assertFailsWith(klib.exceptions.RequireValueException::class) {
             "This is a very invalid test string containing no .." require "§"
         }
 

@@ -1,8 +1,5 @@
 package klib.extensions
 
-import com.atvgstudios.klib.extensions.ofType
-import com.atvgstudios.klib.extensions.or
-import com.atvgstudios.klib.extensions.orFun
 import org.junit.Test
 
 open class Animal(val name: String, val isAnimal: Boolean = true)

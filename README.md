@@ -1,6 +1,6 @@
 # kLib
 
-kLib (ATVG-Studios Kotlin Std Library) is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
+kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
 Extensions and Types.
 
 kLib works as a Standard Library at ATVG-Studios containing code that can be used across many applications in a generic way.

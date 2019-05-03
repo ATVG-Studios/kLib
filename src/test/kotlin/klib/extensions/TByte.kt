@@ -1,6 +1,5 @@
 package klib.extensions
 
-import com.atvgstudios.klib.extensions.mul
 import org.junit.Test
 
 fun b(num: Int): Byte = num.toByte()

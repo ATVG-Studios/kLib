@@ -20,6 +20,11 @@
   
 ## Code Style
 
+### General Rule
+
+Run the kotlin linter Process (make lint) to make sure you have a correct code syntax.  
+Make sure to have the linter by running `./scripts/get_ktlint.sh`
+
 ### Language
 
 1. In this project we use the programming language `Kotlin` and **NO OTHER**.

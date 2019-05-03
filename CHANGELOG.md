@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 0.2.0 - 03.05.2019
+
+## Changed
+- Renamed Package `com.atvgstudios.klib` to `klib`
+
 ## 0.1.6 - 03.05.2019
 
 ### Added

@@ -1,7 +1,5 @@
 package klib.functions
 
-import com.atvgstudios.klib.functions.requireAllOrFail
-import com.atvgstudios.klib.functions.requireOrFail
 import org.junit.Test
 import kotlin.test.assertFalse
 
