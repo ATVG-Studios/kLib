@@ -15,6 +15,15 @@ object Base58e {
     private val ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     private val BASE = BigInteger.valueOf(58)
 
+    /**
+     * Encode Base58
+     *
+     * @param input The Input to encode
+     * @return The encoded Input
+     *
+     * @since 0.1.5
+     * @author Thomas Obernosterer
+     */
     fun encode(input: String): String = encode(input.toByteArray())
 
     /**

@@ -13,6 +13,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 0.1.6 - 03.05.2019
+
+### Added
+- `requireOrFail` Top-Level Function
+- `requireAllOrFail` Top-Level Function
+- `or` extension for Any?
+- `orFun` extension for Any?
+- `Function_Any` Type Alias
+- `eHandled` Top-Level Function
+### Removed
+- `toObject` Function Json Interface
+- `Base58` Object
+### Fixed
+- Removed Implementation of removed `toObject` in dummy.JsonHandler
+
 ## 0.1.5 - 29.04.2019
 
 ### Added
