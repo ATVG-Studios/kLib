@@ -25,7 +25,10 @@ build:
       - build/libs/*.jar
     expire_in: 1 week
   only:
-    - /^release/*$/
+    refs:
+      - branches
+    variables:
+      - $BUILD_TYPE == "release"
 
 docs:
   stage: build
@@ -36,7 +39,10 @@ docs:
       - build/javadoc
     expire_in: 1 week
   only:
-    - /^release/*$/
+    refs:
+      - branches
+    variables:
+      - $BUILD_TYPE == "release"
 
 test:
   stage: test
