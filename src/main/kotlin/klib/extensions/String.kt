@@ -4,7 +4,7 @@ import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
 import klib.objects.base.Base58e
 import klib.objects.hash.Sha256
-import java.util.*
+import java.util.Base64
 
 /**
  * Check string is valid email
