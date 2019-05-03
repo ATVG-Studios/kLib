@@ -8,7 +8,6 @@ package com.atvgstudios.klib.typealiases
  */
 typealias Function = () -> Unit
 
-
 /**
  * Type alias for () -> Any?
  *

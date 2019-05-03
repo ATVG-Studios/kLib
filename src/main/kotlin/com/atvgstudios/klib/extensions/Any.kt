@@ -1,6 +1,5 @@
 package com.atvgstudios.klib.extensions
 
-import com.atvgstudios.klib.typealiases.Function
 import com.atvgstudios.klib.typealiases.Function_Any
 
 /**
@@ -26,7 +25,7 @@ inline fun <reified T> Any.ofType(block: (T) -> Unit) {
  * @author Thomas Obernosterer
  */
 infix fun Any?.orFun(block: Function_Any): Any? {
-    if(this == null){
+    if (this == null) {
         return block()
     }
     return this
@@ -41,7 +40,7 @@ infix fun Any?.orFun(block: Function_Any): Any? {
  * @author Thomas Obernosterer
  */
 infix fun Any?.or(something: Any): Any {
-    if(this == null){
+    if (this == null) {
         return something
     }
     return this
