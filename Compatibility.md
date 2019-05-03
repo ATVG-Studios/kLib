@@ -37,6 +37,7 @@ Table created from APIs marked as Deprecated.
 
 | Version | Change | Reason |
 |---------|--------|--------|
+|  0.2.0  | Rename package from `com.atvgstudios.klib.*` to `klib.*` | Making the use of kLib simpler and pulling it of from ATVG-Studios |
 
 ## Experimental APIs
 
