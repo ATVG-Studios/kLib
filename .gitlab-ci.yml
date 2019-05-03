@@ -25,7 +25,7 @@ build:
       - build/libs/*.jar
     expire_in: 1 week
   only:
-    - release/*
+    - /^release/*$/
 
 docs:
   stage: build
@@ -36,7 +36,7 @@ docs:
       - build/javadoc
     expire_in: 1 week
   only:
-    - release/*
+    - /^release/*$/
 
 test:
   stage: test
