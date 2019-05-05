@@ -11,7 +11,7 @@ kLib is now available via a custom Maven repository.
 You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.at/atvg-studios/maven-repository).  
 The Maven Repository itself is available here: https://mvn.osmium.software
 
-Adding kLib using Gradle:
+Adding the latest version of kLib using Gradle:
 
 ```
 repositories {
@@ -19,11 +19,11 @@ repositories {
 }
 
 dependencies {
-    implementation "com.atvgstudios:klib:0.2.1"
+    implementation "com.atvgstudios:klib:+"
 }
 ```
 
-Adding kLib using Maven:
+Adding the latest version of kLib using Maven:
 
 ```
 <repositories>
@@ -37,14 +37,10 @@ Adding kLib using Maven:
   <dependency>
     <groupId>com.atvgstudios</groupId>
     <artifactId>klib</artifactId>
-    <version>0.2.1</version>
+    <version>[0.1.0,)</version>
   </dependency>
 </dependencies>
 ```
-
-The above versions may be outdated.  
-Please check the Changelog for the latest version.  
-Also check the Compatibility list if you want to upgrade your current dependency.
 
 # Contributing
 
