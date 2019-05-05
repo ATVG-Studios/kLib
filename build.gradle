@@ -27,6 +27,7 @@ dependencies {
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
@@ -46,53 +47,13 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions.freeCompilerArgs += ["-Xuse-experimental=kotlin.Experimental"]
 }
 
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
 dokka {
     outputFormat = 'html'
     outputDirectory = "$buildDir/javadoc"
     jdkVersion = 8
-}
-
-
-publishing {
-    repositories {
-        maven {
-            url = "$buildDir/repo"
-        }
-	
-    }
-    publications {
-        maven(MavenPublication) {
-	    pom {
-                name = 'kLib'
-                description = 'kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions, Extensions and Types.'
-                url = 'https://klib.atvg-studios.com/'
-                licenses {
-                    license {
-                        name = 'MIT'
-                        url = 'https://gitlab.atvg-studios.at/atvg-studios/kLib/blob/master/LICENSE'
-                    }
-                }
-                developers {
-                    developer {
-                        id = 'atjontv'
-                        name = 'Thomas Obernosterer'
-                        email = 'thomas.obernosterer@atvg-studios.com'
-                    }
-                }
-                scm {
-                    connection = 'scm:git:git://gitlab.atvg-studios.at/atvg-studios/kLib.git'
-                    developerConnection = 'scm:git:ssh://gitlab.atvg-studios.at/atvg-studios/kLib.git'
-                    url = 'https://gitlab.atvg-studios.at/atvg-studios/kLib.git'
-                }
-            }
-            groupId = 'com.atvgstudios'
-            artifactId = 'klib'
-            version = "$version"
-            from components.kotlin
-        }
-    }
-}
-
-signing {
-    sign publishing.publications.maven
 }

@@ -1,16 +1,14 @@
 GRADLE="./gradlew"
 KTLINT="./ktlint"
 
-all: lint compile package docs publish
+all: lint compile package docs
 
 compile:
 	$(GRADLE) build
 
 package:
 	$(GRADLE) shadowJar
-
-publish:
-	$(GRADLE) publish
+	$(GRADLE) sourcesJar
 
 lint:
 	$(KTLINT) "src/main/**/*.kt"
