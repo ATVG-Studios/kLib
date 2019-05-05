@@ -7,6 +7,45 @@ kLib works as a Standard Library at ATVG-Studios containing code that can be use
 
 Checkout the Homepage over [here](https://klib.atvg-studios.com).
 
+kLib is now available via a custom Maven repository.  
+You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.at/atvg-studios/maven-repository).  
+The Maven Repository itself is available here: https://mvn.osmium.software
+
+Adding kLib using Gradle:
+
+```
+repositories {
+    maven { url 'https://mvn.osmium.software' }
+}
+
+dependencies {
+    implementation "com.atvgstudios:klib:0.2.1"
+}
+```
+
+Adding kLib using Maven:
+
+```
+<repositories>
+  <repository>
+    <id>atvg-studios</id>
+    <name>ATVG-Studios Maven</name>
+    <url>https://mvn.osmium.software</url>
+  </repository>
+</repositories>
+<dependencies>
+  <dependency>
+    <groupId>com.atvgstudios</groupId>
+    <artifactId>klib</artifactId>
+    <version>0.2.1</version>
+  </dependency>
+</dependencies>
+```
+
+The above versions may be outdated.  
+Please check the Changelog for the latest version.  
+Also check the Compatibility list if you want to upgrade your current dependency.
+
 # Contributing
 
 If you want to contribute, please add your name, email, company (if any) and homepage (if any) to the Authors Array in the kLibInfo.

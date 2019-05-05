@@ -2,6 +2,8 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '5.0.0'
     id 'org.jetbrains.kotlin.jvm' version '1.3.31'
     id 'org.jetbrains.dokka' version '0.9.18'
+    id 'maven-publish'
+    id 'signing'
 }
 
 group 'com.atvgstudios'
@@ -48,4 +50,49 @@ dokka {
     outputFormat = 'html'
     outputDirectory = "$buildDir/javadoc"
     jdkVersion = 8
+}
+
+
+publishing {
+    repositories {
+        maven {
+            url = "$buildDir/repo"
+        }
+	
+    }
+    publications {
+        maven(MavenPublication) {
+	    pom {
+                name = 'kLib'
+                description = 'kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions, Extensions and Types.'
+                url = 'https://klib.atvg-studios.com/'
+                licenses {
+                    license {
+                        name = 'MIT'
+                        url = 'https://gitlab.atvg-studios.at/atvg-studios/kLib/blob/master/LICENSE'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'atjontv'
+                        name = 'Thomas Obernosterer'
+                        email = 'thomas.obernosterer@atvg-studios.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://gitlab.atvg-studios.at/atvg-studios/kLib.git'
+                    developerConnection = 'scm:git:ssh://gitlab.atvg-studios.at/atvg-studios/kLib.git'
+                    url = 'https://gitlab.atvg-studios.at/atvg-studios/kLib.git'
+                }
+            }
+            groupId = 'com.atvgstudios'
+            artifactId = 'klib'
+            version = "$version"
+            from components.kotlin
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.maven
 }
