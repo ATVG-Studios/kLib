@@ -8,9 +8,9 @@ import klib.typealiases.Function
  * @see Function
  *
  * @since 0.1.5 (Experimental)
+ * @since 0.2.1
  * @author Nils Rider
  */
-@klib.annotations.Experimental
 class Queue {
     private var queueList: MutableList<Function> = ArrayList()
 
