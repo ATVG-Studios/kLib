@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+- `quicksort` extension for MutableList
+- `quicksort` extension for List
+- `plusAssign` Function to Queue
+- `invoke` Function to Queue
+- `startTimedExecution` Function to Queue
 ### Changed
 ### Deprecated
 ### Removed
