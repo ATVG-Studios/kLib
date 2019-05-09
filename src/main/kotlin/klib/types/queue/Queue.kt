@@ -107,7 +107,7 @@ class Queue {
      * @author Thomas Obernosterer
      */
     operator fun invoke() {
-        if(!isEmpty)
+        if (!isEmpty)
             dequeue().invoke()
     }
 
@@ -122,7 +122,7 @@ class Queue {
     fun startTimedExecution(millis: Long) {
         val timerTask = object : TimerTask() {
             override fun run() {
-                if(!isEmpty)
+                if (!isEmpty)
                     dequeue().invoke()
             }
         }

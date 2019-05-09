@@ -96,15 +96,15 @@ fun <T> MutableList<T>.prepend(value: T) {
  * @since 0.2.2
  * @author Thomas Obernosterer
  */
-fun <T: Comparable<T>> MutableList<T>.quicksort() {
+fun <T : Comparable<T>> MutableList<T>.quicksort() {
     fun quicksort(items: List<T>): MutableList<T> {
-        if(items.size < 2){
+        if (items.size < 2) {
             return items.toMutableList()
         }
         val pivot = items[items.size / 2]
         val equal = items.filter { it == pivot }
         val less = items.filter { it < pivot }
-        val greater = items.filter { it > pivot}
+        val greater = items.filter { it > pivot }
         return (quicksort(less) + equal + quicksort(greater)).toMutableList()
     }
     val orig = this.toList()
