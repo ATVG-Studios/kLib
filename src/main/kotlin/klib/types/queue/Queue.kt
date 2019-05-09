@@ -115,18 +115,21 @@ class Queue {
      * Start a execution daemon that executes the queue all x millis
      *
      * @param millis Interval between executions
+     * @param dieAfterLast If true kills the timer if the queue is empty (Default: True)
      *
      * @since 0.2.2
      * @author Thomas Obernosterer
      */
-    fun startTimedExecution(millis: Long) {
+    fun startTimedExecution(millis: Long, dieAfterLast: Boolean = true) {
+        val timer = Timer("klib.queue.task", false)
         val timerTask = object : TimerTask() {
             override fun run() {
                 if (!isEmpty)
                     dequeue().invoke()
+                if (isEmpty && dieAfterLast)
+                    timer.cancel()
             }
         }
-        val timer = Timer("klib.queue.task", false)
         timer.schedule(timerTask, 0, millis)
     }
 }
