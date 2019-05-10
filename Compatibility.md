@@ -46,3 +46,4 @@ Table created from APIs marked as Experimental. These may change or be removed a
 
 | Since | Change |
 |-------|--------|
+| 0.2.2 | Adding in Konfig for a custom Configuration File (`objects.Konfig`) |

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `plusAssign` Function to Queue
 - `invoke` Function to Queue
 - `startTimedExecution` Function to Queue
+- `Konfig` Object Class (Experimental API)
 ### Changed
 ### Deprecated
 ### Removed
