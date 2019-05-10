@@ -33,7 +33,7 @@ object Konfig {
      * @author Thomas Obernosterer
      */
     fun parseFile(file: File): Map<String, Any> {
-        if(!file.canRead()) throw KonfParseException("The file ${file.name} cannot be read!")
+        if (!file.canRead()) throw KonfParseException("The file ${file.name} cannot be read!")
         return parse(file.readLines())
     }
 
@@ -52,14 +52,14 @@ object Konfig {
         val totalLines = data.size
         data.forEach {
             line++
-            if(it.startsWith("#")) return@forEach
+            if (it.startsWith("#")) return@forEach
 
-            if(!it.contains("=")) throw KonfParseException("Cannot parse line $line of $totalLines")
+            if (!it.contains("=")) throw KonfParseException("Cannot parse line $line of $totalLines")
 
             val d = it.split("=")
             val key = d[0]
 
-            if(key in result) throw KonfParseException("Cannot use duplicate key on line $line of $totalLines")
+            if (key in result) throw KonfParseException("Cannot use duplicate key on line $line of $totalLines")
 
             val value = d.joinToString("=").replaceFirst("$key=", "")
 
@@ -79,7 +79,7 @@ object Konfig {
      */
     fun writeFile(data: Map<String, Any>, fileName: String) {
         val file = File(fileName)
-        if(!file.exists()) file.createNewFile()
+        if (!file.exists()) file.createNewFile()
         writeFile(data, File(fileName))
     }
 
@@ -93,7 +93,7 @@ object Konfig {
      * @author Thomas Obernosterer
      */
     fun writeFile(data: Map<String, Any>, file: File) {
-        if(!file.canWrite()) throw Exception("Cannot write to file ${file.name}")
+        if (!file.canWrite()) throw Exception("Cannot write to file ${file.name}")
 
         file.writeText(createKonfig(data).joinToString("\n"))
     }
