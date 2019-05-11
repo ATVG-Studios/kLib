@@ -11,7 +11,7 @@ package:
 	$(GRADLE) sourcesJar
 
 lint:
-	$(KTLINT) "src/main/**/*.kt"
+	$(KTLINT) "src/main/**/*.kt" -F
 
 test:
 	$(GRADLE) test

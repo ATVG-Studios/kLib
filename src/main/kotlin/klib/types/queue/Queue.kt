@@ -1,6 +1,8 @@
 package klib.types.queue
 
 import klib.typealiases.Function
+import java.util.Timer
+import java.util.TimerTask
 
 /**
  * Custom Queue for Functions
@@ -82,5 +84,52 @@ class Queue {
         val x: List<Function> = queueList.toTypedArray().clone().toList()
         queueList.clear()
         return x
+    }
+
+    /**
+     * Add new functions using "queue += {}"
+     *
+     * @param function The function to run
+     *
+     * @see Function
+     *
+     * @since 0.2.2
+     * @author Thomas Obernosterer
+     */
+    operator fun plusAssign(function: Function) {
+        queueList.add(function)
+    }
+
+    /**
+     * Run the top of the queue
+     *
+     * @since 0.2.2
+     * @author Thomas Obernosterer
+     */
+    operator fun invoke() {
+        if (!isEmpty)
+            dequeue().invoke()
+    }
+
+    /**
+     * Start a execution daemon that executes the queue all x millis
+     *
+     * @param millis Interval between executions
+     * @param dieAfterLast If true kills the timer if the queue is empty (Default: True)
+     *
+     * @since 0.2.2
+     * @author Thomas Obernosterer
+     */
+    fun startTimedExecution(millis: Long, dieAfterLast: Boolean = true) {
+        val timer = Timer("klib.queue.task", false)
+        val timerTask = object : TimerTask() {
+            override fun run() {
+                if (!isEmpty)
+                    dequeue().invoke()
+                if (isEmpty && dieAfterLast)
+                    timer.cancel()
+            }
+        }
+        timer.schedule(timerTask, 0, millis)
     }
 }

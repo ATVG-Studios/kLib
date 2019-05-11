@@ -87,3 +87,28 @@ fun <T> MutableList<T>.popBegin(): T {
 fun <T> MutableList<T>.prepend(value: T) {
     this.add(0, value)
 }
+
+/**
+ * Sorting a list using quicksort by modifying the list
+ *
+ * @see quicksort
+ *
+ * @since 0.2.2
+ * @author Thomas Obernosterer
+ */
+fun <T : Comparable<T>> MutableList<T>.quicksort() {
+    fun quicksort(items: List<T>): MutableList<T> {
+        if (items.size < 2) {
+            return items.toMutableList()
+        }
+        val pivot = items[items.size / 2]
+        val equal = items.filter { it == pivot }
+        val less = items.filter { it < pivot }
+        val greater = items.filter { it > pivot }
+        return (quicksort(less) + equal + quicksort(greater)).toMutableList()
+    }
+    val orig = this.toList()
+    val res = quicksort(orig)
+    this.clear()
+    this.addAll(res)
+}

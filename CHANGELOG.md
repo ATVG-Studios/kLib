@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 0.2.2 - 11.05.2019
+
+### Added
+- `quicksort` extension for MutableList
+- `quicksort` extension for List
+- `plusAssign` Function to Queue
+- `invoke` Function to Queue
+- `startTimedExecution` Function to Queue
+- `Konfig` Object Class (Experimental API)
+
 ## 0.2.1 - 05.05.2019
 
 ### Changed
@@ -118,9 +128,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 0.1.5 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.5...master)
-* 0.1.3 - [Diff 0.1.4 to 0.1.5](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.4...0.1.5)
-* 0.1.3 - [Diff 0.1.3 to 0.1.4](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.3...0.1.4)
+* Unreleased - [Diff 0.2.2 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.2...master)
+* 0.2.1 - [Diff 0.2.0 to 0.2.1](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.0...0.2.1)
+* 0.2.0 - [Diff 0.1.6 to 0.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.6...0.2.0)
+* 0.1.6 - [Diff 0.1.5 to 0.1.6](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.5...0.1.6)
+* 0.1.5 - [Diff 0.1.4 to 0.1.5](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.4...0.1.5)
+* 0.1.4 - [Diff 0.1.3 to 0.1.4](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.3...0.1.4)
 * 0.1.3 - [Diff 0.1.2 to 0.1.3](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.2...0.1.3)
 * 0.1.2 - [Diff 0.1.1 to 0.1.2](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.1...0.1.2)
 * 0.1.1 - [Diff 0.1.0 to 0.1.1](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.0...0.1.1)
