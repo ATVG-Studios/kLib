@@ -7,17 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 0.2.2 - 11.05.2019
+
+### Added
 - `quicksort` extension for MutableList
 - `quicksort` extension for List
 - `plusAssign` Function to Queue
 - `invoke` Function to Queue
 - `startTimedExecution` Function to Queue
 - `Konfig` Object Class (Experimental API)
-### Changed
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## 0.2.1 - 05.05.2019
 
