@@ -9,5 +9,5 @@ package klib.extensions
  * @author Thomas Obernosterer
  */
 fun Boolean.asInt(): Int {
-    return if(this) 1 else 0
+    return if (this) 1 else 0
 }
