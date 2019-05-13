@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="0.2.2"
+VERSION="1.0.0"
 
 mvn gpg:sign-and-deploy-file \
 	-DrepositoryId=atvg-studios \

@@ -13,6 +13,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 1.0.0 - 13.05.2019
+
+### Added
+- `asInt` extension for Boolean
+- `power` extension for Double
+- `half` property for Int
+- `third` property for Int
+- `quarter` property for Int
+- `fourth` property for Int
+- `tenth` property for Int
+
 ## 0.2.2 - 11.05.2019
 
 ### Added
@@ -128,7 +139,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 0.2.2 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.2...master)
+* Unreleased - [Diff 1.0.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.0.0...master)
+* 0.2.1 - [Diff 0.2.2 to 1.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.2...1.0.0)
+* 0.2.2 - [Diff 0.2.1 to 0.2.2](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.1...0.2.2)
 * 0.2.1 - [Diff 0.2.0 to 0.2.1](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.0...0.2.1)
 * 0.2.0 - [Diff 0.1.6 to 0.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.6...0.2.0)
 * 0.1.6 - [Diff 0.1.5 to 0.1.6](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.1.5...0.1.6)

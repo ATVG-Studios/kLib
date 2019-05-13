@@ -44,3 +44,55 @@ infix fun Int.power(n: Int): Int {
 fun Int.toHex(upperCase: Boolean = false): String {
     return if (upperCase) this.toString(16).toUpperCase() else this.toString(16)
 }
+
+/**
+ * Tenth of Int
+ *
+ * @return Tenth of Int
+ *
+ * @since 1.0.0
+ * @author Thomas Obernosterer
+ */
+val Int.tenth get() = this / 10
+
+/**
+ * Fourth of Int
+ *
+ * @return Fourth of Int
+ *
+ * @since 1.0.0
+ * @author Thomas Obernosterer
+ */
+val Int.fourth get() = this / 4
+
+/**
+ * Quarter of Int
+ *
+ * @return Quarter of Int
+ *
+ * @see fourth
+ *
+ * @since 1.0.0
+ * @author Thomas Obernosterer
+ */
+val Int.quarter get() = fourth
+
+/**
+ * Tenth of Int
+ *
+ * @return Tenth of Int
+ *
+ * @since 1.0.0
+ * @author Thomas Obernosterer
+ */
+val Int.third get() = this / 3
+
+/**
+ * Half of Int
+ *
+ * @return Half of Int
+ *
+ * @since 1.0.0
+ * @author Thomas Obernosterer
+ */
+val Int.half get() = this / 2
