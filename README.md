@@ -1,5 +1,12 @@
 # kLib
 
+| Branch | Stale | Status |
+|--------|-------|--------|
+| master | O |[![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
+| release/0.1.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/0.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/0.1.x) |
+| release/0.2.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/0.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/0.2.x) |
+| release/1.0.x | O | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.0.x) |
+
 kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
 Extensions and Types.
 
