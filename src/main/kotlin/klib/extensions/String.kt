@@ -74,7 +74,7 @@ fun String.asSha256(): String {
  */
 infix fun String.deny(str: String) {
     if (this.contains(str)) {
-        throw klib.exceptions.InvalidValueException(str, this)
+        throw InvalidValueException(str, this)
     }
 }
 
@@ -89,7 +89,7 @@ infix fun String.deny(str: String) {
  */
 infix fun String.require(str: String) {
     if (!this.contains(str)) {
-        throw klib.exceptions.RequireValueException(str, this)
+        throw RequireValueException(str, this)
     }
 }
 

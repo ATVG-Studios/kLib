@@ -8,8 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `abs` property for Int
+- `isTrue` property for Int
+- `isFalse` property for Int
+- `KonfigParseException` Exception
 ### Changed
 ### Deprecated
+- `KonfParseException` Exception
 ### Removed
 ### Fixed
 ### Security

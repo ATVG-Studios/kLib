@@ -39,6 +39,7 @@ Table created from APIs marked as Deprecated.
 
 | Version | Change | Reason |
 |---------|--------|--------|
+|  <NEXT_VERSION>  | Removal of `exceptions.KonfParseException` | Replaced with `KonfigParseException` for ease |
 
 ## Experimental APIs
 

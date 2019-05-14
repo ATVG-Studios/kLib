@@ -106,3 +106,23 @@ val Int.half get() = this / 2
  * @author Thomas Obernosterer
  */
 val Int.abs get() = Math.abs(this)
+
+/**
+ * Check if the Int is 1
+ *
+ * @return True if 1
+ *
+ * @since <NEXT_VERSION>
+ * @author Thomas Obernosterer
+ */
+val Int.isTrue get() = this == 1
+
+/**
+ * Check if the Int is 0
+ *
+ * @return True if 0
+ *
+ * @since <NEXT_VERSION>
+ * @author Thomas Obernosterer
+ */
+val Int.isFalse get() = this == 0

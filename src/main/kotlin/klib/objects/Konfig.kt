@@ -1,6 +1,7 @@
 package klib.objects
 
 import klib.exceptions.KonfParseException
+import klib.exceptions.KonfigParseException
 import java.io.File
 
 /**
@@ -33,7 +34,7 @@ object Konfig {
      * @author Thomas Obernosterer
      */
     fun parseFile(file: File): Map<String, Any> {
-        if (!file.canRead()) throw KonfParseException("The file ${file.name} cannot be read!")
+        if (!file.canRead()) throw KonfigParseException("The file ${file.name} cannot be read!")
         return parse(file.readLines())
     }
 
@@ -59,7 +60,7 @@ object Konfig {
             val d = it.split("=")
             val key = d[0]
 
-            if (key in result) throw KonfParseException("Cannot use duplicate key on line $line of $totalLines")
+            if (key in result) throw KonfigParseException("Cannot use duplicate key on line $line of $totalLines")
 
             val value = d.joinToString("=").replaceFirst("$key=", "")
 
