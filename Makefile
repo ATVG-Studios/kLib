@@ -18,3 +18,6 @@ test:
 
 docs:
 	$(GRADLE) dokka
+
+code-version:
+	sed -i 's/<NEXT_VERSION>/$(VERSION)/g' src/main/kotlin/klib/**/*.kt

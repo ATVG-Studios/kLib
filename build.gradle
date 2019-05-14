@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'com.atvgstudios'
-version '1.0.0'
+version '<NEXT_VERSION>'
 
 repositories {
     mavenCentral()

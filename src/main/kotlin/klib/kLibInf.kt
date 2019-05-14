@@ -32,7 +32,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val version = "1.0.0"
+    const val version = "<NEXT_VERSION>"
 
     /**
      * Company creating kLib
