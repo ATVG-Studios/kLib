@@ -96,3 +96,13 @@ val Int.third get() = this / 3
  * @author Thomas Obernosterer
  */
 val Int.half get() = this / 2
+
+/**
+ * Absolute value of Int
+ *
+ * @return Absolute value of Int
+ *
+ * @since <NEXT_VERSION>
+ * @author Thomas Obernosterer
+ */
+val Int.abs get() = Math.abs(this)
