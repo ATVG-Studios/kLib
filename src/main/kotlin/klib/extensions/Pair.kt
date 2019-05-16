@@ -9,7 +9,7 @@ import klib.exceptions.InvalidValueException
  * @throws InvalidValueException If str is inside the String
  * @see String.deny
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Nils Rider
  */
 infix fun Pair<String, String>.deny(str: String) {
@@ -24,7 +24,7 @@ infix fun Pair<String, String>.deny(str: String) {
  * @throws InvalidValueException If str is not inside the String
  * @see String.require
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Nils Rider
  */
 infix fun Pair<String, String>.require(str: String) {
