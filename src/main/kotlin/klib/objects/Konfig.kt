@@ -1,6 +1,5 @@
 package klib.objects
 
-import klib.exceptions.KonfParseException
 import klib.exceptions.KonfigParseException
 import java.io.File
 
@@ -55,7 +54,7 @@ object Konfig {
             line++
             if (it.startsWith("#")) return@forEach
 
-            if (!it.contains("=")) throw KonfParseException("Cannot parse line $line of $totalLines")
+            if (!it.contains("=")) throw KonfigParseException("Cannot parse line $line of $totalLines")
 
             val d = it.split("=")
             val key = d[0]

@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `isTrue` property for Int
 - `isFalse` property for Int
 - `KonfigParseException` Exception
+- `pairOf` Top-Level Function
+- `p` Top-Level Function
+- `deny` extension for Pair
+- `require` extension for Pair
 ### Changed
 ### Deprecated
 - `KonfParseException` Exception
