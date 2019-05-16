@@ -1,5 +1,6 @@
 package klib.extensions
 
+import klib.kLibInf
 import klib.typealiases.Function_Any
 
 /**
@@ -44,4 +45,18 @@ infix fun Any?.or(something: Any): Any {
         return something
     }
     return this
+}
+
+/**
+ * Convert Any to Json using a JsonHandler
+ *
+ * @return Any as Json
+ *
+ * @see kLibInf.jsonHandler
+ *
+ * @since <NEXT_VERSION>
+ * @author Nils Rider
+ */
+fun Any.toJson(): String {
+    return kLibInf.jsonHandler.fromObject(this)
 }
