@@ -9,7 +9,7 @@ package klib.functions
  *
  * @see pairOf
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Nils Rider
  */
 fun <A, B> p(first: A, second: B) = pairOf(first, second)
@@ -21,7 +21,7 @@ fun <A, B> p(first: A, second: B) = pairOf(first, second)
  * @param second Second Pair Element
  * @return Pair(first, second)
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Nils Rider
  */
 fun <A, B> pairOf(first: A, second: B) = Pair(first, second)

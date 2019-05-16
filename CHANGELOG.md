@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 1.1.0 - 16.05.2019
+
+### Added
 - `abs` property for Int
 - `isTrue` property for Int
 - `isFalse` property for Int
@@ -15,12 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `p` Top-Level Function
 - `deny` extension for Pair
 - `require` extension for Pair
-### Changed
 ### Deprecated
 - `KonfParseException` Exception
-### Removed
-### Fixed
-### Security
 
 ## 1.0.0 - 13.05.2019
 

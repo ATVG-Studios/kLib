@@ -5,7 +5,7 @@ package klib.exceptions
  *
  * @param reason
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Thomas Obernosterer
  */
 class KonfigParseException(reason: String) : Exception("KonfigParseException: Cannot parse konf; Reason: $reason")

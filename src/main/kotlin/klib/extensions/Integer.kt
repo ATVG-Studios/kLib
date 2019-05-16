@@ -102,7 +102,7 @@ val Int.half get() = this / 2
  *
  * @return Absolute value of Int
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Thomas Obernosterer
  */
 val Int.abs get() = Math.abs(this)
@@ -112,7 +112,7 @@ val Int.abs get() = Math.abs(this)
  *
  * @return True if 1
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Thomas Obernosterer
  */
 val Int.isTrue get() = this == 1
@@ -122,7 +122,7 @@ val Int.isTrue get() = this == 1
  *
  * @return True if 0
  *
- * @since <NEXT_VERSION>
+ * @since 1.1.0
  * @author Thomas Obernosterer
  */
 val Int.isFalse get() = this == 0

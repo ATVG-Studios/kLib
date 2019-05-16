@@ -5,7 +5,7 @@ package klib.exceptions
  *
  * @param reason
  *
- * @deprecated Since <NEXT_VERSION>
+ * @deprecated Since 1.1.0
  *
  * @since 0.2.2
  * @author Thomas Obernosterer
