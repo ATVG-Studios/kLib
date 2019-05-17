@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `println` Top-Level Function
 - `asFile` extension for String
 - `ZipFile` Type Class (Experimental API)
+- `toFile` extension for InputStream
 ### Changed
 ### Deprecated
 ### Removed
