@@ -4,6 +4,7 @@ import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
 import klib.objects.base.Base58e
 import klib.objects.hash.Sha256
+import java.io.File
 import java.util.Base64
 
 /**
@@ -191,3 +192,13 @@ fun String.asBase64(): String {
 fun String.fromBase64(): String {
     return String(Base64.getDecoder().decode(this.toByteArray()))
 }
+
+/**
+ * Uses the string as filename for a new File object
+ *
+ * @return File object with string as name
+ *
+ * @since <NEXT_VERSION>
+ * @author Thomas Obernosterer
+ */
+fun String.asFile() = File(this)
