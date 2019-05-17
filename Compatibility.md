@@ -37,9 +37,9 @@ Table created from APIs removed.
 
 Table created from APIs marked as Deprecated.
 
-| Version | Change | Reason |
+| Since | Change | Reason |
 |---------|--------|--------|
-|  1.1.0  | Removal of `exceptions.KonfParseException` | Replaced with `KonfigParseException` for ease |
+| 1.1.0 | Removal of `exceptions.KonfParseException` | Replaced with `KonfigParseException` for ease |
 
 ## Experimental APIs
 
@@ -48,3 +48,4 @@ Table created from APIs marked as Experimental. These may change or be removed a
 | Since | Change |
 |-------|--------|
 | 0.2.2 | Adding in Konfig for a custom Configuration File (`objects.Konfig`) |
+| <NEXT_VERSION> | Adding in ZipFile as a simple ZIP API (`types.zip.ZipFile`) |
