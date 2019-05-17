@@ -1,7 +1,7 @@
 GRADLE="./gradlew"
 KTLINT="./ktlint"
 
-all: lint compile package docs
+all: lint compile package doc
 
 compile:
 	$(GRADLE) build
@@ -16,7 +16,7 @@ lint:
 test:
 	$(GRADLE) test
 
-docs:
+doc:
 	$(GRADLE) dokka
 
 code-version:

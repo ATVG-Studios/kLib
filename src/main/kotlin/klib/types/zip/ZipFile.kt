@@ -29,7 +29,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      */
     fun open() {
         val file = File(fileName)
-        if(file.exists()) {
+        if (file.exists()) {
             throw FileAlreadyExistsException(file)
         }
 
@@ -48,7 +48,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @author Thomas Obernosterer
      */
     fun addFile(newFile: File, zipPath: String = "") {
-        if(safeMode) {
+        if (safeMode) {
             try {
                 open()
                 addFileUnsafe(newFile, zipPath)
@@ -57,7 +57,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
             } finally {
                 close()
             }
-        }else{
+        } else {
             addFileUnsafe(newFile, zipPath)
         }
     }
@@ -73,7 +73,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @author Thomas Obernosterer
      */
     fun addDirectory(newFolder: File, zipPath: String = "") {
-        if(safeMode) {
+        if (safeMode) {
             try {
                 open()
                 addDirectoryUnsafe(newFolder, zipPath)
@@ -82,7 +82,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
             } finally {
                 close()
             }
-        }else{
+        } else {
             addDirectoryUnsafe(newFolder, zipPath)
         }
     }
@@ -109,20 +109,20 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @author Thomas Obernosterer
      */
     private fun addFileUnsafe(newFile: File, zipPath: String = "") {
-        if(newFile.isDirectory) {
+        if (newFile.isDirectory) {
             addDirectory(newFile, zipPath)
             return
         }
 
         val buffer = getBuffer()
         val fileInputStream = FileInputStream(newFile)
-        val newPath = if(zipPath != "") "$zipPath/" else ""
+        val newPath = if (zipPath != "") "$zipPath/" else ""
 
         zipFile.putNextEntry(ZipEntry("$newPath${newFile.name}"))
 
-        while(true) {
+        while (true) {
             val len = fileInputStream.read(buffer)
-            if(len <= 0) {
+            if (len <= 0) {
                 break
             }
             zipFile.write(buffer, 0, len)
@@ -140,8 +140,8 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @author Thomas Obernosterer
      */
     private fun addDirectoryUnsafe(newFolder: File, zipPath: String = "") {
-        for(fileName in newFolder.list()) {
-            val newPath = if(zipPath != "") "$zipPath/${newFolder.name}" else newFolder.name
+        for (fileName in newFolder.list()) {
+            val newPath = if (zipPath != "") "$zipPath/${newFolder.name}" else newFolder.name
             addFileUnsafe("${newFolder.absolutePath}/$fileName".asFile(), newPath)
         }
     }
