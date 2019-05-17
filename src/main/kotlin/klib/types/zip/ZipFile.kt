@@ -14,7 +14,7 @@ import java.util.zip.ZipOutputStream
  * @param fileName The name of the new ZipFile
  * @param safeMode Handle or Expose thrown errors (Default True/Enabled)
  *
- * @since <NEXT_VERSION> (Experimental)
+ * @since 1.2.0 (Experimental)
  * @author Thomas Obernosterer
  */
 @klib.annotations.Experimental
@@ -25,7 +25,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
     /**
      * Open the ZipFile
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     fun open() {
@@ -48,7 +48,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @param zipPath The path inside the zip file for the new file
      * @throws Exception (Without SafeMode)
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     fun addFile(newFile: File, zipPath: String = "") {
@@ -72,7 +72,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @param zipPath The path inside the zip file for the new files
      * @throws Exception (Without SafeMode)
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     fun addFiles(vararg newFiles: File, zipPath: String = "") {
@@ -96,7 +96,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @param zipPath The path inside the zip file for the new folder
      * @throws Exception (Without SafeMode)
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     fun addDirectory(newFolder: File, zipPath: String = "") {
@@ -116,7 +116,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
     /**
      * Close the ZipFile
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     fun close() {
@@ -132,7 +132,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @param zipPath The path inside the zip file for the new files
      * @throws Exception
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     private fun addFilesUnsafe(vararg newFiles: File, zipPath: String = "") {
@@ -148,7 +148,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @param zipPath The path inside the zip file for the new file
      * @throws Exception
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     private fun addFileUnsafe(newFile: File, zipPath: String = "") {
@@ -179,7 +179,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @param zipPath The path inside the zip file for the new folder
      * @throws Exception
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     private fun addDirectoryUnsafe(newFolder: File, zipPath: String = "") {
@@ -194,7 +194,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      *
      * @return ByteArray of size 1024
      *
-     * @since <NEXT_VERSION>
+     * @since 1.2.0
      * @author Thomas Obernosterer
      */
     private fun getBuffer() = ByteArray(1024)
