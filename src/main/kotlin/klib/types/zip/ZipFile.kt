@@ -63,6 +63,31 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
     }
 
     /**
+     * Add Files respecting the safeMode option
+     *
+     * @param newFiles The files to add
+     * @param zipPath The path inside the zip file for the new files
+     * @throws Exception (Without SafeMode)
+     *
+     * @since <NEXT_VERSION>
+     * @author Thomas Obernosterer
+     */
+    fun addFiles(vararg newFiles: File, zipPath: String = "") {
+        if (safeMode) {
+            try {
+                open()
+                addFilesUnsafe(*newFiles, zipPath = zipPath)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                close()
+            }
+        } else {
+            addFilesUnsafe(*newFiles, zipPath = zipPath)
+        }
+    }
+
+    /**
      * Add Directory respecting the safeMode option
      *
      * @param newFolder The folder to add
@@ -96,6 +121,22 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
     fun close() {
         zipFile.flush()
         zipFile.close()
+    }
+
+    /**
+     * Add File without protection of errors
+     *
+     * @param newFiles The files to add
+     * @param zipPath The path inside the zip file for the new files
+     * @throws Exception
+     *
+     * @since <NEXT_VERSION>
+     * @author Thomas Obernosterer
+     */
+    private fun addFilesUnsafe(vararg newFiles: File, zipPath: String = "") {
+        for (file in newFiles) {
+            addFileUnsafe(file)
+        }
     }
 
     /**
