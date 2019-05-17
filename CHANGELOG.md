@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `asFile` extension for String
 - `ZipFile` Type Class (Experimental API)
 - `toFile` extension for InputStream
+- `toFileInZipFile` extension for InputStream
+- `addToZipFile` extension for File
 ### Changed
 ### Deprecated
 ### Removed

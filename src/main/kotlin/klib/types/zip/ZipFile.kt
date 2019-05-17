@@ -20,6 +20,7 @@ import java.util.zip.ZipOutputStream
 @klib.annotations.Experimental
 class ZipFile(private val fileName: String, private val safeMode: Boolean = true) {
     private lateinit var zipFile: ZipOutputStream
+    private var fileOpen = false
 
     /**
      * Open the ZipFile
@@ -28,6 +29,8 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @author Thomas Obernosterer
      */
     fun open() {
+        if (fileOpen) return
+
         val file = File(fileName)
         if (file.exists()) {
             throw FileAlreadyExistsException(file)
@@ -35,6 +38,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
 
         val fileWriter = FileOutputStream(file)
         zipFile = ZipOutputStream(fileWriter)
+        fileOpen = true
     }
 
     /**
@@ -54,7 +58,6 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
                 addFileUnsafe(newFile, zipPath)
             } catch (e: Exception) {
                 e.printStackTrace()
-            } finally {
                 close()
             }
         } else {
@@ -79,7 +82,6 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
                 addFilesUnsafe(*newFiles, zipPath = zipPath)
             } catch (e: Exception) {
                 e.printStackTrace()
-            } finally {
                 close()
             }
         } else {
@@ -104,7 +106,6 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
                 addDirectoryUnsafe(newFolder, zipPath)
             } catch (e: Exception) {
                 e.printStackTrace()
-            } finally {
                 close()
             }
         } else {
@@ -121,6 +122,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
     fun close() {
         zipFile.flush()
         zipFile.close()
+        fileOpen = false
     }
 
     /**
