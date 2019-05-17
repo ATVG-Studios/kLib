@@ -54,7 +54,7 @@ infix fun Any?.or(something: Any): Any {
  *
  * @see kLibInf.jsonHandler
  *
- * @since <NEXT_VERSION>
+ * @since 1.2.0
  * @author Nils Rider
  */
 fun Any.toJson(): String {

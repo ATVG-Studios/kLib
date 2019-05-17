@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 1.2.0 - 17.05.2019
+
+### Added
 - `toJson` extension for Any
 - `println` Top-Level Function
 - `asFile` extension for String
@@ -14,11 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `toFile` extension for InputStream
 - `toFileInZipFile` extension for InputStream
 - `addToZipFile` extension for File
-### Changed
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## 1.1.0 - 16.05.2019
 
@@ -160,7 +164,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 1.1.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.1.0...master)
+* Unreleased - [Diff 1.2.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.2.0...master)
+* 1.2.0 - [Diff 1.1.0 to 1.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.1.0...1.2.0)
 * 1.1.0 - [Diff 1.0.0 to 1.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.0.0...1.1.0)
 * 1.0.0 - [Diff 0.2.2 to 1.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.2...1.0.0)
 * 0.2.2 - [Diff 0.2.1 to 0.2.2](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.1...0.2.2)

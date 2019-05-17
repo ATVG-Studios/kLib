@@ -10,7 +10,7 @@ import java.io.InputStream
  *
  * @param file The file to write into
  *
- * @since <NEXT_VERSION>
+ * @since 1.2.0
  * @author Thomas Obernosterer
  */
 fun InputStream.toFile(file: File) {
@@ -23,7 +23,7 @@ fun InputStream.toFile(file: File) {
  * @param file The file to write into
  * @param zipFile The zipFile the file gets added to
  *
- * @since <NEXT_VERSION>
+ * @since 1.2.0
  * @author Thomas Obernosterer
  */
 @UseExperimental(Experimental::class)

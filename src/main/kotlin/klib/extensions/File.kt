@@ -9,7 +9,7 @@ import java.io.File
  *
  * @param zipFile The file to add to
  *
- * @since <NEXT_VERSION>
+ * @since 1.2.0
  * @author Thomas Obernosterer
  */
 @UseExperimental(Experimental::class)

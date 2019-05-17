@@ -5,7 +5,7 @@ package klib.functions
  *
  * @param messages A list of aguments
  *
- * @since <NEXT_VERSION>
+ * @since 1.2.0
  * @author Thomas Obernosterer
  */
 fun println(vararg messages: Any?) {

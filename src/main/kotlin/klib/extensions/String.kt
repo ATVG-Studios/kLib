@@ -198,7 +198,7 @@ fun String.fromBase64(): String {
  *
  * @return File object with string as name
  *
- * @since <NEXT_VERSION>
+ * @since 1.2.0
  * @author Thomas Obernosterer
  */
 fun String.asFile() = File(this)
