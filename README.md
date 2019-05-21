@@ -3,10 +3,10 @@
 | Branch | Stale | Status |
 |--------|-------|--------|
 | master | O |[![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
-| release/0.1.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/0.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/0.1.x) |
-| release/0.2.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/0.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/0.2.x) |
-| release/1.0.x | O | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.0.x) |
-| release/1.1.x | O | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.1.x) |
+| release/1.0.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.0.x) |
+| release/1.1.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.1.x) |
+| release/1.2.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.2.x) |
+| release/1.3.x | X | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.3.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.3.x) |
 
 kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
 Extensions and Types.
@@ -68,6 +68,10 @@ original code is **NOT** protected by a License, Patent or Agreement.
 Checkout our doc about [Compatibility](Compatibility.md).  
 It contains information about which versions are compatible without issues.  
 Also what breaking changes where made when and which will come up in near future!
+
+## Outdated Versions
+
+All versions before 1.0.0 are considered Legacy and are no longer developed or supported.
 
 # License
 

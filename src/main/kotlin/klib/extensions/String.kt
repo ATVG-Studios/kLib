@@ -1,9 +1,13 @@
 package klib.extensions
 
+import klib.annotations.Experimental
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
 import klib.objects.base.Base58e
 import klib.objects.hash.Sha256
+import klib.objects.library.Library
+import klib.types.library.LClass
+import klib.types.library.LFunction
 import java.io.File
 import java.util.Base64
 
@@ -202,3 +206,36 @@ fun String.fromBase64(): String {
  * @author Thomas Obernosterer
  */
 fun String.asFile() = File(this)
+
+/**
+ * Make the string a file and load it as library and load a class from it
+ *
+ * @param className The class to load
+ * @return a LClass with the loaded class
+ *
+ * @see LClass
+ *
+ * @since 1.3.0 (Experimental)
+ * @author Thomas Obernosterer
+ */
+@UseExperimental(Experimental::class)
+infix fun String.loadAsLibraryWithClass(className: String): LClass {
+    return Library.loadClassFromJar(this.asFile(), className)
+}
+
+/**
+ * Make the string a file and load it as library and load a method from it
+ *
+ * @param className The class to load from
+ * @param functionName The method to load
+ * @return a LFunction with the loaded method
+ *
+ * @see LFunction
+ *
+ * @since 1.3.0 (Experimental)
+ * @author Thomas Obernosterer
+ */
+@UseExperimental(Experimental::class)
+fun String.loadAsLibraryWithFunction(className: String, functionName: String): LFunction {
+    return Library.loadFunctionFromJar(this.asFile(), className, functionName)
+}

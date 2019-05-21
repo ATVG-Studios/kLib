@@ -13,6 +13,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 1.3.0 - 21.05.2019
+
+## Added
+- `Library` Object Class
+- `LClass` Type Class
+- `LFunction` Type Class
+- `loadAsLibraryWithClass` extension for File
+- `loadAsLibraryWithClass` extension for String
+- `loadAsLibraryWithFunction` extension for File
+- `loadAsLibraryWithFunction` extension for String
+
 ## 1.2.0 - 17.05.2019
 
 ### Added
@@ -164,7 +175,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 1.2.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.2.0...master)
+* Unreleased - [Diff 1.3.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.3.0...master)
+* 1.3.0 - [Diff 1.2.0 to 1.3.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.2.0...1.3.0)
 * 1.2.0 - [Diff 1.1.0 to 1.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.1.0...1.2.0)
 * 1.1.0 - [Diff 1.0.0 to 1.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.0.0...1.1.0)
 * 1.0.0 - [Diff 0.2.2 to 1.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/0.2.2...1.0.0)

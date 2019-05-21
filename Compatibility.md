@@ -10,7 +10,7 @@ Breaking versions must be in a new row!
 | 3 - 5 | 0.1.2 - 0.1.4 |
 | 6     | 0.1.5 |
 | 7     | 0.1.6 |
-| 8 - 13| 0.2.0 - 1.2.0 |
+| 8 - 14| 0.2.0 - 1.3.0 |
 
 This means: `0.1.2` **IS** compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
 
@@ -49,3 +49,4 @@ Table created from APIs marked as Experimental. These may change or be removed a
 |-------|--------|
 | 0.2.2 | Adding in Konfig for a custom Configuration File (`objects.Konfig`) |
 | 1.2.0 | Adding in ZipFile as a simple ZIP API (`types.zip.ZipFile`) |
+| 1.3.0 | Adding in Library to dynamically load Jars (`objects.library.Library`, `types.library.LClass`, `types.library.LFunction`) |
