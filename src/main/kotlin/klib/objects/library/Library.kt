@@ -3,7 +3,6 @@ package klib.objects.library
 import klib.types.library.LClass
 import klib.types.library.LFunction
 import java.io.File
-import java.lang.reflect.Method
 import java.net.URL
 import java.net.URLClassLoader
 
