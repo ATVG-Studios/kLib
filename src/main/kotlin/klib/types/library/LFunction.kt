@@ -11,7 +11,7 @@ import java.lang.reflect.Method
  * @since 1.3.0 (Experimental)
  * @author Thomas Obernosterer
  */
-class LFunction (
+class LFunction(
     private val sourceClass: Any,
     private val sourceMethod: Method
 ) {
