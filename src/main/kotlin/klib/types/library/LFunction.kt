@@ -31,6 +31,19 @@ class LFunction(
     /**
      * Run the sourceMethod
      *
+     * @param param A single arguments for the function
+     * @return Unknown (Defined by Dynamic Library)
+     *
+     * @since 1.4.0 (Experimental)
+     * @author Thomas Obernosterer
+     */
+    operator fun invoke(param: Any?): Any? {
+        return sourceMethod.invoke(sourceClass, param)
+    }
+
+    /**
+     * Run the sourceMethod
+     *
      * @return Unknown (Defined by Dynamic Library)
      *
      * @since 1.3.0 (Experimental)

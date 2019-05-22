@@ -13,9 +13,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 1.4.0 - 22.05.2019
+
+### Changed
+- Extended Experimental Library implementation
+  - LClass now supports super class functions
+  - LClass now supports direct method invocation
+  - LClass now provides a list of LFunction's defined in Host class (and Supers)
+  - LFunction now supports one-argument method invocations
+
+### Fixed
+- `zipPath` not being used when using `addFiles` on ZipFile
+
 ## 1.3.0 - 21.05.2019
 
-## Added
+### Added
 - `Library` Object Class
 - `LClass` Type Class
 - `LFunction` Type Class
@@ -175,7 +187,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 1.3.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.3.0...master)
+* Unreleased - [Diff 1.4.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.4.0...master)
+* 1.4.0 - [Diff 1.3.0 to 1.4.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.3.0...1.4.0)
 * 1.3.0 - [Diff 1.2.0 to 1.3.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.2.0...1.3.0)
 * 1.2.0 - [Diff 1.1.0 to 1.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.1.0...1.2.0)
 * 1.1.0 - [Diff 1.0.0 to 1.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.0.0...1.1.0)

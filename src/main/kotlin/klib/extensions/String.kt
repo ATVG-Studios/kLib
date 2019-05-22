@@ -9,6 +9,7 @@ import klib.objects.library.Library
 import klib.types.library.LClass
 import klib.types.library.LFunction
 import java.io.File
+import java.io.FileNotFoundException
 import java.util.Base64
 
 /**
@@ -212,6 +213,8 @@ fun String.asFile() = File(this)
  *
  * @param className The class to load
  * @return a LClass with the loaded class
+ * @throws FileNotFoundException
+ * @throws ClassNotFoundException
  *
  * @see LClass
  *
@@ -219,6 +222,7 @@ fun String.asFile() = File(this)
  * @author Thomas Obernosterer
  */
 @UseExperimental(Experimental::class)
+@Throws(FileNotFoundException::class, ClassNotFoundException::class)
 infix fun String.loadAsLibraryWithClass(className: String): LClass {
     return Library.loadClassFromJar(this.asFile(), className)
 }
@@ -229,6 +233,9 @@ infix fun String.loadAsLibraryWithClass(className: String): LClass {
  * @param className The class to load from
  * @param functionName The method to load
  * @return a LFunction with the loaded method
+ * @throws FileNotFoundException
+ * @throws ClassNotFoundException
+ * @throws NoSuchMethodException
  *
  * @see LFunction
  *
@@ -236,6 +243,7 @@ infix fun String.loadAsLibraryWithClass(className: String): LClass {
  * @author Thomas Obernosterer
  */
 @UseExperimental(Experimental::class)
+@Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
 fun String.loadAsLibraryWithFunction(className: String, functionName: String): LFunction {
     return Library.loadFunctionFromJar(this.asFile(), className, functionName)
 }

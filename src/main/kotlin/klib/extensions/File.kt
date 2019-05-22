@@ -6,6 +6,7 @@ import klib.types.library.LClass
 import klib.types.library.LFunction
 import klib.types.zip.ZipFile
 import java.io.File
+import java.io.FileNotFoundException
 
 /**
  * Add a file to a ZipFile
@@ -23,11 +24,14 @@ fun File.addToZipFile(zipFile: ZipFile) = zipFile.addFile(this)
  *
  * @param className The class to load
  * @return a LClass with the loaded class
+ * @throws FileNotFoundException
+ * @throws ClassNotFoundException
  *
  * @since 1.3.0 (Experimental)
  * @author Thomas Obernosterer
  */
 @UseExperimental(Experimental::class)
+@Throws(FileNotFoundException::class, ClassNotFoundException::class)
 infix fun File.loadAsLibraryWithClass(className: String): LClass {
     return Library.loadClassFromJar(this, className)
 }
@@ -38,11 +42,15 @@ infix fun File.loadAsLibraryWithClass(className: String): LClass {
  * @param className The class to load from
  * @param functionName The method to load
  * @return a LFunction with the loaded method
+ * @throws FileNotFoundException
+ * @throws ClassNotFoundException
+ * @throws NoSuchMethodException
  *
  * @since 1.3.0 (Experimental)
  * @author Thomas Obernosterer
  */
 @UseExperimental(Experimental::class)
+@Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
 fun File.loadAsLibraryWithFunction(className: String, functionName: String): LFunction {
     return Library.loadFunctionFromJar(this, className, functionName)
 }

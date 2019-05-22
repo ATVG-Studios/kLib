@@ -137,7 +137,7 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      */
     private fun addFilesUnsafe(vararg newFiles: File, zipPath: String = "") {
         for (file in newFiles) {
-            addFileUnsafe(file)
+            addFileUnsafe(file, zipPath)
         }
     }
 
