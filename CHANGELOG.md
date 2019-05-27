@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 2.0.1 - 27.05.2019
+
+### Fixed
+- `String.deny` failing on empty strings
+- `String.require` not considering empty strings
+- `kLibInf.version` having the wrong version number
+
 ## 2.0.0 - 27.05.2019
 
 ### Added

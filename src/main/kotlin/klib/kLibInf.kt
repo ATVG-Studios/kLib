@@ -26,7 +26,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val versionId = 16 // A unique version number used to identify releases and to make easy requirement checks
+    const val versionId = 17 // A unique version number used to identify releases and to make easy requirement checks
 
     /**
      * Version String (For humans; SemVer)
@@ -34,7 +34,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val version = "1.5.0"
+    const val version = "2.0.1"
 
     /**
      * Version String (For computers; SemVer)
