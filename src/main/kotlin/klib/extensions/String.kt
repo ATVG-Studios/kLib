@@ -92,8 +92,12 @@ fun String.asSha1(): String {
  * @author Thomas Obernosterer
  */
 infix fun String.deny(str: String) {
-    if (str.isEmpty()) InvalidValueException("\"\"", str)
-
+    if (str.isEmpty() && this.isEmpty()){
+        throw InvalidValueException(str, this)
+    }
+    if (str.isEmpty() || this.isEmpty()){
+        return
+    }
     if (this.contains(str)) {
         throw InvalidValueException(str, this)
     }
@@ -109,7 +113,9 @@ infix fun String.deny(str: String) {
  * @author Thomas Obernosterer
  */
 infix fun String.require(str: String) {
-    if (str.isEmpty()) InvalidValueException("\"\"", str)
+    if (str.isEmpty() && this.isEmpty()){
+        throw InvalidValueException(str, this)
+    }
 
     if (!this.contains(str)) {
         throw RequireValueException(str, this)
