@@ -1,5 +1,6 @@
 package klib.extensions
 
+import klib.objects.hash.Sha1
 import klib.objects.hash.Sha256
 import kotlin.experimental.xor
 
@@ -55,4 +56,16 @@ fun ByteArray.doubleDigest(): String {
  */
 fun ByteArray.asSha256(): String {
     return Sha256.hash(this).hex
+}
+
+/**
+ * SHA1 Hash the byte array
+ *
+ * @return The Hash of the Array
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+fun ByteArray.asSha1(): String {
+    return Sha1.hash(this).hex
 }

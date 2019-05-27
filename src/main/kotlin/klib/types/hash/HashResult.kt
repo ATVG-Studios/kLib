@@ -1,5 +1,8 @@
 package klib.types.hash
 
+import klib.extensions.inBoundsOf
+import java.lang.IndexOutOfBoundsException
+
 /**
  * HashResults gets return from the Hasher with the Hex Hash and the used Algorithm
  *
@@ -10,6 +13,32 @@ package klib.types.hash
  * @author Thomas Obernosterer
  */
 class HashResult(val hex: String, val algo: String) {
+
+    /**
+     * Get the first 4 bytes (8 characters) from the Hash
+     *
+     * @since 2.0.0
+     * @author Thomas Obernosterer
+     */
+    val checksum = takeBytes(4)
+
+    /**
+     * Get a set amount of Bytes from the hash
+     *
+     * @param amount Byte count
+     * @return Bytes from 0 to amount*2
+     *
+     * @since 2.0.0
+     * @author Thomas Obernosterer
+     */
+    fun takeBytes(amount: Int): String {
+        if (amount * 2 inBoundsOf hex) {
+            return hex.substring(0, amount*2)
+        } else {
+            throw IndexOutOfBoundsException()
+        }
+    }
+
     /**
      * Returns Hex Value
      *

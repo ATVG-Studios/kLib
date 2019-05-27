@@ -126,3 +126,29 @@ val Int.isTrue get() = this == 1
  * @author Thomas Obernosterer
  */
 val Int.isFalse get() = this == 0
+
+/**
+ * Check if a Int is in bounds of Char Array (String)
+ *
+ * @param str Sting to check in
+ * @return True if in 0 until str.length
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+infix fun Int.inBoundsOf(str: String): Boolean {
+    return this in 0 until str.length
+}
+
+/**
+ * Check if a Int is in bounds of Iterable<*>
+ *
+ * @param iterable Iterable<*> to check in
+ * @return True if in 0 until iterable.count()
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+infix fun Int.inBoundsOf(iterable: Iterable<*>): Boolean {
+    return this in 0 until iterable.count()
+}

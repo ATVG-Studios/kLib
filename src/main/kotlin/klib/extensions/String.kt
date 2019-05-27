@@ -4,6 +4,7 @@ import klib.annotations.Experimental
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
 import klib.objects.base.Base58e
+import klib.objects.hash.Sha1
 import klib.objects.hash.Sha256
 import klib.objects.library.Library
 import klib.types.library.LClass
@@ -70,6 +71,18 @@ fun String.asSha256(): String {
 }
 
 /**
+ * Get SHA1 value of string
+ *
+ * @return The SHA1 Hash of the string
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.asSha1(): String {
+    return Sha1.hash(this).hex
+}
+
+/**
  * Throw a InvalidValueException if a string contains a string
  *
  * @param str Not allowed String
@@ -79,6 +92,8 @@ fun String.asSha256(): String {
  * @author Thomas Obernosterer
  */
 infix fun String.deny(str: String) {
+    if (str.isEmpty()) InvalidValueException("\"\"", str)
+
     if (this.contains(str)) {
         throw InvalidValueException(str, this)
     }
@@ -94,6 +109,8 @@ infix fun String.deny(str: String) {
  * @author Thomas Obernosterer
  */
 infix fun String.require(str: String) {
+    if (str.isEmpty()) InvalidValueException("\"\"", str)
+
     if (!this.contains(str)) {
         throw RequireValueException(str, this)
     }

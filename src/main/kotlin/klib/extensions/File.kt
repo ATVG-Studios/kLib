@@ -1,7 +1,10 @@
 package klib.extensions
 
 import klib.annotations.Experimental
+import klib.objects.hash.Sha1
+import klib.objects.hash.Sha256
 import klib.objects.library.Library
+import klib.types.hash.HashResult
 import klib.types.library.LClass
 import klib.types.library.LFunction
 import klib.types.zip.ZipFile
@@ -53,4 +56,44 @@ infix fun File.loadAsLibraryWithClass(className: String): LClass {
 @Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
 fun File.loadAsLibraryWithFunction(className: String, functionName: String): LFunction {
     return Library.loadFunctionFromJar(this, className, functionName)
+}
+
+/**
+ * Hash the content of the File with SHA256
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+fun File.hashSha256(): HashResult {
+    return Sha256.hash(this.readBytes())
+}
+
+/**
+ * Hash the content of the File with SHA1
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+fun File.hashSha1(): HashResult {
+    return Sha1.hash(this.readBytes())
+}
+
+/**
+ * Hash the content of the File with SHA256 and return 4 Bytes
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+fun File.Sha256Checksum(): String {
+    return Sha256.hash(this.readBytes()).checksum
+}
+
+/**
+ * Hash the content of the File with SHA1 and return 4 Bytes
+ *
+ * @since 2.0.0
+ * @author Thomas Obernosterer
+ */
+fun File.Sha1Checksum(): String {
+    return Sha1.hash(this.readBytes()).checksum
 }

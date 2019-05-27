@@ -20,4 +20,5 @@ doc:
 	$(GRADLE) dokka
 
 code-version:
-	sed -i 's/<NEXT_VERSION>/$(VERSION)/g' src/main/kotlin/klib/**/*.kt src/main/kotlin/**/*.kt build.gradle Compatibility.md maven/**
+	find src/main/kotlin -name "*.kt" -type f -exec sed -i 's/<NEXT_VERSION>/$(VERSION)/g' {} \;
+	sed -i 's/<NEXT_VERSION>/$(VERSION)/g' build.gradle Compatibility.md maven/**

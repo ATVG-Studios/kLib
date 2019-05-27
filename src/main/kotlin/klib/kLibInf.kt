@@ -1,7 +1,9 @@
 package klib
 
 import klib.dummy.JsonHandler
+import klib.extensions.toStrInt
 import klib.interfaces.Json
+import klib.types.SemVer
 
 /**
  * kLib Information Center
@@ -24,7 +26,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val versionId = 15 // A unique version number used to identify releases and to make easy requirement checks
+    const val versionId = 16 // A unique version number used to identify releases and to make easy requirement checks
 
     /**
      * Version String (For humans; SemVer)
@@ -32,7 +34,15 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val version = "1.4.0"
+    const val version = "1.5.0"
+
+    /**
+     * Version String (For computers; SemVer)
+     *
+     * @since 2.0.0
+     * @author Thomas Obernosterer
+     */
+    val semver = SemVer(version[0].toStrInt(), version[2].toStrInt(), version[4].toStrInt(), buildMetadata = "$versionId")
 
     /**
      * Company creating kLib

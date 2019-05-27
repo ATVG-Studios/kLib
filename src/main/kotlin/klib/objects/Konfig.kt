@@ -7,9 +7,9 @@ import java.io.File
  * Custom Configuration reader and generator
  *
  * @since 0.2.2 (Experimental)
+ * @since 2.0.0
  * @author Thomas Obernosterer
  */
-@klib.annotations.Experimental
 object Konfig {
 
     /**
@@ -53,6 +53,7 @@ object Konfig {
         data.forEach {
             line++
             if (it.startsWith("#")) return@forEach
+            if (it.isNullOrEmpty()) return@forEach
 
             if (!it.contains("=")) throw KonfigParseException("Cannot parse line $line of $totalLines")
 

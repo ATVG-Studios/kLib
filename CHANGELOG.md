@@ -13,6 +13,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 2.0.0 - 27.05.2019
+
+### Added
+- `checksum` property for HashResult
+- `getBytes` function for HashResult
+- `Sha1` Object Class
+- `asSha1` extension for String
+- `inBoundsOf` extension for Int
+- `hashSha256` extension for File
+- `hashSha1` extension for File
+- `Sha256Checksum` extension for File
+- `Sha1Checksum` extension for File
+- `asSha1` extension for ByteArray
+- `toStrInt` extension for Char
+- `semver` property for kLibInf
+- `SemVer` Type Class
+- `InvalidTypeException` Exception Class
+
+### Removed
+- `KonfParseException` Exception Class
+
+### Fixed
+- `String.deny` failed on empty string or param; Now only fails on empty param
+- `Konfig.parse` crashing on empty lines
+
 ## 1.4.0 - 22.05.2019
 
 ### Changed
