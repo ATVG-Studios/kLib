@@ -62,7 +62,8 @@ object Library {
         val child = URLClassLoader(arrayOf<URL>(file.toURI().toURL()), this.javaClass.classLoader)
         val classFromJar = Class.forName(className, true, child)
         val method = classFromJar.methods.find { it.name == functionName } ?: throw NoSuchMethodException()
-        val classObject = classFromJar.newInstance()
+        val classConstructor = classFromJar.getConstructor()
+        val classObject = classConstructor.newInstance()
         return LFunction(classObject, method)
     }
 }

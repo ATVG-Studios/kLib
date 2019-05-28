@@ -1,7 +1,6 @@
 package klib
 
 import klib.dummy.JsonHandler
-import klib.extensions.toStrInt
 import klib.interfaces.Json
 import klib.types.SemVer
 
@@ -43,7 +42,7 @@ object kLibInf {
      * @since 2.0.0
      * @author Thomas Obernosterer
      */
-    val semver = SemVer(2,1,0, "r$versionId")
+    val semver = SemVer(2, 1, 0, "r$versionId")
 
     /**
      * Company creating kLib
