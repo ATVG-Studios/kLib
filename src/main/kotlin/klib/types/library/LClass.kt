@@ -3,6 +3,7 @@ package klib.types.library
 import java.io.FileNotFoundException
 import java.lang.reflect.Method
 import java.lang.reflect.Modifier
+import java.lang.reflect.Type
 
 /**
  * Custom Class to handle Dynamically loaded Classes
@@ -31,6 +32,16 @@ class LClass(
             clazz = clazz.superclass
         }
     }
+
+    /**
+     * Create a new Instance of the Host class
+     *
+     * @return Any as instance of sourceClass
+     *
+     * @since 2.1.0 (Experimental)
+     * @author Thomas Obernosterer
+     */
+    fun new(): Any = sourceClass.getConstructor().newInstance()
 
     /**
      * Get a function from the Host class and execute it
@@ -95,7 +106,7 @@ class LClass(
     @Throws(FileNotFoundException::class, NoSuchMethodException::class)
     fun getMethod(functionName: String): LFunction {
         val method = methods.find { it.name == functionName } ?: throw NoSuchMethodException()
-        val classObject = sourceClass.newInstance()
+        val classObject = new()
         return LFunction(classObject, method)
     }
 
@@ -111,7 +122,7 @@ class LClass(
      */
     fun getAllMethods(): List<LFunction> {
         val functions: MutableList<LFunction> = ArrayList()
-        val classObject = sourceClass.newInstance()
+        val classObject = new()
         methods.forEach {
             functions.add(LFunction(classObject, it))
         }

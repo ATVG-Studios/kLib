@@ -13,6 +13,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 2.1.0 - 28.05.2019
+
+### Added
+- `new` function to LClass (To be used with `is` and `as` and Interfaces)
+- `semver` property of kLibInf is now priority
+- `kLibRequire` Top-Level Function gets semver support
+- `extract` function to ZipFile
+- `unzip` function to ZipFile
+
+### Changed
+- Moved `ZipFile` out of Experimental
+
+### Deprecated
+- `version` property of kLibInf (Replaced with semver)
+
+### Fixed
+- `println` ran in infinite loop
+
 ## 2.0.1 - 27.05.2019
 
 ### Fixed

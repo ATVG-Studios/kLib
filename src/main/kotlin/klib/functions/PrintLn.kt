@@ -9,5 +9,7 @@ package klib.functions
  * @author Thomas Obernosterer
  */
 fun println(vararg messages: Any?) {
-    messages.forEach { println(it) }
+    messages.forEach {
+        kotlin.io.println(it)
+    }
 }

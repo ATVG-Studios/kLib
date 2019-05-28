@@ -40,7 +40,8 @@ Table created from APIs removed.
 Table created from APIs marked as Deprecated.
 
 | Since | Change | Reason |
-|---------|--------|--------|
+|-------|--------|--------|
+| 2.1.0 | Removal of `kLibInf.version` | Replaced with `kLibInf.semver` using `types.SemVer` |
 
 ## Experimental APIs
 
@@ -48,5 +49,4 @@ Table created from APIs marked as Experimental. These may change or be removed a
 
 | Since | Change |
 |-------|--------|
-| 1.2.0 | Adding in ZipFile as a simple ZIP API (`types.zip.ZipFile`) |
 | 1.3.0 | Adding in Library to dynamically load Jars (`objects.library.Library`, `types.library.LClass`, `types.library.LFunction`) |

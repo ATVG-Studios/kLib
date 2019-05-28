@@ -1,11 +1,14 @@
 package klib.types.zip
 
 import klib.extensions.asFile
+import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileInputStream
+import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.lang.Exception
 import java.util.zip.ZipEntry
+import java.util.zip.ZipInputStream
 import java.util.zip.ZipOutputStream
 
 /**
@@ -15,6 +18,7 @@ import java.util.zip.ZipOutputStream
  * @param safeMode Handle or Expose thrown errors (Default True/Enabled)
  *
  * @since 1.2.0 (Experimental)
+ * @since 2.1.0
  * @author Thomas Obernosterer
  */
 @klib.annotations.Experimental
@@ -126,6 +130,58 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
     }
 
     /**
+     * Extract a ZipFile
+     *
+     * @param targetPath The path to extract into
+     * @see unzip
+     *
+     * @since 2.1.0
+     * @author Thomas Obernosterer
+     */
+    fun extract(targetPath: File) = unzip(targetPath)
+
+    /**
+     * Extract a ZipFile
+     *
+     * @param targetPath The path to extract into
+     *
+     * @since 2.1.0
+     * @author Thomas Obernosterer
+     */
+    fun unzip(targetPath: File) {
+        val zFile = File(fileName)
+        if(!zFile.exists()) throw FileNotFoundException()
+
+        val zipInputStream = ZipInputStream(BufferedInputStream(FileInputStream(zFile)))
+
+        zipInputStream.use {  zipStream ->
+            val buffer = getBuffer(8192)
+
+            while (true) {
+                val zipEntry = zipStream.nextEntry ?: break
+                val file = File(targetPath, zipEntry.name)
+                val dir = if(zipEntry.isDirectory) file else file.parentFile
+                if(!dir.isDirectory && !dir.mkdirs()) throw FileNotFoundException("Failed to ensure directory: " + dir.canonicalPath)
+
+                if(zipEntry.isDirectory) continue
+
+                val fileOutputStream = FileOutputStream(file)
+                fileOutputStream.use {
+                    while (true) {
+                        val count = zipStream.read(buffer)
+                        if(count <= 0) break
+                        it.write(buffer, 0, count)
+                    }
+                }
+                val time = zipEntry.time
+                if(time > 0) {
+                    file.setLastModified(time)
+                }
+            }
+        }
+    }
+
+    /**
      * Add File without protection of errors
      *
      * @param newFiles The files to add
@@ -197,5 +253,5 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @since 1.2.0
      * @author Thomas Obernosterer
      */
-    private fun getBuffer() = ByteArray(1024)
+    private fun getBuffer(size: Int = 1024) = ByteArray(size)
 }
