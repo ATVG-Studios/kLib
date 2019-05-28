@@ -150,31 +150,31 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      */
     fun unzip(targetPath: File) {
         val zFile = File(fileName)
-        if(!zFile.exists()) throw FileNotFoundException()
+        if (!zFile.exists()) throw FileNotFoundException()
 
         val zipInputStream = ZipInputStream(BufferedInputStream(FileInputStream(zFile)))
 
-        zipInputStream.use {  zipStream ->
+        zipInputStream.use { zipStream ->
             val buffer = getBuffer(8192)
 
             while (true) {
                 val zipEntry = zipStream.nextEntry ?: break
                 val file = File(targetPath, zipEntry.name)
-                val dir = if(zipEntry.isDirectory) file else file.parentFile
-                if(!dir.isDirectory && !dir.mkdirs()) throw FileNotFoundException("Failed to ensure directory: " + dir.canonicalPath)
+                val dir = if (zipEntry.isDirectory) file else file.parentFile
+                if (!dir.isDirectory && !dir.mkdirs()) throw FileNotFoundException("Failed to ensure directory: " + dir.canonicalPath)
 
-                if(zipEntry.isDirectory) continue
+                if (zipEntry.isDirectory) continue
 
                 val fileOutputStream = FileOutputStream(file)
                 fileOutputStream.use {
                     while (true) {
                         val count = zipStream.read(buffer)
-                        if(count <= 0) break
+                        if (count <= 0) break
                         it.write(buffer, 0, count)
                     }
                 }
                 val time = zipEntry.time
-                if(time > 0) {
+                if (time > 0) {
                     file.setLastModified(time)
                 }
             }
