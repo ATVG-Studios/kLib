@@ -19,7 +19,6 @@ import java.io.FileNotFoundException
  * @since 1.2.0
  * @author Thomas Obernosterer
  */
-@UseExperimental(Experimental::class)
 fun File.addToZipFile(zipFile: ZipFile) = zipFile.addFile(this)
 
 /**
