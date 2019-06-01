@@ -25,7 +25,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val versionId = 18 // A unique version number used to identify releases and to make easy requirement checks
+    const val versionId = 19 // A unique version number used to identify releases and to make easy requirement checks
 
     /**
      * Version String (For humans; SemVer)
@@ -34,7 +34,7 @@ object kLibInf {
      * @author Thomas Obernosterer
      */
     @Deprecated("The simple Version String was deprecated, and replaced with the semver property", level = DeprecationLevel.ERROR)
-    const val version = "2.1.0"
+    const val version = "2.1.1"
 
     /**
      * Version String (For computers; SemVer)
@@ -42,7 +42,7 @@ object kLibInf {
      * @since 2.0.0
      * @author Thomas Obernosterer
      */
-    val semver = SemVer(2, 1, 0, "r$versionId")
+    val semver = SemVer(2, 1, 1, "r$versionId")
 
     /**
      * Company creating kLib

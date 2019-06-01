@@ -21,7 +21,6 @@ import java.util.zip.ZipOutputStream
  * @since 2.1.0
  * @author Thomas Obernosterer
  */
-@klib.annotations.Experimental
 class ZipFile(private val fileName: String, private val safeMode: Boolean = true) {
     private lateinit var zipFile: ZipOutputStream
     private var fileOpen = false

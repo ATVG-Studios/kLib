@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 2.1.1 - 01.06.2019
+
+### Fixed
+- Removed Experimental Annotations from ZipFile functions/classes
+
 ## 2.1.0 - 28.05.2019
 
 ### Added

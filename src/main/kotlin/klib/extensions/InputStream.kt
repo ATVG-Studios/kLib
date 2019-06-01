@@ -1,6 +1,5 @@
 package klib.extensions
 
-import klib.annotations.Experimental
 import klib.types.zip.ZipFile
 import java.io.File
 import java.io.InputStream
@@ -26,7 +25,6 @@ fun InputStream.toFile(file: File) {
  * @since 1.2.0
  * @author Thomas Obernosterer
  */
-@UseExperimental(Experimental::class)
 fun InputStream.toFileInZipFile(file: File, zipFile: ZipFile) {
     toFile(file)
     zipFile.addFile(file)
