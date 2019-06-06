@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+* `smartMerge` extension to MutableMap
+* `fullMerge` extension to MutableMap
+* `mergeArrays` extension to MutableMap
 ### Changed
 ### Deprecated
 ### Removed
