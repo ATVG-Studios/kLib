@@ -8,6 +8,7 @@ fun main() {
     mergeArrays()
     fullMerge()
     smartMerge()
+    smartMerge2()
 }
 
 fun mergeArrays() {
@@ -46,5 +47,20 @@ fun smartMerge() {
     )
 
     listA.smartMerge(listB)
+    println(listA)
+}
+
+fun smartMerge2() {
+    val listA: MutableMap<String, String> = mutableMapOf(
+        "a" to "b",
+        "c" to "d"
+    )
+    val listB: MutableMap<String, Any> = mutableMapOf(
+        "a" to "d",
+        "e" to "f",
+        "g" to "h"
+    )
+
+    listA.smartMerge(listB) { it as String }
     println(listA)
 }
