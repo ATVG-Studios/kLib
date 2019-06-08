@@ -7,14 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
-* `smartMerge` extension to MutableMap
-* `fullMerge` extension to MutableMap
-* `mergeArrays` extension to MutableMap
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+
+## 3.0.0 - 08.06.2019
+
+### IMPORTANT NOTICE
+- kLib is now licensed under the OSPL20 (a MPL 2.0 Fork), kLib prior to 3.0 will stay MIT!
+
+### Added
+- `smartMerge` extension to MutableMap
+- `fullMerge` extension to MutableMap
+- `mergeArrays` extension to MutableMap
+- `openIfExist` parameter for ZipFile.open
+- `reset` extension to File
+- `kSock` object class
+- `every` extension to Function `() -> Unit`
+
+### Removed
+- `version` property of kLibInf (Replaced with semver)
+- `versionId` property of kLibInf (Replaced with semver)
+- `klibRequire` for versionId (Replaced with semver)
+- `klibRequire` for versionId range (Replaced with semver)
+
+### Fixed
+- Fixed bug in SemVer parsing crashing when preRelease and buildMetadata was not given
 
 ## 2.1.1 - 01.06.2019
 
@@ -245,7 +265,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 1.4.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.4.0...master)
+* Unreleased - [Diff 3.0.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.0.0...master)
+* 3.0.0 - [Diff 2.1.1 to 3.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/2.1.1...3.0.0)
+* 2.1.1 - [Diff 2.1.0 to 2.1.1](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/2.1.0...2.1.1)
+* 2.1.0 - [Diff 2.0.0 to 2.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/2.0.0...2.1.0)
+* 2.0.0 - [Diff 1.4.0 to 2.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.4.0...2.0.0)
 * 1.4.0 - [Diff 1.3.0 to 1.4.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.3.0...1.4.0)
 * 1.3.0 - [Diff 1.2.0 to 1.3.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.2.0...1.3.0)
 * 1.2.0 - [Diff 1.1.0 to 1.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/1.1.0...1.2.0)

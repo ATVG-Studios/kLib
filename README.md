@@ -6,6 +6,7 @@
 | release/1.4.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.4.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.4.x) |
 | release/2.0.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/2.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/2.0.x) |
 | release/2.1.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/2.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/2.1.x) |
+| release/3.0.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.0.x) |
 
 kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
 Extensions and Types.
@@ -74,10 +75,6 @@ All versions before 1.4.0 are considered Legacy and are no longer developed or s
 
 # License
 
-kLib is distributed under the [MIT](LICENSE) License and available for everyone at any time.
+kLib is distributed under the [OSPL 20](LICENSE) License (a MPL 2.0 Fork).
 
-The usage of kLib however, may be written in a "Open-Source Licenses" section of a Legal Notice or a End User License Agreement (EULA).
-
-Users may be informed about the Usage of kLib in your product.
-
-This is **NOT** a strict requirement, but a helpful feature for both ATVG-Studios and the User.
+The usage of kLib may be written in a "Open-Source Licenses" section of a Legal Notice or a End User License Agreement (EULA). (This is **NOT** a strict requirement.)

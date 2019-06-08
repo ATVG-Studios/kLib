@@ -12,6 +12,7 @@ Breaking versions must be in a new row!
 | 7     | 0.1.6 |
 | 8 - 15| 0.2.0 - 1.4.0 |
 |16 - 19| 2.0.0 - 2.1.1|
+|20     | 3.0.0 |
 
 This means: `0.1.2` **IS** compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
 
@@ -34,6 +35,10 @@ Table created from APIs removed.
 |  0.1.6  | Removal of deprecated API `Base58` (`objects.base.Base58`) | Was replaced with `Base58e` which bases on code from Google (Supports encode+decode) |
 |  0.2.0  | Rename package from `com.atvgstudios.klib.*` to `klib.*` | Making the use of kLib simpler and pulling it of from ATVG-Studios |
 |  2.0.0  | Removal of `exceptions.KonfParseException` | Replaced with `KonfigParseException` for ease |
+|  3.0.0  | Removal of `kLibInf.version` | Replaced with `kLibInf.semver` using `types.SemVer` |
+|  3.0.0  | Removal of `kLibInf.versionId` | Replaced with `kLibInf.semver` using `types.SemVer` |
+|  3.0.0  | Removal of `kLibRequire` | Replaced with `kLibRequire` using `types.SemVer` |
+|  3.0.0  | Removal of `kLibRequire` (min,max) | Replaced with `kLibRequire` (min,max) using `types.SemVer` |
 
 ## Upcoming Breaking Changes
 
@@ -41,7 +46,6 @@ Table created from APIs marked as Deprecated.
 
 | Since | Change | Reason |
 |-------|--------|--------|
-| 2.1.0 | Removal of `kLibInf.version` | Replaced with `kLibInf.semver` using `types.SemVer` |
 
 ## Experimental APIs
 

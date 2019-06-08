@@ -6,8 +6,8 @@ plugins {
     id 'signing'
 }
 
-group 'com.atvgstudios'
-version '2.1.1'
+group 'klib'
+version '3.0.0'
 
 repositories {
     mavenCentral()

@@ -96,3 +96,18 @@ fun File.Sha256Checksum(): String {
 fun File.Sha1Checksum(): String {
     return Sha1.hash(this.readBytes()).checksum
 }
+
+/**
+ * Reset a file (delete if exist; create if not)
+ *
+ * @since 3.0.0
+ * @author Thomas Obernosterer
+ */
+fun File.reset() {
+    if (this.exists()) {
+        this.delete()
+        this.createNewFile()
+    } else {
+        this.createNewFile()
+    }
+}

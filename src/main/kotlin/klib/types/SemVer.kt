@@ -46,12 +46,18 @@ class SemVer(
             val pattern = Regex("""(0|[1-9]\d*)?(?:\.)?(0|[1-9]\d*)?(?:\.)?(0|[1-9]\d*)?(?:-([\dA-z\-]+(?:\.[\dA-z\-]+)*))?(?:\+([\dA-z\-]+(?:\.[\dA-z\-]+)*))?""")
             val result = pattern.matchEntire(version) ?: throw InvalidTypeException(version, "SemVer Version String")
 
+            var preRelease: String? = result.groupValues[4]
+            var buildMetadata: String? = result.groupValues[5]
+
+            if (preRelease != null && preRelease.isEmpty()) preRelease = null
+            if (buildMetadata != null && buildMetadata.isEmpty()) buildMetadata = null
+
             return SemVer(
                 major = result.groupValues[1].toIntOrNull() ?: 0,
                 minor = result.groupValues[2].toIntOrNull() ?: 0,
                 patch = result.groupValues[3].toIntOrNull() ?: 0,
-                preRelease = result.groupValues[4],
-                buildMetadata = result.groupValues[5]
+                preRelease = preRelease,
+                buildMetadata = buildMetadata
             )
         }
     }

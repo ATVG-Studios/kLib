@@ -31,11 +31,11 @@ class ZipFile(private val fileName: String, private val safeMode: Boolean = true
      * @since 1.2.0
      * @author Thomas Obernosterer
      */
-    fun open() {
+    fun open(openIfExist: Boolean = false) {
         if (fileOpen) return
 
         val file = File(fileName)
-        if (file.exists()) {
+        if (!openIfExist && file.exists()) {
             throw FileAlreadyExistsException(file)
         }
 
