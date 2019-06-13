@@ -29,3 +29,13 @@ fun InputStream.toFileInZipFile(file: File, zipFile: ZipFile) {
     toFile(file)
     zipFile.addFile(file)
 }
+
+/**
+ * Read a input streams content
+ *
+ * @since 3.1.0
+ * @author Thomas Obernosterer
+ */
+fun InputStream.readText(): String {
+    return this.bufferedReader().readText()
+}

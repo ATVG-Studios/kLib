@@ -21,3 +21,21 @@ fun <T : Comparable<T>> List<T>.quicksort(): List<T> {
     }
     return quicksort(this)
 }
+
+/**
+ * Convert List A to List B with Type E
+ *
+ * @param convert Method to convert type T to E
+ *
+ * @since 3.1.0
+ * @author Thomas Obernosterer
+ */
+fun <T, E> List<T>.toListWithConvert(convert: (T) -> E): List<E> {
+    val list: MutableList<E> = ArrayList()
+
+    this.forEach {
+        list.add(convert(it))
+    }
+
+    return list
+}

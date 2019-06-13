@@ -33,3 +33,13 @@ infix fun Byte.mul(b: Byte): Byte {
 
     return p.toByte()
 }
+
+/**
+ * Convert Byte into a Hex String
+ *
+ * @since 3.1.0
+ * @author Thomas Obernosterer
+ */
+fun Byte.toHex(): String {
+    return this.toString(16)
+}

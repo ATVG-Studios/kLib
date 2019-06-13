@@ -1,6 +1,5 @@
 package klib.extensions
 
-import klib.annotations.Experimental
 import klib.objects.hash.Sha1
 import klib.objects.hash.Sha256
 import klib.objects.library.Library
@@ -10,6 +9,7 @@ import klib.types.library.LFunction
 import klib.types.zip.ZipFile
 import java.io.File
 import java.io.FileNotFoundException
+import java.net.URL
 
 /**
  * Add a file to a ZipFile
@@ -30,9 +30,9 @@ fun File.addToZipFile(zipFile: ZipFile) = zipFile.addFile(this)
  * @throws ClassNotFoundException
  *
  * @since 1.3.0 (Experimental)
+ * @since 3.1.0
  * @author Thomas Obernosterer
  */
-@UseExperimental(Experimental::class)
 @Throws(FileNotFoundException::class, ClassNotFoundException::class)
 infix fun File.loadAsLibraryWithClass(className: String): LClass {
     return Library.loadClassFromJar(this, className)
@@ -49,9 +49,9 @@ infix fun File.loadAsLibraryWithClass(className: String): LClass {
  * @throws NoSuchMethodException
  *
  * @since 1.3.0 (Experimental)
+ * @since 3.1.0
  * @author Thomas Obernosterer
  */
-@UseExperimental(Experimental::class)
 @Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
 fun File.loadAsLibraryWithFunction(className: String, functionName: String): LFunction {
     return Library.loadFunctionFromJar(this, className, functionName)
@@ -110,4 +110,14 @@ fun File.reset() {
     } else {
         this.createNewFile()
     }
+}
+
+/**
+ * Download a URL into a File
+ *
+ * @since 3.1.0
+ * @author Thomas Obernosterer
+ */
+fun File.fromUrl(url: URL) {
+    url.toFile(this)
 }

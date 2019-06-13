@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.atvgstudios</groupId>
   <artifactId>klib</artifactId>
-  <version>3.0.0</version>
+  <version>3.1.0</version>
   <name>kLib</name>
   <description>kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions, Extensions and Types.</description>
   <url>https://klib.atvg-studios.com/</url>

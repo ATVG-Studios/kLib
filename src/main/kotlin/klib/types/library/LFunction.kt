@@ -9,6 +9,7 @@ import java.lang.reflect.Method
  * @param sourceMethod A method instance (object) to run
  *
  * @since 1.3.0 (Experimental)
+ * @since 3.1.0
  * @author Thomas Obernosterer
  */
 class LFunction(

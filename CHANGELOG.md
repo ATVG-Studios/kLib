@@ -13,6 +13,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 3.1.0 - 12.06.2019
+
+### Added
+- `smartMerge` extension to MutableMap (With value type converter)
+- `fullMerge` extension to MutableMap (With value type converter)
+- `mergeArrays` extension to MutableMap (With value type converter)
+- `toListWithConvert` extension to List
+- `toListWithConvert` extension to MutableList
+- `fromUrl` extension to File
+- `toFile` extension to URL
+- `toObjectOfType` extension to URL
+- `Http` class
+- `Http.DataTypes` Enum Class
+- `readText` extension to InputStream
+- `fromHex` extension to String
+- `fromHexToLong` extension to String
+- `toHex` extension to Byte
+- `binSearch` extension to IntArray (Using Recursion, its 50% faster)
+
+### Changed
+- Moved Library API from Experimental to Stable
+
 ## 3.0.0 - 08.06.2019
 
 ### IMPORTANT NOTICE
@@ -20,7 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `smartMerge` extension to MutableMap
-- `smartMerge` extension to MutableMap (With value type converter)
 - `fullMerge` extension to MutableMap
 - `mergeArrays` extension to MutableMap
 - `openIfExist` parameter for ZipFile.open

@@ -1,8 +1,8 @@
 package klib.extensions
 
-import klib.annotations.Experimental
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
+import klib.kLibInf
 import klib.objects.base.Base58e
 import klib.objects.hash.Sha1
 import klib.objects.hash.Sha256
@@ -11,6 +11,7 @@ import klib.types.library.LClass
 import klib.types.library.LFunction
 import java.io.File
 import java.io.FileNotFoundException
+import java.lang.reflect.Type
 import java.util.Base64
 
 /**
@@ -242,9 +243,9 @@ fun String.asFile() = File(this)
  * @see LClass
  *
  * @since 1.3.0 (Experimental)
+ * @since 3.1.0
  * @author Thomas Obernosterer
  */
-@UseExperimental(Experimental::class)
 @Throws(FileNotFoundException::class, ClassNotFoundException::class)
 infix fun String.loadAsLibraryWithClass(className: String): LClass {
     return Library.loadClassFromJar(this.asFile(), className)
@@ -263,10 +264,43 @@ infix fun String.loadAsLibraryWithClass(className: String): LClass {
  * @see LFunction
  *
  * @since 1.3.0 (Experimental)
+ * @since 3.1.0
  * @author Thomas Obernosterer
  */
-@UseExperimental(Experimental::class)
 @Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
 fun String.loadAsLibraryWithFunction(className: String, functionName: String): LFunction {
     return Library.loadFunctionFromJar(this.asFile(), className, functionName)
+}
+
+/**
+ * Parse to Type
+ *
+ * @param type The type to parse
+ * @see klib.interfaces.Json
+ *
+ * @since 3.1.0
+ * @author Thomas Obernosterer
+ */
+fun String.toObjectOfType(type: Type): Any? {
+    return kLibInf.jsonHandler.toObject(this, type)
+}
+
+/**
+ * Convert Hex String to Int
+ *
+ * @since 3.1.0
+ * @author Thomas Obernosterer
+ */
+fun String.fromHex(): Int {
+    return this.toIntOrNull(16) ?: 0
+}
+
+/**
+ * Convert Hex String to Long
+ *
+ * @since 3.1.0
+ * @author Thomas Obernosterer
+ */
+fun String.fromHextoLong(): Long {
+    return this.toLongOrNull(16) ?: 0L
 }

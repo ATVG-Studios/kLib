@@ -7,12 +7,10 @@ import java.lang.reflect.Modifier
 /**
  * Custom Class to handle Dynamically loaded Classes
  *
- * @param sourceClass A Class<*> that serves as the Host for further use
- *
  * @since 1.3.0 (Experimental)
+ * @since 3.1.0
  * @author Thomas Obernosterer
  */
-@klib.annotations.Experimental
 class LClass(
     private val sourceClass: Class<*>
 ) {

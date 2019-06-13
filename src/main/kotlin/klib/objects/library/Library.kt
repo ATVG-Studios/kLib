@@ -13,9 +13,9 @@ import java.net.URLClassLoader
  * Dynamically load Classes and Methods from Jar files
  *
  * @since 1.3.0 (Experimental)
+ * @since 3.1.0
  * @author Thomas Obernosterer
  */
-@klib.annotations.Experimental
 object Library {
     /**
      * Dynamically load a Class from a Jar File
