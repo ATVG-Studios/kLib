@@ -1,7 +1,7 @@
 package klib
 
-import klib.dummy.JsonHandler
 import klib.interfaces.Json
+import klib.types.JsonHandler
 import klib.types.SemVer
 
 /**
@@ -25,7 +25,7 @@ object kLibInf {
      * @since 2.0.0
      * @author Thomas Obernosterer
      */
-    val semver = SemVer(3, 1, 0)
+    val semver = SemVer(3, 2, 0)
 
     /**
      * Company creating kLib

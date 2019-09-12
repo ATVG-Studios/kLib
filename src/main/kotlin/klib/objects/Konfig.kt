@@ -64,7 +64,14 @@ object Konfig {
 
             val value = d.joinToString("=").replaceFirst("$key=", "")
 
-            result[key] = value
+            if (value.startsWith("[") && value.endsWith("]")) {
+                val valueList = value.replace("[", "")
+                                    .replace("]", "")
+                                    .split(",")
+                result[key] = valueList
+            } else {
+                result[key] = value
+            }
         }
         return result
     }

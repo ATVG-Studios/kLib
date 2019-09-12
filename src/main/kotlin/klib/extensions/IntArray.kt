@@ -4,6 +4,8 @@ package klib.extensions
  * Recursion based Binary Search (About 50% faster then binarySearch)
  *
  * @param element Element to search for
+ * @param start Index to start from
+ * @param end Index to stop at
  * @return Index when Found, -1 when not
  *
  * @since 3.1.0

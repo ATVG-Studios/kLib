@@ -39,3 +39,30 @@ fun <T, E> List<T>.toListWithConvert(convert: (T) -> E): List<E> {
 
     return list
 }
+
+/**
+ * Recursion based Binary Search (About 50% faster then binarySearch)
+ *
+ * @param element Element to search for
+ * @param start Index to start from
+ * @param end Index to stop at
+ * @return Index when Found, -1 when not
+ *
+ * @since 3.2.0
+ * @author Thomas Obernosterer
+ */
+fun <T : Comparable<T>> List<T>.binSearch(element: T, start: Int = 0, end: Int = size): Int {
+    fun binSearch(array: List<T>, element: T, left: Int, right: Int): Int {
+        val middle = (left + right) / 2
+
+        return when {
+            left > right -> -1
+            array[middle] == element -> middle
+            array[middle] > element -> binSearch(array, element, left, middle - 1)
+            array[middle] < element -> binSearch(array, element, middle + 1, right)
+            else -> -1
+        }
+    }
+
+    return binSearch(this, element, start, end)
+}

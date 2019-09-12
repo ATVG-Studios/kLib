@@ -2,11 +2,10 @@
 
 | Branch | Status |
 |--------|--------|
-| master | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
-| release/1.4.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/1.4.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/1.4.x) |
-| release/2.0.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/2.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/2.0.x) |
-| release/2.1.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/2.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/2.1.x) |
-| release/3.0.x | [![pipeline status](https://gitlab.atvg-studios.at/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.0.x) |
+| master | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
+| release/3.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.0.x) |
+| release/3.1.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.1.x) |
+| release/3.2.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.2.x) |
 
 kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
 Extensions and Types.
@@ -16,14 +15,14 @@ kLib works as a Standard Library at ATVG-Studios containing code that can be use
 Checkout the Homepage over [here](https://klib.atvg-studios.com).
 
 kLib is now available via a custom Maven repository.  
-You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.at/atvg-studios/maven-repository).  
-The Maven Repository itself is available here: https://mvn.osmium.software
+You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.com/atvg-studios/maven-repository).  
+The Maven Repository itself is available here: https://mvn.atvg-studios.com
 
 Adding the latest version of kLib using Gradle:
 
 ```
 repositories {
-    maven { url 'https://mvn.osmium.software' }
+    maven { url 'https://mvn.atvg-studios.com' }
 }
 
 dependencies {
@@ -38,7 +37,7 @@ Adding the latest version of kLib using Maven:
   <repository>
     <id>atvg-studios</id>
     <name>ATVG-Studios Maven</name>
-    <url>https://mvn.osmium.software</url>
+    <url>https://mvn.atvg-studios.com</url>
   </repository>
 </repositories>
 <dependencies>
@@ -71,7 +70,14 @@ Also what breaking changes where made when and which will come up in near future
 
 ## Outdated Versions
 
-All versions before 1.4.0 are considered Legacy and are no longer developed or supported.
+All listed versions are considered Legacy and are no longer developed or supported.
+
+| Version Tree | Last Version |
+|--------------|--------------|
+|    0.1.x     |    0.1.6     |
+|    0.2.x     |    0.2.2     |
+|    1.x.x     |    1.4.0     |
+|    2.x.x     |    2.1.1     |
 
 # License
 

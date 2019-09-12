@@ -13,6 +13,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## 3.2.0 - 12.09.2019
+
+### Added
+- `print` Top-Level Function
+- `binSearch` extension for List
+- `binSearch` extension for MutableList
+- Http.custom function
+- Konfig now supports Lists/Arrays
+- kLib is now shipping with JSON Parser (it adds about 300KB to builds)
+
+### Changed
+- Extended Http.get with headers parameter
+- Extended Http.post with headers parameter
+- Default JsonHandler now uses JSON Parser and actually works
+
 ## 3.1.0 - 12.06.2019
 
 ### Added
@@ -287,7 +302,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 3.0.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.0.0...master)
+* Unreleased - [Diff 3.2.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.2.0...master)
+* 3.2.0 - [Diff 3.1.0 to 3.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.1.0...3.2.0)
+* 3.1.0 - [Diff 3.0.0 to 3.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.0.0...3.1.0)
 * 3.0.0 - [Diff 2.1.1 to 3.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/2.1.1...3.0.0)
 * 2.1.1 - [Diff 2.1.0 to 2.1.1](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/2.1.0...2.1.1)
 * 2.1.0 - [Diff 2.0.0 to 2.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/2.0.0...2.1.0)

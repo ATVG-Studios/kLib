@@ -20,18 +20,25 @@ class Http(val url: String) {
      * Send get Request
      *
      * @param optionalParams Appended to URL with & if ? already present; else with ?
+     * @param headers Map of Headers
      * @return Request Response
      *
      * @since 3.1.0
      * @author Thomas Obernosterer
      */
-    fun get(optionalParams: String = ""): String {
+    fun get(optionalParams: String = "", headers: Map<String, String> = HashMap()): String {
         val uri = "$url${if (url.contains("?")) "&" else "?"}$optionalParams"
         val connection = URL(uri).openConnection() as HttpURLConnection
 
         connection.doInput = true
         connection.requestMethod = "GET"
         connection.setRequestProperty("User-Agent", "kLib/${kLibInf.semver}")
+
+        if (headers.isNotEmpty()) {
+            headers.forEach {
+                connection.setRequestProperty(it.key, it.value)
+            }
+        }
 
         return connection.inputStream.readText()
     }
@@ -41,17 +48,24 @@ class Http(val url: String) {
      *
      * @param data Data to send
      * @param datatype Content-Type Header
+     * @param headers Map of Headers
      * @return Request Response
      *
      * @since 3.1.0
      * @author Thomas Obernosterer
      */
-    fun post(data: String, datatype: DataTypes): String {
+    fun post(data: String, datatype: DataTypes, headers: Map<String, String> = HashMap()): String {
         val connection = URL(url).openConnection() as HttpURLConnection
 
         connection.doOutput = true
         connection.requestMethod = "POST"
         connection.setRequestProperty("User-Agent", "kLib/${kLibInf.semver}")
+
+        if (headers.isNotEmpty()) {
+            headers.forEach {
+                connection.setRequestProperty(it.key, it.value)
+            }
+        }
 
         when (datatype) {
             DataTypes.JSON ->
@@ -62,6 +76,42 @@ class Http(val url: String) {
 
         DataOutputStream(connection.outputStream).writeBytes(data)
         return connection.inputStream.readText()
+    }
+
+    /**
+     * Send custom Request
+     *
+     * @param method HTTP Method
+     * @param data Data to send (Empty string if none)
+     * @param headers Map of headers
+     *
+     * @since 3.2.0
+     * @author Thomas Obernosterer
+     */
+    fun custom(method: String = "GET", data: String = "", headers: Map<String, String> = HashMap()): String {
+        val connection = URL(url).openConnection() as HttpURLConnection
+
+        if (data.isEmpty()) {
+            connection.doInput = true
+        } else {
+            connection.doOutput = true
+        }
+
+        connection.requestMethod = method
+        connection.setRequestProperty("User-Agent", "kLib/${kLibInf.semver}")
+
+        if (headers.isNotEmpty()) {
+            headers.forEach {
+                connection.setRequestProperty(it.key, it.value)
+            }
+        }
+
+        return if (data.isEmpty()) {
+            connection.inputStream.readText()
+        } else {
+            DataOutputStream(connection.outputStream).writeBytes(data)
+            connection.inputStream.readText()
+        }
     }
 
     /**
