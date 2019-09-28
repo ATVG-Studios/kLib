@@ -1,5 +1,6 @@
 package klib.library
 
+import klib.extensions.asFile
 import java.io.File
 import java.io.FileNotFoundException
 import java.net.URL
@@ -27,6 +28,7 @@ object Library {
      * @see LClass
      *
      * @since 1.3.0 (Experimental)
+     * @since 3.1.0
      * @author Thomas Obernosterer
      */
     @Throws(FileNotFoundException::class, ClassNotFoundException::class)
@@ -52,6 +54,7 @@ object Library {
      * @see LFunction
      *
      * @since 1.3.0 (Experimental)
+     * @since 3.1.0
      * @author Thomas Obernosterer
      */
     @Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
@@ -64,4 +67,46 @@ object Library {
         val classObject = classConstructor.newInstance()
         return LFunction(classObject, method)
     }
+
+    /**
+     * Dynamically load a Class from a Jar File
+     *
+     * @param file The Jar file to load from
+     * @param className The Class to load
+     * @return Returns a LClass object
+     * @throws FileNotFoundException
+     * @throws ClassNotFoundException
+     *
+     * @see LClass
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    @Throws(FileNotFoundException::class, ClassNotFoundException::class)
+    fun loadClassFromJar(file: String, className: String): LClass {
+        return loadClassFromJar(file.asFile(), className)
+    }
+
+    /**
+     * Dynamically load a Method/Function from a Jar File
+     *
+     * @param file The Jar file to load from
+     * @param className The Class to load from
+     * @param functionName The Method to load
+     * @return Returns a LFunction object
+     * @throws FileNotFoundException
+     * @throws ClassNotFoundException
+     * @throws NoSuchMethodException
+     *
+     * @see LClass
+     * @see LFunction
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    @Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
+    fun loadFunctionFromJar(file: String, className: String, functionName: String): LFunction {
+        return loadFunctionFromJar(file.asFile(), className, functionName)
+    }
+
 }
