@@ -26,9 +26,7 @@ build:
     expire_in: 1 week
   only:
     refs:
-      - branches
-    variables:
-      - $BUILD_TYPE == "release"
+      - tags
 
 docs:
   stage: build
@@ -40,9 +38,7 @@ docs:
     expire_in: 1 week
   only:
     refs:
-      - branches
-    variables:
-      - $BUILD_TYPE == "release"
+      - tags
 
 test:
   stage: test
