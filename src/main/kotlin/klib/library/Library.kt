@@ -109,4 +109,41 @@ object Library {
         return loadFunctionFromJar(file.asFile(), className, functionName)
     }
 
+    /**
+     * Dynamically load a Class from a Jar File
+     *
+     * @param loader LibLoader object
+     * @return Returns a LClass object
+     * @throws FileNotFoundException
+     * @throws ClassNotFoundException
+     *
+     * @see LClass
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    @Throws(FileNotFoundException::class, ClassNotFoundException::class)
+    fun loadClassFromJar(loader: LibLoad): LClass {
+        return loadClassFromJar(loader.file, loader.className)
+    }
+
+    /**
+     * Dynamically load a Method/Function from a Jar File
+     *
+     * @param loader LibLoader object
+     * @return Returns a LFunction object
+     * @throws FileNotFoundException
+     * @throws ClassNotFoundException
+     * @throws NoSuchMethodException
+     *
+     * @see LClass
+     * @see LFunction
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    @Throws(FileNotFoundException::class, ClassNotFoundException::class, NoSuchMethodException::class)
+    fun loadFunctionFromJar(loader: LibLoad): LFunction {
+        return loadFunctionFromJar(loader.file, loader.className, loader.functionName)
+    }
 }
