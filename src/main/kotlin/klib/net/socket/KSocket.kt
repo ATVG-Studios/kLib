@@ -15,7 +15,7 @@ class KSocket {
     val data = buffer
     var canRead: Boolean
         get() = canReadFile
-        set(value) = TODO()
+        set(value) = TODO("Cannot set value '$value' on read-only field 'canRead'")
 
     fun open(file: String, timeout: Long = 25, buffer: CharBuffer = CharBuffer.allocate(1024)) {
         this.fileName = file
