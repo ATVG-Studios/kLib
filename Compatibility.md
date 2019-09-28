@@ -46,6 +46,7 @@ Table created from APIs marked as Deprecated.
 
 | Since | Change | Reason |
 |-------|--------|--------|
+| 4.0.0 | Removal of kSock (`klib.net.socket.kSock`) API | Was replaced with KSocket (`klib.net.socket.KSocket`) |
 
 ## Experimental APIs
 

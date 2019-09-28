@@ -11,6 +11,8 @@ import java.util.TimerTask
  * Simple but useful one-way IPC socket
  *
  * @since 3.0.0
+ * @since 4.0.0 (Deprecated)
+ * @deprecated
  * @author Thomas Obernosterer
  */
 @Deprecated("kSock has been replaced by KSocket", ReplaceWith("KSocket", "klib.net.socket.KSocket"), DeprecationLevel.ERROR)
