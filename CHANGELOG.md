@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * KSocket (`klib.net.socket.KSocket`)
 * KString (`klib.text.KString`)
 * `asFileInputStream` extension for String
+* `asFileOutputStream` extension for String
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
 ### Deprecated

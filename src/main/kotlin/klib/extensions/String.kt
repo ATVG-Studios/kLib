@@ -12,6 +12,7 @@ import klib.library.Library
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
+import java.io.FileOutputStream
 import java.lang.reflect.Type
 import java.util.Base64
 
@@ -243,6 +244,18 @@ fun String.asFile() = File(this)
  */
 fun String.asFileInputStream(): FileInputStream {
     return asFile().inputStream()
+}
+
+/**
+ * Opens the string as file and returns the output stream
+ *
+ * @return FileOutputStream with string as file
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.asFileOutputStream(): FileOutputStream {
+    return asFile().outputStream()
 }
 
 /**
