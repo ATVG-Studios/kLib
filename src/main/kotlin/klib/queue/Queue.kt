@@ -1,6 +1,5 @@
-package klib.types.queue
+package klib.queue
 
-import klib.typealiases.Function
 import java.util.Timer
 import java.util.TimerTask
 

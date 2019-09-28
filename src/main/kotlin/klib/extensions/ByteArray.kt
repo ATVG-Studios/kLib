@@ -1,7 +1,7 @@
 package klib.extensions
 
-import klib.objects.hash.Sha1
-import klib.objects.hash.Sha256
+import klib.hash.Sha1
+import klib.hash.Sha256
 import kotlin.experimental.xor
 
 /**

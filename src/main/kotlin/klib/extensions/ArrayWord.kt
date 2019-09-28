@@ -1,6 +1,6 @@
 package klib.extensions
 
-import klib.types.word.Word
+import klib.word.Word
 
 /**
  * Turn Word array into Bytes

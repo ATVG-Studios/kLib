@@ -1,6 +1,6 @@
 package klib.functions
 
-import klib.typealiases.Function
+import klib.queue.Function
 
 /**
  * Require something to be not null; Else execute onError

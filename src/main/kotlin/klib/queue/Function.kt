@@ -1,4 +1,4 @@
-package klib.typealiases
+package klib.queue
 
 /**
  * Type alias for () -> Unit

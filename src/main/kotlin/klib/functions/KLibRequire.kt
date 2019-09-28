@@ -1,7 +1,7 @@
 package klib.functions
 
+import klib.SemVer
 import klib.kLibInf
-import klib.types.SemVer
 
 /**
  * Check if the used kLib is the required version (Dependency Check)

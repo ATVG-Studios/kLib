@@ -1,46 +1,44 @@
-package klib.objects.hash
+package klib.hash
 
-import klib.interfaces.Hasher
-import klib.types.hash.HashResult
 import java.nio.charset.Charset
 
 /**
- * Custom Sha1 Hasher-Interface Implementation
+ * Custom Sha256 Hasher-Interface Implementation
  *
- * @since 2.0.0
+ * @since 0.1.2
  * @author Thomas Obernosterer
  */
-object Sha1 : Hasher {
+object Sha256 : Hasher {
     /**
      * Charset to use
      *
      * @see Charset.defaultCharset()
      *
-     * @since 2.0.0
+     * @since 0.1.2
      * @author Thomas Obernosterer
      */
     var defaultCharset: Charset = Charset.defaultCharset()
 
     /**
-     * Hash a byte array in SHA1
+     * Hash a byte array in SHA256
      *
      * @param data
      * @return
      *
-     * @since 2.0.0
+     * @since 0.1.2
      * @author Thomas Obernosterer
      */
-    fun hash(data: ByteArray): HashResult = super.hash(data, "SHA-1")
+    fun hash(data: ByteArray): HashResult = super.hash(data, "SHA-256")
 
     /**
-     * Hash a string in SHA1 (Use defaultCharset)
+     * Hash a string in SHA256 (Use defaultCharset)
      *
      * @param data
      * @return
      * @see defaultCharset
      *
-     * @since 2.0.0
+     * @since 0.1.2
      * @author Thomas Obernosterer
      */
-    fun hash(data: String): HashResult = super.hash(data.toByteArray(defaultCharset), "SHA-1")
+    fun hash(data: String): HashResult = super.hash(data.toByteArray(defaultCharset), "SHA-256")
 }

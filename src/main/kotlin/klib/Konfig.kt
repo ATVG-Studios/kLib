@@ -1,4 +1,4 @@
-package klib.objects
+package klib
 
 import klib.exceptions.KonfigParseException
 import java.io.File

@@ -1,7 +1,5 @@
-package klib.objects.library
+package klib.library
 
-import klib.types.library.LClass
-import klib.types.library.LFunction
 import java.io.File
 import java.io.FileNotFoundException
 import java.net.URL

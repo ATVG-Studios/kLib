@@ -1,4 +1,4 @@
-package klib.objects.uuid
+package klib.uuid
 
 import java.util.UUID
 

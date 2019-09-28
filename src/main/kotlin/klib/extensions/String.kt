@@ -1,14 +1,14 @@
 package klib.extensions
 
+import klib.encoding.base.Base58e
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
+import klib.hash.Sha1
+import klib.hash.Sha256
 import klib.kLibInf
-import klib.objects.base.Base58e
-import klib.objects.hash.Sha1
-import klib.objects.hash.Sha256
-import klib.objects.library.Library
-import klib.types.library.LClass
-import klib.types.library.LFunction
+import klib.library.LClass
+import klib.library.LFunction
+import klib.library.Library
 import java.io.File
 import java.io.FileNotFoundException
 import java.lang.reflect.Type

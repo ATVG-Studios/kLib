@@ -1,4 +1,4 @@
-package klib.interfaces
+package klib.json
 
 import java.lang.reflect.Type
 

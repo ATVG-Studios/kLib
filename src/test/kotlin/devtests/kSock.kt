@@ -1,6 +1,6 @@
 package devtests
 
-import klib.objects.kSock
+import klib.net.socket.kSock
 
 fun main() {
     kSock.open {

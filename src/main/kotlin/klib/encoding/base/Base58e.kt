@@ -1,4 +1,4 @@
-package klib.objects.base
+package klib.encoding.base
 
 import java.math.BigInteger
 

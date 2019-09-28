@@ -1,7 +1,6 @@
-package klib.types
+package klib.json
 
 import com.google.gson.Gson
-import klib.interfaces.Json
 import java.lang.reflect.Type
 
 /**

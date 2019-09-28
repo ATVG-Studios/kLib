@@ -1,6 +1,5 @@
-package klib.interfaces
+package klib.hash
 
-import klib.types.hash.HashResult
 import java.security.MessageDigest
 
 /**

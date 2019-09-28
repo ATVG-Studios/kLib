@@ -1,7 +1,6 @@
-package klib.types.hash
+package klib.hash
 
 import klib.extensions.inBoundsOf
-import java.lang.IndexOutOfBoundsException
 
 /**
  * HashResults gets return from the Hasher with the Hex Hash and the used Algorithm

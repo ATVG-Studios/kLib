@@ -1,6 +1,6 @@
 package klib.extensions
 
-import klib.types.zip.ZipFile
+import klib.zip.ZipFile
 import java.io.File
 import java.io.InputStream
 

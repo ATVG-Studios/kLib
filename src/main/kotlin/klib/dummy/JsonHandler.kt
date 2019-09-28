@@ -1,6 +1,6 @@
 package klib.dummy
 
-import klib.interfaces.Json
+import klib.json.Json
 import java.lang.reflect.Type
 
 /**
@@ -11,7 +11,7 @@ import java.lang.reflect.Type
  * @deprecated
  * @author Nils Rider
  */
-@Deprecated(message = "This was a dummy because no JSON parser was part of kLib. But we now ship with a JSON Parser!", replaceWith = ReplaceWith("klib.types.JsonHandler"), level = DeprecationLevel.ERROR)
+@Deprecated(message = "This was a dummy because no JSON parser was part of kLib. But we now ship with a JSON Parser!", replaceWith = ReplaceWith("klib.json.JsonHandler"), level = DeprecationLevel.ERROR)
 class JsonHandler : Json {
     override fun fromObject(data: Any): String {
         TODO("not implemented") // To change body of created functions use File | Settings | File Templates.

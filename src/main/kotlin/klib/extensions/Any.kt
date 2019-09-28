@@ -1,7 +1,7 @@
 package klib.extensions
 
 import klib.kLibInf
-import klib.typealiases.Function_Any
+import klib.queue.Function_Any
 
 /**
  * Type Check and Type Cast made easy

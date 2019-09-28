@@ -1,4 +1,4 @@
-package klib.types.library
+package klib.library
 
 import java.io.FileNotFoundException
 import java.lang.reflect.Method

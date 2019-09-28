@@ -1,4 +1,4 @@
-package klib.types.zip
+package klib.zip
 
 import klib.extensions.asFile
 import java.io.BufferedInputStream
@@ -6,7 +6,6 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
-import java.lang.Exception
 import java.util.zip.ZipEntry
 import java.util.zip.ZipInputStream
 import java.util.zip.ZipOutputStream

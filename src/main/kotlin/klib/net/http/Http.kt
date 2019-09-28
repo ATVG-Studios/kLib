@@ -1,4 +1,4 @@
-package klib.types.http
+package klib.net.http
 
 import klib.extensions.readText
 import klib.kLibInf

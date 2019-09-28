@@ -1,6 +1,6 @@
 package devtests
 
-import klib.types.SemVer
+import klib.SemVer
 
 fun main() {
     val semver1 = SemVer.parse("1.0.0")

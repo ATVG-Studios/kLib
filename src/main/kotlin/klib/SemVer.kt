@@ -1,4 +1,4 @@
-package klib.types
+package klib
 
 import klib.exceptions.InvalidTypeException
 import klib.extensions.isNumeric

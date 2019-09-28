@@ -1,4 +1,4 @@
-package klib.types.word
+package klib.word
 
 import kotlin.experimental.xor
 
