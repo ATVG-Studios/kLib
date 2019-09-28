@@ -238,7 +238,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 - `toObject` Function in Json Interface (Using Any)
-- `Base58` Object (com.atvgstudios.klib.objects.base.Base58)
+- `Base58` Object (com.atvgstudios.klib.encoding.base.Base58)
 
 ### Removed
 - `Json` Object (com.atvgstudios.klib.objects.json.Json)
