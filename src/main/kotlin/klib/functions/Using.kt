@@ -12,6 +12,6 @@ import java.io.Closeable
  * @since 4.0.0
  * @author Thomas Obernosterer
  */
-inline fun <T: Closeable?, R> using(receiver: T, block: (T) -> R): R {
+inline fun <T : Closeable?, R> using(receiver: T, block: (T) -> R): R {
     return receiver.use(block)
 }
