@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+* KSocket (`klib.net.socket.KSocket`)
+* KString (`klib.text.KString`)
 ### Changed
+* Moved and Renamed a lot of packages (Major Breaking Change)
 ### Deprecated
+* kSock (`klib.net.socket.kSock`)
 ### Removed
 ### Fixed
 ### Security

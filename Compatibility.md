@@ -13,6 +13,7 @@ Breaking versions must be in a new row!
 | 8 - 15| 0.2.0 - 1.4.0 |
 |16 - 19| 2.0.0 - 2.1.1 |
 |20 - 22| 3.0.0 - 3.2.0 |
+|23     | 4.0.0 |
 
 This means: `0.1.2` **IS** compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
 
@@ -25,7 +26,7 @@ As long as you dont use features of new versions and then go to a older version,
 
 ## Breaking Changes
 
-Table created from APIs removed.
+Table created from APIs removed/changed.
 
 | Version | Change | Reason |
 |---------|--------|--------|
@@ -39,6 +40,7 @@ Table created from APIs removed.
 |  3.0.0  | Removal of `kLibInf.versionId` | Replaced with `kLibInf.semver` using `types.SemVer` |
 |  3.0.0  | Removal of `kLibRequire` | Replaced with `kLibRequire` using `types.SemVer` |
 |  3.0.0  | Removal of `kLibRequire` (min,max) | Replaced with `kLibRequire` (min,max) using `types.SemVer` |
+|  4.0.0  | Major renaming of packages | Following the suggestion from #1 |
 
 ## Upcoming Breaking Changes
 
