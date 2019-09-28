@@ -10,6 +10,7 @@ import klib.library.LClass
 import klib.library.LFunction
 import klib.library.Library
 import java.io.File
+import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.lang.reflect.Type
 import java.util.Base64
@@ -231,6 +232,18 @@ fun String.fromBase64(): String {
  * @author Thomas Obernosterer
  */
 fun String.asFile() = File(this)
+
+/**
+ * Opens the string as file and returns the input stream
+ *
+ * @return FileInputStream with string as file
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.asFileInputStream(): FileInputStream {
+    return asFile().inputStream()
+}
 
 /**
  * Make the string a file and load it as library and load a class from it
