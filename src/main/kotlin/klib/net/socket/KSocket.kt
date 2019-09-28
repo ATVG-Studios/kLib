@@ -38,8 +38,8 @@ class KSocket {
 
     fun readTimed(block: (size: Int, data: CharBuffer) -> Unit) {
         var lastTime = 0L
-        var size = 0
-        var lastMod = 0L
+        var size: Int
+        var lastMod: Long
         val timer = Timer()
         timer.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
