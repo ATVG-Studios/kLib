@@ -1,6 +1,6 @@
 package klib.functions
 
-import klib.KString
+import klib.text.KString
 
 fun kstring(builder: KString.() -> Unit): String {
     return KString().apply(builder).toString()

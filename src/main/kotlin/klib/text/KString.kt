@@ -1,4 +1,4 @@
-package klib
+package klib.text
 
 class KString {
     private val stringBuilder = StringBuilder()
