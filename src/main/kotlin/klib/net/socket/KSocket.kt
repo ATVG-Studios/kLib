@@ -1,6 +1,5 @@
 package klib.net.socket
 
-import klib.extensions.reset
 import java.io.File
 import java.nio.CharBuffer
 import java.util.Timer
@@ -29,7 +28,7 @@ class KSocket {
     }
 
     fun read(): Int {
-        if(!isReadable()) {
+        if (!isReadable()) {
             data.clear()
             return -1
         }
