@@ -1,9 +1,6 @@
 package devtests
 
 import klib.functions.loadClass
-import klib.library.LClass
-import klib.library.Library
-import java.io.File
 
 /**
  * Source of hello.kt
