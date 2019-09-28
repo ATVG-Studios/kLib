@@ -32,9 +32,11 @@ fun main() {
 
     val users = klib.kLibInf.jsonHandler.toObject(jsonData, Array<User>::class.java)
     if (users is Array<*>) {
-        (users as Array<User>).forEach {
-            it.id *= 5
-            println(it)
+        users.forEach {
+            if(it is User) {
+                it.id *= 5
+                println(it)
+            }
         }
     }
 }
