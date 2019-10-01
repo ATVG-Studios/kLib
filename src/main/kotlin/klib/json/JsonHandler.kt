@@ -1,7 +1,8 @@
 package klib.json
 
-import com.google.gson.Gson
-import java.lang.reflect.Type
+import net.jemzart.jsonkraken.parsers.Deserializer
+import net.jemzart.jsonkraken.parsers.Serializer
+import net.jemzart.jsonkraken.values.JsonArray
 
 /**
  * JsonHandler
@@ -20,20 +21,30 @@ class JsonHandler : Json {
      * @author Thomas Obernosterer
      */
     override fun fromObject(data: Any): String {
-        return Gson().toJson(data)
+        val ser = Serializer(data, false)
+        return ser.create()
     }
 
     /**
      * Convert a JSON String to a Object
      *
      * @param data The JSON String
-     * @param type The target Type
      * @return Any The Object
      *
-     * @since 3.2.0
+     * @since 4.0.0
      * @author Thomas Obernosterer
      */
-    override fun toObject(data: String, type: Type): Any? {
-        return Gson().fromJson(data, type)
+    override fun toObject(data: String): Any? {
+        val des = Deserializer(data)
+        return des.create()
+    }
+
+    override fun toArray(data: String): JsonArray? {
+        val obj = toObject(data)
+
+        if (obj is JsonArray)
+            return obj
+
+        return null
     }
 }

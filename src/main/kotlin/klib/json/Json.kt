@@ -1,6 +1,6 @@
 package klib.json
 
-import java.lang.reflect.Type
+import net.jemzart.jsonkraken.values.JsonArray
 
 /**
  * Common JSON Parser Interface
@@ -18,14 +18,24 @@ interface Json {
     fun fromObject(data: Any): String
 
     /**
-     * Convert Json to Type
+     * Convert Json to Any
      *
      * @param data The Json String
-     * @param type The target Type
      * @return Type as Any if data is parsable; Otherwise null
      *
-     * @since 0.1.5
-     * @author Nils Rider
+     * @since 4.0.0
+     * @author Thomas Obernosterer
      */
-    fun toObject(data: String, type: Type): Any?
+    fun toObject(data: String): Any?
+
+    /**
+     * Convert Json to JsonArray
+     *
+     * @param data The Json String
+     * @return Type as Any if data is parsable; Otherwise null
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    fun toArray(data: String): JsonArray?
 }

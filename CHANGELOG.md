@@ -11,12 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * KString (`klib.text.KString`)
 * `asFileInputStream` extension for String
 * `asFileOutputStream` extension for String
+* Light weight JSON Parser (`net.jemzart.jsonkraken`)
+* `toListOfType` extension for JsonArray
+* `toObjectOfType` extension for JsonObject
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
 ### Deprecated
 * kSock (`klib.net.socket.kSock`)
 ### Removed
 * SimpleJSON was removed again (`org.json.*`)
+* GSON was removed again (`com.google.gson`)
+* `toObject(json, type)` function from Json interface
 ### Fixed
 ### Security
 

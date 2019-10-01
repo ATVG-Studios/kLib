@@ -1,5 +1,9 @@
 package devtests
 
+import klib.extensions.toListOfType
+import klib.kLibInf
+import net.jemzart.jsonkraken.values.JsonArray
+
 data class User(var id: Int, val first_name: String, val last_name: String, val email: String)
 
 fun main() {
@@ -30,13 +34,13 @@ fun main() {
         "  \"email\": \"mseear4@state.tx.us\"\n" +
         "}]"
 
-    val users = klib.kLibInf.jsonHandler.toObject(jsonData, Array<User>::class.java)
-    if (users is Array<*>) {
-        users.forEach {
-            if(it is User) {
-                it.id *= 5
-                println(it)
-            }
-        }
+    val jsonHandler = kLibInf.jsonHandler
+
+    val usersJson: JsonArray = jsonHandler.toObject(jsonData) as JsonArray
+    val users = usersJson.toListOfType<User>()
+
+    users.forEach {
+        it.id *= 5
+        println(it)
     }
 }
