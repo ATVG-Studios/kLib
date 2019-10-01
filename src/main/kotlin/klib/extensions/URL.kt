@@ -2,7 +2,6 @@ package klib.extensions
 
 import klib.kLibInf
 import java.io.File
-import java.lang.reflect.Type
 import java.net.URL
 
 /**
@@ -18,15 +17,19 @@ fun URL.toFile(file: File) {
 }
 
 /**
- * Download json and parse to Type
+ * Download json and parse to Type T
  *
- * @param type The type to parse to
  * @see kLibInf.jsonHandler
- * @see klib.interfaces.Json
+ * @see klib.json.Json
  *
  * @since 3.1.0
+ * @since 4.0.0 (Generic)
  * @author Thomas Obernosterer
  */
-fun URL.toObjectOfType(type: Type): Any? {
-    return kLibInf.jsonHandler.toObject(this.readText(), type)
+inline fun <reified T> URL.toObjectOfType(): T? {
+    val obj = kLibInf.jsonHandler.toObject(this.readText())
+    if (obj is T)
+        return obj
+
+    return null
 }

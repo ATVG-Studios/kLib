@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `toObjectOfType` extension for JsonObject
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
+* `toObjectFromType` extension on String uses Generics
+* `toObjectFromType` extension on String uses Generics
 ### Deprecated
 * kSock (`klib.net.socket.kSock`)
 ### Removed

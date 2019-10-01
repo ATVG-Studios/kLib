@@ -13,7 +13,6 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
-import java.lang.reflect.Type
 import java.util.Base64
 
 /**
@@ -299,16 +298,21 @@ fun String.loadAsLibraryWithFunction(className: String, functionName: String): L
 }
 
 /**
- * Parse to Type
+ * Parse to Type T
  *
- * @param type The type to parse
- * @see klib.interfaces.Json
+ * @see klib.json.Json
  *
  * @since 3.1.0
+ * @since 4.0.0 (Generic)
  * @author Thomas Obernosterer
  */
-fun String.toObjectOfType(type: Type): Any? {
-    return kLibInf.jsonHandler.toObject(this, type)
+inline fun <reified T> String.toObjectOfType(): T? {
+    val obj = kLibInf.jsonHandler.toObject(this)
+
+    if (obj is T)
+        return obj
+
+    return null
 }
 
 /**
