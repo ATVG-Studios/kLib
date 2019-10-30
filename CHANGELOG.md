@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Light weight JSON Parser (`net.jemzart.jsonkraken`)
 * `toListOfType` extension for JsonArray
 * `toObjectOfType` extension for JsonObject
+* Directory (`klib.files.Directory`)
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
 * `toObjectFromType` extension on String uses Generics
