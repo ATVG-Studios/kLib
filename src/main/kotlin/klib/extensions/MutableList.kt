@@ -1,5 +1,8 @@
 package klib.extensions
 
+import klib.files.Directory
+import java.io.File
+
 /**
  * Swap two indexes in a MutableList
  *
@@ -129,4 +132,26 @@ fun <T, E> MutableList<T>.toListWithConvert(convert: (T) -> E): List<E> {
     }
 
     return list
+}
+
+/**
+ * Replace all in all file contents
+ *
+ * @param search The string to replace
+ * @param replace The string to replace with
+ * @param ignoreCase Ignore case on search
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun MutableList<File>.replaceAllOf(search: String, replace: String, ignoreCase: Boolean = false) {
+    val content = this.readAll().toMutableMap()
+
+    content.forEach {
+        while(it.value.contains(search, ignoreCase)) {
+            content[it.key] = it.value.replace(search, replace, ignoreCase)
+        }
+    }
+
+    this.writeAll(content)
 }

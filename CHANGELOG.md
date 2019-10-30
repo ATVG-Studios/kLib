@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Directory (`klib.files.Directory`)
 * `readAll` extension for FileList
 * `writeAll` extensions for FileList
+* `replaceAllOf` extension for MutableFileList
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
 * `toObjectFromType` extension on String uses Generics
