@@ -1,6 +1,5 @@
 package klib.extensions
 
-import klib.files.Directory
 import java.io.File
 
 /**
@@ -148,7 +147,7 @@ fun MutableList<File>.replaceAllOf(search: String, replace: String, ignoreCase: 
     val content = this.readAll().toMutableMap()
 
     content.forEach {
-        while(it.value.contains(search, ignoreCase)) {
+        while (it.value.contains(search, ignoreCase)) {
             content[it.key] = it.value.replace(search, replace, ignoreCase)
         }
     }

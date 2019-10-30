@@ -109,7 +109,7 @@ fun List<File>.writeAll(content: HashMap<String, String>) {
  */
 fun List<File>.writeAll(content: MutableMap<String, String>) {
     this.forEach {
-        if(it.name in content) {
+        if (it.name in content) {
             it.writeText(content[it.name] ?: "")
         }
     }
