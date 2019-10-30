@@ -86,7 +86,7 @@ class Directory(val directoryPath: String) {
      * @author Thomas Obernosterer
      */
     fun addFiles(vararg fileList: File) {
-        files.forEach { addFile(it) }
+        fileList.forEach { addFile(it) }
     }
 
     /**
@@ -98,7 +98,7 @@ class Directory(val directoryPath: String) {
      * @author Thomas Obernosterer
      */
     fun addFiles(filesList: List<File>) {
-        files.forEach { addFile(it) }
+        filesList.forEach { addFile(it) }
     }
 
     /**
