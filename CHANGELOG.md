@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `toListOfType` extension for JsonArray
 * `toObjectOfType` extension for JsonObject
 * Directory (`klib.files.Directory`)
+* `asDirectory` extension for File
 * `readAll` extension for FileList
 * `writeAll` extensions for FileList
 * `replaceAllOf` extension for MutableFileList

@@ -3,6 +3,7 @@ package klib.extensions
 import klib.encoding.base.Base58e
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
+import klib.files.Directory
 import klib.hash.Sha1
 import klib.hash.Sha256
 import klib.kLibInf
@@ -232,6 +233,16 @@ fun String.fromBase64(): String {
  * @author Thomas Obernosterer
  */
 fun String.asFile() = File(this)
+
+/**
+ * Uses the string as path for a new Directory object
+ *
+ * @return Directory object with string as path
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.asDirectory() = Directory(this)
 
 /**
  * Opens the string as file and returns the input stream
