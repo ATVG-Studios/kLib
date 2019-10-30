@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * SimpleJSON was removed again (`org.json.*`)
 * GSON was removed again (`com.google.gson`)
 * `toObject(json, type)` function from Json interface
+* `binSearch` extension from MutableList
 ### Fixed
 ### Security
 
