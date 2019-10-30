@@ -22,15 +22,14 @@ class Directory(val directoryPath: String) {
 
         fun addDirectory(direct: File) {
             // If given path exists and is directory
-            if(direct.exists()) {
-                if(direct.isDirectory)
-                {
+            if (direct.exists()) {
+                if (direct.isDirectory) {
                     direct.listFiles()?.forEach {
                         // Recursively call add
                         addDirectory(it)
                     }
                 }
-                if(direct.isFile) {
+                if (direct.isFile) {
                     // Add as file
                     addFile(direct)
                 }
@@ -55,10 +54,10 @@ class Directory(val directoryPath: String) {
     fun addFile(newFile: File) {
         var found = false
 
-        for(i in 0 until files.size) {
+        for (i in 0 until files.size) {
             val file = files[i]
             // File in cache
-            if(file.name == newFile.name) {
+            if (file.name == newFile.name) {
                 // override file
                 files[i] = file
 
@@ -68,7 +67,7 @@ class Directory(val directoryPath: String) {
         }
 
         // File not found in cache
-        if(!found) {
+        if (!found) {
             // add to cache
             files.add(newFile)
         }
@@ -173,9 +172,9 @@ class Directory(val directoryPath: String) {
         val file = files.find { it.name == fileName }
 
         // If read is forced
-        if(forceNewRead) {
+        if (forceNewRead) {
             // and file exists in the directory
-            return if(file != null) {
+            return if (file != null) {
                 // Read the file
                 readFile(file)
             } else {
@@ -235,21 +234,21 @@ class Directory(val directoryPath: String) {
      * @author Thomas Obernosterer
      */
     fun writeAll(enableGitShield: Boolean = true) {
-        for(file in files) {
-            if(!file.exists()) {
+        for (file in files) {
+            if (!file.exists()) {
                 throw FileNotFoundException(file.name)
             }
 
-            if(!file.isFile) {
+            if (!file.isFile) {
                 continue
             }
 
-            if(!file.canWrite()) {
+            if (!file.canWrite()) {
                 continue
             }
 
             // Ignore .git folder to prevent repository corruption
-            if(file.path.contains(".git") && enableGitShield) {
+            if (file.path.contains(".git") && enableGitShield) {
                 continue
             }
 
@@ -274,7 +273,7 @@ class Directory(val directoryPath: String) {
         val filesWithExt: MutableList<File> = ArrayList()
 
         files.forEach {
-            if(it.extension == extension) {
+            if (it.extension == extension) {
                 filesWithExt.add(it)
             }
         }
