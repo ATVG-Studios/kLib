@@ -1,5 +1,7 @@
 package klib.extensions
 
+import java.io.File
+
 /**
  * Sorting a list using quicksort by returning the sorted list
  *
@@ -65,4 +67,50 @@ fun <T : Comparable<T>> List<T>.binSearch(element: T, start: Int = 0, end: Int =
     }
 
     return binSearch(this, element, start, end)
+}
+
+/**
+ * Read all files contents
+ *
+ * @return HashMap with file name and content
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun List<File>.readAll(): HashMap<String, String> {
+    val content = HashMap<String, String>()
+
+    this.forEach {
+        content[it.name] = it.readText()
+    }
+
+    return content
+}
+
+/**
+ * Write all files contents
+ *
+ * @param content HashMap with file name and content
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun List<File>.writeAll(content: HashMap<String, String>) {
+    writeAll(content.toMutableMap())
+}
+
+/**
+ * Write all files contents
+ *
+ * @param content MutableMap with file name and content
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun List<File>.writeAll(content: MutableMap<String, String>) {
+    this.forEach {
+        if(it.name in content) {
+            it.writeText(content[it.name] ?: "")
+        }
+    }
 }
