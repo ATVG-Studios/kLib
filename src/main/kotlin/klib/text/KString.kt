@@ -62,6 +62,36 @@ class KString {
     }
 
     /**
+     * Append Text to Builder
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    operator fun plus(value: Char) {
+        stringBuilder.append(value)
+    }
+
+    /**
+     * Append Text to Builder
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    operator fun Char.unaryPlus() {
+        stringBuilder.append(this)
+    }
+
+    /**
+     * Append Text to Builder
+     *
+     * @since 4.0.0
+     * @author Thomas Obernosterer
+     */
+    operator fun plusAssign(value: Char) {
+        stringBuilder.append(value)
+    }
+
+    /**
      * Get the Builder's Data
      *
      * @return Build string
