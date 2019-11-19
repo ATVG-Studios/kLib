@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `readLong` global function
 * `runRandom` global function
 * `orNullable` extension for Any
+* `toSnakeCase` extension for String
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
 * `toObjectFromType` extension on String uses Generics

@@ -10,6 +10,7 @@ import klib.kLibInf
 import klib.library.LClass
 import klib.library.LFunction
 import klib.library.Library
+import klib.text.KString
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
@@ -59,6 +60,36 @@ fun String.toUpperCaseOnUnderscore(replaceWith: String = " "): String {
     }
 
     return bigAfterUnderscore
+}
+
+/**
+ * Make a string to snake_case
+ *
+ * @return Snake cased String
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.toSnakeCase(): String {
+    val newString = KString()
+    var ignoreUpper = false
+
+    for (i in this.indices) {
+        when {
+            this[i].isUpperCase() && i != 0 && !ignoreUpper -> {
+                newString += "_${this[i].toLowerCase()}"
+            }
+            this[i] == ' ' -> {
+                newString += '_'
+                ignoreUpper = true
+            }
+            else -> {
+                newString += this[i].toLowerCase()
+                ignoreUpper = false
+            }
+        }
+    }
+    return newString.toString()
 }
 
 /**
