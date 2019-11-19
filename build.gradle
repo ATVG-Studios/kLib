@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    dokkaRuntime "org.jetbrains.dokka:dokka-fatjar:0.9.18"
+    dokkaRuntime "org.jetbrains.dokka:dokka-fatjar:$dokka_version"
 
     testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
