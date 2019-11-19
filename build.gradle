@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'klib'
-version '4.0.0-dev'
+version "$klib_version"
 
 repositories {
     mavenCentral()
@@ -41,7 +41,7 @@ jar {
         attributes 'Specification-Version': "alpha"
         attributes 'Specification-Vendor': "ATVG-Studios"
         attributes 'Implementation-Title': "kLib"
-        attributes 'Implementation-Version': "$version"
+        attributes 'Implementation-Version': "$klib_version"
         attributes 'Implementation-Vendor': "ATVG-Studios"
     }
 }
