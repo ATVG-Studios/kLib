@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `orNullable` extension for Any
 * `toSnakeCase` extension for String
 ### Changed
+- Upgraded Kotlin from 1.3.31 to 1.3.60
 * Moved and Renamed a lot of packages (Major Breaking Change)
 * `toObjectFromType` extension on String uses Generics
 * `toObjectFromType` extension on String uses Generics
