@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `readAll` extension for FileList
 * `writeAll` extensions for FileList
 * `replaceAllOf` extension for MutableFileList
+* `readInt` global function
+* `readLong` global function
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
 * `toObjectFromType` extension on String uses Generics
