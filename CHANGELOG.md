@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `readInt` global function
 * `readLong` global function
 * `runRandom` global function
+* `orNullable` extension for Any
 ### Changed
 * Moved and Renamed a lot of packages (Major Breaking Change)
 * `toObjectFromType` extension on String uses Generics

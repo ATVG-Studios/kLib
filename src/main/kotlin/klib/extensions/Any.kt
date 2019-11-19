@@ -36,15 +36,13 @@ infix fun Any?.orFun(block: Function_Any): Any? {
  * Any? or Any
  *
  * @param something Return Something is Any is null
+ * @see orNullable for nullable
  *
  * @since 0.1.6
  * @author Thomas Obernosterer
  */
 infix fun Any?.or(something: Any): Any {
-    if (this == null) {
-        return something
-    }
-    return this
+    return this ?: something
 }
 
 /**
@@ -59,4 +57,17 @@ infix fun Any?.or(something: Any): Any {
  */
 fun Any.toJson(): String {
     return kLibInf.jsonHandler.fromObject(this)
+}
+
+/**
+ * Any? or Any?
+ *
+ * @param something Return Something is Any is null
+ * @see or for non-nullable
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+infix fun Any?.orNullable(something: Any?): Any? {
+    return this ?: something
 }
