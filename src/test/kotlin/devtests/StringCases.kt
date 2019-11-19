@@ -7,6 +7,6 @@ fun main() {
 
     val snakeCased = normal.toSnakeCase()
 
-    println(normal)
-    println(snakeCased)
+    println("Normal: $normal")
+    println("Snake: $snakeCased")
 }
