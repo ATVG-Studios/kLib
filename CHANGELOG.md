@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `runRandom` global function
 * `orNullable` extension for Any
 * `toSnakeCase` extension for String
+* `asIntOr` extension for String
+* `asLongOr` extensions for String
 ### Changed
 - Upgraded Kotlin from 1.3.31 to 1.3.60
 * Moved and Renamed a lot of packages (Major Breaking Change)

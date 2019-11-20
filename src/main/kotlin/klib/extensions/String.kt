@@ -376,3 +376,39 @@ fun String.fromHex(): Int {
 fun String.fromHextoLong(): Long {
     return this.toLongOrNull(16) ?: 0L
 }
+
+/**
+ * Infix wrapper for toIntOrNull
+ *
+ * @param or Fault Case
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+infix fun String?.asIntOr(or: Int): Int {
+    return this.orEmpty().toIntOrNull() ?: or
+}
+
+/**
+ * Infix wrapper for asLongOr
+ *
+ * @param or Fault Case
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+infix fun String?.asLongOr(or: Long): Long {
+    return this.orEmpty().toLongOrNull() ?: or
+}
+
+/**
+ * Infix wrapper for asLongOr with Int replacement
+ *
+ * @param or Fault Case
+ *
+ * @since 4.0.0
+ * @author Thomas Obernosterer
+ */
+infix fun String?.asLongOr(or: Int): Long {
+    return this.orEmpty().toLongOrNull() ?: or.toLong()
+}
