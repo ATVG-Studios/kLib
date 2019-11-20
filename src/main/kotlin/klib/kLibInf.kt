@@ -24,7 +24,7 @@ object kLibInf {
      * @since 2.0.0
      * @author Thomas Obernosterer
      */
-    val semver = SemVer(4, 0, 0, "dev")
+    val semver = SemVer(4, 0, 0, "rc.1")
 
     /**
      * Company creating kLib
