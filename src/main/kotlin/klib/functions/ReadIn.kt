@@ -1,5 +1,8 @@
 package klib.functions
 
+import klib.extensions.asIntOr
+import klib.extensions.asLongOr
+
 /**
  * Read Int from STDIN
  *
@@ -9,9 +12,8 @@ package klib.functions
  * @since 4.0.0
  * @author Thomas Obernosterer
  */
-fun readInt(default: String = "-1"): Int {
-    val input = readLine() ?: default
-    return Integer.parseInt(input)
+fun readInt(default: Int = -1): Int {
+    return readLine() asIntOr default
 }
 
 /**
@@ -23,7 +25,6 @@ fun readInt(default: String = "-1"): Int {
  * @since 4.0.0
  * @author Thomas Obernosterer
  */
-fun readLong(default: String = "-1"): Long {
-    val input = readLine() ?: default
-    return Integer.parseUnsignedInt(input).toLong()
+fun readLong(default: Long = -1L): Long {
+    return readLine() asLongOr default
 }
