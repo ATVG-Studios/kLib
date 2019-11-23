@@ -7,39 +7,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
-* KSocket (`klib.net.socket.KSocket`)
-* KString (`klib.text.KString`)
-* `asFileInputStream` extension for String
-* `asFileOutputStream` extension for String
-* Light weight JSON Parser (`net.jemzart.jsonkraken`)
-* `toListOfType` extension for JsonArray
-* `toObjectOfType` extension for JsonObject
-* Directory (`klib.files.Directory`)
-* `asDirectory` extension for File
-* `readAll` extension for FileList
-* `writeAll` extensions for FileList
-* `replaceAllOf` extension for MutableFileList
-* `readInt` global function
-* `readLong` global function
-* `runRandom` global function
-* `orNullable` extension for Any
-* `toSnakeCase` extension for String
-* `asIntOr` extension for String
-* `asLongOr` extensions for String
 ### Changed
-- Upgraded Kotlin from 1.3.31 to 1.3.60
-* Moved and Renamed a lot of packages (Major Breaking Change)
-* `toObjectFromType` extension on String uses Generics
-* `toObjectFromType` extension on String uses Generics
 ### Deprecated
-* kSock (`klib.net.socket.kSock`)
 ### Removed
-* SimpleJSON was removed again (`org.json.*`)
-* GSON was removed again (`com.google.gson`)
-* `toObject(json, type)` function from Json interface
-* `binSearch` extension from MutableList
 ### Fixed
 ### Security
+
+## 4.0.0 - 23.11.2019
+
+### Added
+- KSocket (`klib.net.socket.KSocket`)
+- KString (`klib.text.KString`)
+- `asFileInputStream` extension for String
+- `asFileOutputStream` extension for String
+- Light weight JSON Parser (`net.jemzart.jsonkraken`)
+- `toListOfType` extension for JsonArray
+- `toObjectOfType` extension for JsonObject
+- Directory (`klib.files.Directory`)
+- `asDirectory` extension for File
+- `readAll` extension for FileList
+- `writeAll` extensions for FileList
+- `replaceAllOf` extension for MutableFileList
+- `readInt` global function
+- `readLong` global function
+- `runRandom` global function
+- `orNullable` extension for Any
+- `toSnakeCase` extension for String
+- `asIntOr` extension for String
+- `asLongOr` extensions for String
+
+### Changed
+- Upgraded Kotlin from 1.3.31 to 1.3.60
+- Moved and Renamed a lot of packages (Major Breaking Change)
+- `toObjectFromType` extension on String uses Generics
+- `toObjectFromType` extension on String uses Generics
+
+### Deprecated
+- kSock (`klib.net.socket.kSock`)
+
+### Removed
+- SimpleJSON was removed again (`org.json.*`)
+- GSON was removed again (`com.google.gson`)
+- `toObject(json, type)` function from Json interface
+- `binSearch` extension from MutableList
 
 ## 3.2.0 - 12.09.2019
 
@@ -330,7 +340,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Overview
 
-* Unreleased - [Diff 3.2.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.2.0...master)
+* Unreleased - [Diff 4.0.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/4.0.0...master)
+* 4.0.0 - [Diff 3.2.0 to 4.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.2.0...4.0.0)
 * 3.2.0 - [Diff 3.1.0 to 3.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.1.0...3.2.0)
 * 3.1.0 - [Diff 3.0.0 to 3.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.0.0...3.1.0)
 * 3.0.0 - [Diff 2.1.1 to 3.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/2.1.1...3.0.0)

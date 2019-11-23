@@ -3,9 +3,8 @@
 | Branch | Status |
 |--------|--------|
 | master | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
-| release/3.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.0.x) |
-| release/3.1.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.1.x) |
-| release/3.2.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/3.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.2.x) |
+| release/3.2.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/3.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/3.2.x) |
+| release/4.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/4.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/4.0.x) |
 
 kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
 Extensions and Types.
@@ -78,6 +77,8 @@ All listed versions are considered Legacy and are no longer developed or support
 |    0.2.x     |    0.2.2     |
 |    1.x.x     |    1.4.0     |
 |    2.x.x     |    2.1.1     |
+|    3.0.x     |    3.0.0     |
+|    3.1.x     |    3.1.0     |
 
 # License
 
