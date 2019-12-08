@@ -26,3 +26,34 @@ fun IntArray.binSearch(element: Int, start: Int = 0, end: Int = size): Int {
 
     return binSearch(this, element, start, end)
 }
+
+/**
+ * Partition an Array
+ *
+ * @param begin Begin on where to start
+ * @param end End on where to stop
+ * @param pivotIndex Custom pivot index
+ * @return The Partition Index
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+fun IntArray.partition(begin: Int = 0, end: Int = size, pivotIndex: Int = end-1): Int {
+    require(pivotIndex lessThen end)
+
+    val pivot = this[pivotIndex]
+    var i = (begin-1)
+
+    for(j in begin until end) {
+        if(this[j] lessThenOrEqualTo pivot) {
+            i++
+            swap(i, j)
+        }
+    }
+
+    i++
+    swap(i, pivotIndex)
+    return i
+}
+
+}

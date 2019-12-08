@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `Sha512` Object
 - `asSha512` extension for ByteArray
+- `partition` extension for IntArray
 ### Changed
 ### Deprecated
 ### Removed
