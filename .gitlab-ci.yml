@@ -1,4 +1,4 @@
-image: gradle:5.2.1-jdk8
+image: gradle:6.0.1-jdk8
 
 stages:
   - build
@@ -7,7 +7,7 @@ stages:
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
-  - if [ ! -e ktlint ]; then curl -sSLO https://github.com/shyiko/ktlint/releases/download/0.31.0/ktlint && chmod a+x ktlint; fi
+  - scripts/klint.sh
 
 cache:
   paths:
@@ -34,7 +34,7 @@ docs:
     - gradle dokka
   artifacts:
     paths:
-      - build/javadoc
+      - build/dokka
     expire_in: 1 week
   only:
     refs:
