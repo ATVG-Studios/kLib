@@ -175,7 +175,6 @@ infix fun Int.lessThen(other: Int) = this < other
  */
 infix fun Int.lessThenOrEqualTo(other: Int) = this <= other
 
-
 /**
  * Compares the Integer with Other
  *

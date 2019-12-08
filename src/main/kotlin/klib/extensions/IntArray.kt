@@ -38,14 +38,14 @@ fun IntArray.binSearch(element: Int, start: Int = 0, end: Int = size): Int {
  * @since 4.1.0
  * @author Thomas Obernosterer
  */
-fun IntArray.partition(begin: Int = 0, end: Int = size, pivotIndex: Int = end-1): Int {
+fun IntArray.partition(begin: Int = 0, end: Int = size, pivotIndex: Int = end - 1): Int {
     require(pivotIndex lessThen end)
 
     val pivot = this[pivotIndex]
-    var i = (begin-1)
+    var i = (begin - 1)
 
-    for(j in begin until end) {
-        if(this[j] lessThenOrEqualTo pivot) {
+    for (j in begin until end) {
+        if (this[j] lessThenOrEqualTo pivot) {
             i++
             swap(i, j)
         }

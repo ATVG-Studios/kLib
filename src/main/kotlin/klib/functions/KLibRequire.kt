@@ -20,7 +20,6 @@ fun kLibRequire(version: SemVer) {
     }
 }
 
-
 /**
  * Check if the used kLib is at least the required version (Dependency Check)
  * If not, kLibInf.exit() is called
