@@ -175,3 +175,25 @@ infix fun Int.lessThen(other: Int) = this < other
  */
 infix fun Int.lessThenOrEqualTo(other: Int) = this <= other
 
+
+/**
+ * Compares the Integer with Other
+ *
+ * @param other The Integer to compare to
+ * @return This > Other
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+infix fun Int.greaterThen(other: Int) = this > other
+
+/**
+ * Compares the Integer with Other
+ *
+ * @param other The Integer to compare to
+ * @return This >= Other
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+infix fun Int.greaterThenOrEqualTo(other: Int) = this >= other

@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `swap` extension for IntArray
 - `lessThen` extension for Integer
 - `lessThenOrEqualTo` extension for Integer
+- `greaterThen` extension for Integer
+- `greaterThenOrEqualTo` extension for Integer
 ### Changed
 ### Deprecated
 ### Removed
