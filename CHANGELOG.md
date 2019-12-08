@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `asSha512` extension for ByteArray
 - `partition` extension for IntArray
 - `swap` extension for IntArray
+- `lessThen` extension for Integer
+- `lessThenOrEqualTo` extension for Integer
 ### Changed
 ### Deprecated
 ### Removed

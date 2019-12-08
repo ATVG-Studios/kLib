@@ -152,3 +152,26 @@ infix fun Int.inBoundsOf(str: String): Boolean {
 infix fun Int.inBoundsOf(iterable: Iterable<*>): Boolean {
     return this in 0 until iterable.count()
 }
+
+/**
+ * Compares the Integer with Other
+ *
+ * @param other The Integer to compare to
+ * @return This < Other
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+infix fun Int.lessThen(other: Int) = this < other
+
+/**
+ * Compares the Integer with Other
+ *
+ * @param other The Integer to compare to
+ * @return This <= Other
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+infix fun Int.lessThenOrEqualTo(other: Int) = this <= other
+
