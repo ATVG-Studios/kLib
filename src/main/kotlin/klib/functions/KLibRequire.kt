@@ -20,6 +20,24 @@ fun kLibRequire(version: SemVer) {
     }
 }
 
+
+/**
+ * Check if the used kLib is at least the required version (Dependency Check)
+ * If not, kLibInf.exit() is called
+ *
+ * @param min Minimum Version
+ * @see kLibInf.exit
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+fun kLibRequireMin(min: SemVer) {
+    if (kLibInf.semver < min) {
+        println("This application requires kLib $min! (Version ${kLibInf.semver} not Compatible)")
+        kLibInf.exit(1)
+    }
+}
+
 /**
  * Check if the used kLib is the required version (Dependency Check)
  * If not, kLibInf.exit() is called

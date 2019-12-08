@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `lessThenOrEqualTo` extension for Integer
 - `greaterThen` extension for Integer
 - `greaterThenOrEqualTo` extension for Integer
+- `kLibRequireMin` with a minimum only Version (Closes #6)
 ### Changed
 - Upgraded Kotlin from 1.3.60 to 1.3.61
 - `kLibRequire` falsely made a `lessThen` comparison
