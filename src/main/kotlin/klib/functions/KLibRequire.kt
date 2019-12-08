@@ -14,7 +14,7 @@ import klib.kLibInf
  * @author Thomas Obernosterer
  */
 fun kLibRequire(version: SemVer) {
-    if (kLibInf.semver < version) {
+    if (kLibInf.semver != version) {
         println("This application requires kLib $version! (Version ${kLibInf.semver} not Compatible)")
         kLibInf.exit(1)
     }
