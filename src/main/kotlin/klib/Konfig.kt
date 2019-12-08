@@ -1,7 +1,7 @@
 package klib
 
-import klib.exceptions.KonfigParseException
 import java.io.File
+import klib.exceptions.KonfigParseException
 
 /**
  * Custom Configuration reader and generator

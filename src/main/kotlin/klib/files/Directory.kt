@@ -1,9 +1,9 @@
 package klib.files
 
-import klib.extensions.readAll
-import klib.extensions.replaceAllOf
 import java.io.File
 import java.io.FileNotFoundException
+import klib.extensions.readAll
+import klib.extensions.replaceAllOf
 
 /**
  * Enhanced Directory API

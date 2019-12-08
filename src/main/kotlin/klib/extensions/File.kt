@@ -1,5 +1,8 @@
 package klib.extensions
 
+import java.io.File
+import java.io.FileNotFoundException
+import java.net.URL
 import klib.hash.HashResult
 import klib.hash.Sha1
 import klib.hash.Sha256
@@ -7,9 +10,6 @@ import klib.library.LClass
 import klib.library.LFunction
 import klib.library.Library
 import klib.zip.ZipFile
-import java.io.File
-import java.io.FileNotFoundException
-import java.net.URL
 
 /**
  * Add a file to a ZipFile

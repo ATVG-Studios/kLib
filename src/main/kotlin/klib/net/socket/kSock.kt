@@ -1,11 +1,11 @@
 package klib.net.socket
 
-import klib.extensions.reset
-import klib.functions.currentMillis
 import java.io.File
 import java.io.InputStreamReader
 import java.util.Timer
 import java.util.TimerTask
+import klib.extensions.reset
+import klib.functions.currentMillis
 
 /**
  * Simple but useful one-way IPC socket

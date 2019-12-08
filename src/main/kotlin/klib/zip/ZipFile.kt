@@ -1,6 +1,5 @@
 package klib.zip
 
-import klib.extensions.asFile
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileInputStream
@@ -9,6 +8,7 @@ import java.io.FileOutputStream
 import java.util.zip.ZipEntry
 import java.util.zip.ZipInputStream
 import java.util.zip.ZipOutputStream
+import klib.extensions.asFile
 
 /**
  * Custom ZipFile implementation

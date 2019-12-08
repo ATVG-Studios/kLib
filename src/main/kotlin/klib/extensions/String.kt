@@ -1,5 +1,10 @@
 package klib.extensions
 
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.util.Base64
 import klib.encoding.base.Base58e
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
@@ -11,11 +16,6 @@ import klib.library.LClass
 import klib.library.LFunction
 import klib.library.Library
 import klib.text.KString
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.util.Base64
 
 /**
  * Check string is valid email
