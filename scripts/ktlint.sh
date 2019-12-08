@@ -6,7 +6,7 @@ echo $(pwd)
 
 function get_ktlint()
 {
-  curl -SLO https://github.com/shyiko/ktlint/releases/download/$VERSION/ktlint
+  curl -SLO https://github.com/pinterest/ktlint/releases/download/$VERSION/ktlint
   chmod a+x ktlint
 }
 
