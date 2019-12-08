@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `greaterThen` extension for Integer
 - `greaterThenOrEqualTo` extension for Integer
 ### Changed
+- Upgraded Kotlin from 1.3.60 to 1.3.61
 ### Deprecated
 ### Removed
 ### Fixed
