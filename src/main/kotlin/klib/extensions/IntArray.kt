@@ -56,4 +56,17 @@ fun IntArray.partition(begin: Int = 0, end: Int = size, pivotIndex: Int = end-1)
     return i
 }
 
+/**
+ * Swap to Indices of the Array
+ *
+ * @param indexToSwap The index to be swapped
+ * @param indexToSwapWith The index to swap with
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+fun IntArray.swap(indexToSwap: Int, indexToSwapWith: Int) {
+    val original = this[indexToSwap]
+    this[indexToSwap] = this[indexToSwapWith]
+    this[indexToSwapWith] = original
 }
