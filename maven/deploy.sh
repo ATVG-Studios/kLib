@@ -1,9 +1,20 @@
 #!/bin/bash
-VERSION="4.0.0"
+
+VERSION="4.1.0-dev"
+
+ATVG_DIST="file:///data/atjontv/git/maven-repo"
+
+DIST="$ATVG_DIST"
+REPO="atvg-studios"
+
+if [ "$1" = "-dev" ]
+then
+  DIST="$ATVG_DIST/snapshots"
+fi
 
 mvn gpg:sign-and-deploy-file \
-	-DrepositoryId=atvg-studios \
-	-Durl=file:///data/atjontv/git/maven-repo \
+	-DrepositoryId=$REPO \
+	-Durl=$DIST \
 	-DgroupId=com.atvgstudios \
 	-DartifactId=klib \
 	-Dversion=$VERSION \
