@@ -8,6 +8,7 @@ compile:
 
 package:
 	$(GRADLE) shadowJar
+	$(GRADLE) jar
 	$(GRADLE) sourcesJar
 
 lint:
