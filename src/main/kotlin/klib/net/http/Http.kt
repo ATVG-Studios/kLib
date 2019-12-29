@@ -116,7 +116,7 @@ class Http(private val url: String) {
     }
 
     /**
-     * Supported Datatypes
+     * Supported Data Types
      */
     enum class DataTypes {
         /**
