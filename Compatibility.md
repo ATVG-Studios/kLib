@@ -21,8 +21,8 @@ To see why these versions are incompatible, checkout the **Breaking Changes** se
 
 ## What does Compatible mean?
 
-This means that you can switch versions without the need to make changes.  
-As long as you dont use features of new versions and then go to a older version, you will not need to make changes.
+This means that you can upgrade without the need to make changes.  
+As long as you **DONT** downgrade, you will not need to make changes.
 
 ## Breaking Changes
 
