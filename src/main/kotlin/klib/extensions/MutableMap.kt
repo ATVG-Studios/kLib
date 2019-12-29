@@ -44,7 +44,7 @@ fun <K, V> MutableMap<K, V>.smartMerge(other: Map<K, Any>, convertIt: (Any) -> V
  */
 fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<V>) {
     if (keys.size == values.size) {
-        for (i in 0 until keys.size) {
+        for (i in keys.indices) {
             if (keys[i] !in this) {
                 this[keys[i]] = values[i]
             }
@@ -64,7 +64,7 @@ fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<V>) {
  */
 fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<Any>, convertIt: (Any) -> V) {
     if (keys.size == values.size) {
-        for (i in 0 until keys.size) {
+        for (i in keys.indices) {
             if (keys[i] !in this) {
                 this[keys[i]] = convertIt(values[i])
             }

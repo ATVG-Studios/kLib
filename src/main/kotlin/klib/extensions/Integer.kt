@@ -139,7 +139,7 @@ val Int.isFalse get() = this == 0
  * @author Thomas Obernosterer
  */
 infix fun Int.inBoundsOf(str: String): Boolean {
-    return this in 0 until str.length
+    return this in str.indices
 }
 
 /**
