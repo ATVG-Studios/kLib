@@ -38,15 +38,15 @@ class Queue {
     /**
      * Add a function to the queue
      *
-     * @param x The Function to add
+     * @param func The Function to add
      *
      * @see Function
      *
      * @since 0.1.5
      * @author Nils Rider
      */
-    fun enqueue(x: Function) {
-        queueList.add(x)
+    fun enqueue(func: Function) {
+        queueList.add(func)
     }
 
     /**
