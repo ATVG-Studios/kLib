@@ -77,8 +77,7 @@ All listed versions are considered Legacy and are no longer developed or support
 |    0.2.x     |    0.2.2     |
 |    1.x.x     |    1.4.0     |
 |    2.x.x     |    2.1.1     |
-|    3.0.x     |    3.0.0     |
-|    3.1.x     |    3.1.0     |
+|    3.x.x     |    3.2.0     |
 
 # License
 
