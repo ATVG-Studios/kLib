@@ -1,5 +1,7 @@
 package klib.extensions
 
+import kotlin.math.abs
+
 /**
  * Create char n times where n is the integer
  *
@@ -105,7 +107,7 @@ val Int.half get() = this / 2
  * @since 1.1.0
  * @author Thomas Obernosterer
  */
-val Int.abs get() = Math.abs(this)
+val Int.abs get() = abs(this)
 
 /**
  * Check if the Int is 1
