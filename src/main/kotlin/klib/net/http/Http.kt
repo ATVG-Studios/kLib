@@ -14,7 +14,7 @@ import klib.kLibInf
  * @since 3.1.0
  * @author Thomas Obernosterer
  */
-class Http(val url: String) {
+class Http(private val url: String) {
 
     /**
      * Send get Request

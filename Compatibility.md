@@ -42,6 +42,7 @@ Table created from APIs removed/changed.
 |  3.0.0  | Removal of `kLibRequire` (min,max) | Replaced with `kLibRequire` (min,max) using `types.SemVer` |
 |  4.0.0  | Major renaming of packages | Following the suggestion from #1 |
 |  4.1.0  | Renamed Queue.enqueue parameter `x` to `func` | Parameter names that make sense |
+|  4.1.0  | Made Http.url private | No reason to keep the url public was found |
 
 ## Upcoming Breaking Changes
 
