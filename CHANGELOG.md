@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
-## 4.0.0 - 23.11.2019
+## 4.0.0 - 23.11.2019 - Release 23
 
 ### Added
 - KSocket (`klib.net.socket.KSocket`)
@@ -66,7 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `toObject(json, type)` function from Json interface
 - `binSearch` extension from MutableList
 
-## 3.2.0 - 12.09.2019
+## 3.2.0 - 12.09.2019 - Release 22
 
 ### Added
 - `print` Top-Level Function
@@ -81,7 +81,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Extended Http.post with headers parameter
 - Default JsonHandler now uses JSON Parser and actually works
 
-## 3.1.0 - 12.06.2019
+## 3.1.0 - 12.06.2019 - Release 21
 
 ### Added
 - `smartMerge` extension to MutableMap (With value type converter)
@@ -103,7 +103,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Moved Library API from Experimental to Stable
 
-## 3.0.0 - 08.06.2019
+## 3.0.0 - 08.06.2019 - Release 20
 
 ### IMPORTANT NOTICE
 - kLib is now licensed under the OSPL20 (a MPL 2.0 Fork), kLib prior to 3.0 will stay MIT!
@@ -126,12 +126,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed bug in SemVer parsing crashing when preRelease and buildMetadata was not given
 
-## 2.1.1 - 01.06.2019
+## 2.1.1 - 01.06.2019 - Release 19
 
 ### Fixed
 - Removed Experimental Annotations from ZipFile functions/classes
 
-## 2.1.0 - 28.05.2019
+## 2.1.0 - 28.05.2019 - Release 18
 
 ### Added
 - `new` function to LClass (To be used with `is` and `as` and Interfaces)
@@ -149,14 +149,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - `println` ran in infinite loop
 
-## 2.0.1 - 27.05.2019
+## 2.0.1 - 27.05.2019 - Release 17
 
 ### Fixed
 - `String.deny` failing on empty strings
 - `String.require` not considering empty strings
 - `kLibInf.version` having the wrong version number
 
-## 2.0.0 - 27.05.2019
+## 2.0.0 - 27.05.2019 - Release 16
 
 ### Added
 - `checksum` property for HashResult
@@ -181,7 +181,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `String.deny` failed on empty string or param; Now only fails on empty param
 - `Konfig.parse` crashing on empty lines
 
-## 1.4.0 - 22.05.2019
+## 1.4.0 - 22.05.2019 - Release 15
 
 ### Changed
 - Extended Experimental Library implementation
@@ -193,7 +193,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - `zipPath` not being used when using `addFiles` on ZipFile
 
-## 1.3.0 - 21.05.2019
+## 1.3.0 - 21.05.2019 - Release 14
 
 ### Added
 - `Library` Object Class
@@ -204,7 +204,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `loadAsLibraryWithFunction` extension for File
 - `loadAsLibraryWithFunction` extension for String
 
-## 1.2.0 - 17.05.2019
+## 1.2.0 - 17.05.2019 - Release 13
 
 ### Added
 - `toJson` extension for Any
@@ -215,7 +215,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `toFileInZipFile` extension for InputStream
 - `addToZipFile` extension for File
 
-## 1.1.0 - 16.05.2019
+## 1.1.0 - 16.05.2019 - Release 12
 
 ### Added
 - `abs` property for Int
@@ -229,7 +229,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 - `KonfParseException` Exception
 
-## 1.0.0 - 13.05.2019
+## 1.0.0 - 13.05.2019 - Release 11
 
 ### Added
 - `asInt` extension for Boolean
@@ -240,7 +240,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `fourth` property for Int
 - `tenth` property for Int
 
-## 0.2.2 - 11.05.2019
+## 0.2.2 - 11.05.2019 - Release 10
 
 ### Added
 - `quicksort` extension for MutableList
@@ -250,17 +250,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `startTimedExecution` Function to Queue
 - `Konfig` Object Class (Experimental API)
 
-## 0.2.1 - 05.05.2019
+## 0.2.1 - 05.05.2019 - Release 9
 
 ### Changed
 - Make `Queue` non-experimental
 
-## 0.2.0 - 03.05.2019
+## 0.2.0 - 03.05.2019 - Release 8
 
 ## Changed
 - Renamed Package `com.atvgstudios.klib` to `klib`
 
-## 0.1.6 - 03.05.2019
+## 0.1.6 - 03.05.2019 - Release 7
 
 ### Added
 - `requireOrFail` Top-Level Function
@@ -275,7 +275,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Removed Implementation of removed `toObject` in dummy.JsonHandler
 
-## 0.1.5 - 29.04.2019
+## 0.1.5 - 29.04.2019 - Release 6
 
 ### Added
 - `Experimental` Annotation Class
@@ -296,7 +296,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - `Json` Object (com.atvgstudios.klib.objects.json.Json)
 
-## 0.1.4 - 27.04.2019
+## 0.1.4 - 27.04.2019 - Release 5
 
 ### Added
 - `ofType` extension for Any
@@ -309,7 +309,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `popEnd` extension for MutableList
 - `prepend` extension for MutableList
 
-## 0.1.3 - 27.04.2019
+## 0.1.3 - 27.04.2019 - Release 4
 
 ### Added
 - `kLibRequire` a function that allows you to only make the application run on a supported kLib version
@@ -332,7 +332,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 - `Json` Object (com.atvgstudios.klib.objects.json.Json)
 
-## 0.1.2 - 23.04.2019
+## 0.1.2 - 23.04.2019 - Release 3
+
 ### Added
 - Integer `timesAs` Extension
 - Top-Level `currentMillis` Function
@@ -345,11 +346,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Moved `UniqueID` Object from Types to Objects package
 
-## 0.1.1 - 21.04.2019
+## 0.1.1 - 21.04.2019 - Release 2
+
 ### Fixed
 - Sematic issues shown by lint
 
-## 0.1.0 - 21.04.2019
+## 0.1.0 - 21.04.2019 - Release 1
+
 ### Added
 - First implementation
 

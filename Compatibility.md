@@ -1,19 +1,19 @@
 # Compatibility
 This file contains a list of kLib versions that are compatible with each other.
 
-Versions in between the `ID` or `Version` range (`-` is a range symbol) are compatible.  
+Versions in between the `Version` range (`-` is a range symbol) are compatible.  
 Breaking versions must be in a new row!
 
-| ID | Version |
-|----|---------|
-| 1 - 2 | 0.1.0 - 0.1.1 |
-| 3 - 5 | 0.1.2 - 0.1.4 |
-| 6     | 0.1.5 |
-| 7     | 0.1.6 |
-| 8 - 15| 0.2.0 - 1.4.0 |
-|16 - 19| 2.0.0 - 2.1.1 |
-|20 - 22| 3.0.0 - 3.2.0 |
-|23     | 4.0.0 |
+|  1st  |  lst  |
+|-------|-------|
+| 0.1.0 | 0.1.1 |
+| 0.1.2 | 0.1.4 |
+| 0.1.5 ||
+| 0.1.6 ||
+| 0.2.0 | 1.4.0 |
+| 2.0.0 | 2.1.1 |
+| 3.0.0 | 3.2.0 |
+| 4.0.0 | 4.1.0 |
 
 This means: `0.1.2` **IS** compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
 
