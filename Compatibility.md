@@ -15,7 +15,7 @@ Breaking versions must be in a new row!
 | 3.0.0 | 3.2.0 |
 | 4.0.0 | 4.1.0 |
 
-This means: `0.1.2` **IS** compatible with `0.1.3` but **NOT** compatible with `0.1.0` and `0.1.1`.
+This means: `3.0.0` **IS upwards** compatible with `3.2.0` but **NOT downwards** compatible with `2.0.0`. (Semantic Versioning)
 
 To see why these versions are incompatible, checkout the **Breaking Changes** section below.
 
