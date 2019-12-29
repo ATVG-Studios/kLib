@@ -1,12 +1,12 @@
 package net.jemzart.jsonkraken.helpers
 
+import java.lang.NullPointerException
 import net.jemzart.jsonkraken.exceptions.CircularReferenceException
 import net.jemzart.jsonkraken.exceptions.InvalidJsonTypeException
 import net.jemzart.jsonkraken.toJsonArray
 import net.jemzart.jsonkraken.toJsonObject
 import net.jemzart.jsonkraken.values.JsonValue
 import normalize
-import java.lang.NullPointerException
 
 internal fun Any?.purify(): Any? {
     return when (this) {

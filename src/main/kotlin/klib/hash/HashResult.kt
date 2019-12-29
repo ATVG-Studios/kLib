@@ -32,7 +32,7 @@ class HashResult(val hex: String, val algo: String) {
      */
     fun takeBytes(amount: Int): String {
         if (amount * 2 inBoundsOf hex) {
-            return hex.substring(0, amount*2)
+            return hex.substring(0, amount * 2)
         } else {
             throw IndexOutOfBoundsException()
         }
