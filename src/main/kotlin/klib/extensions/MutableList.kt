@@ -1,5 +1,6 @@
 package klib.extensions
 
+import klib.functions.listQuicksort
 import java.io.File
 
 /**
@@ -99,18 +100,8 @@ fun <T> MutableList<T>.prepend(value: T) {
  * @author Thomas Obernosterer
  */
 fun <T : Comparable<T>> MutableList<T>.quicksort() {
-    fun quicksort(items: List<T>): MutableList<T> {
-        if (items.size < 2) {
-            return items.toMutableList()
-        }
-        val pivot = items[items.size / 2]
-        val equal = items.filter { it == pivot }
-        val less = items.filter { it < pivot }
-        val greater = items.filter { it > pivot }
-        return (quicksort(less) + equal + quicksort(greater)).toMutableList()
-    }
     val orig = this.toList()
-    val res = quicksort(orig)
+    val res = listQuicksort(orig)
     this.clear()
     this.addAll(res)
 }

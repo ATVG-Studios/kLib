@@ -1,6 +1,7 @@
 package klib.extensions
 
 import klib.functions.arrayBinSearch
+import klib.functions.listQuicksort
 import java.io.File
 
 /**
@@ -12,17 +13,7 @@ import java.io.File
  * @author Thomas Obernosterer
  */
 fun <T : Comparable<T>> List<T>.quicksort(): List<T> {
-    fun quicksort(items: List<T>): List<T> {
-        if (items.size < 2) {
-            return items
-        }
-        val pivot = items[items.size / 2]
-        val equal = items.filter { it == pivot }
-        val less = items.filter { it < pivot }
-        val greater = items.filter { it > pivot }
-        return quicksort(less) + equal + quicksort(greater)
-    }
-    return quicksort(this)
+    return listQuicksort(this)
 }
 
 /**
