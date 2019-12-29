@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Upgraded Kotlin from 1.3.60 to 1.3.61
 - `kLibRequire` falsely made a `lessThen` comparison
-- Queue.enqueue `x` parameter renamed to `func`
+- **BREAKING**: Queue.enqueue `x` parameter renamed to `func`
 ### Deprecated
 ### Removed
 ### Fixed
