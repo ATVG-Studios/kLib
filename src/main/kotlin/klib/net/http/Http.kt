@@ -29,7 +29,7 @@ class Http(private val url: String) {
      */
     fun get(optionalParams: String = "", headers: Map<String, String> = HashMap()): String {
         val uri = "$url${if (url.contains("?")) "&" else "?"}$optionalParams"
-        val connection= openConnection(uri)
+        val connection = openConnection(uri)
 
         connection.doInput = true
         connection.requestMethod = "GET"
@@ -56,7 +56,7 @@ class Http(private val url: String) {
      * @author Thomas Obernosterer
      */
     fun post(data: String, datatype: DataTypes, headers: Map<String, String> = HashMap()): String {
-        val connection= openConnection(url)
+        val connection = openConnection(url)
 
         connection.doOutput = true
         connection.requestMethod = "POST"
@@ -90,7 +90,7 @@ class Http(private val url: String) {
      * @author Thomas Obernosterer
      */
     fun custom(method: String = "GET", data: String = "", headers: Map<String, String> = HashMap()): String {
-        val connection= openConnection(url)
+        val connection = openConnection(url)
 
         if (data.isEmpty()) {
             connection.doInput = true

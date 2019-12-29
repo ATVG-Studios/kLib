@@ -11,7 +11,7 @@ package klib.functions
  * @since 4.1.0
  * @author Thomas Obernosterer
  */
-fun <T: Comparable<T>> arrayBinSearch(array: Array<T>, element: T, start: Int = 0, end: Int): Int {
+fun <T : Comparable<T>> arrayBinSearch(array: Array<T>, element: T, start: Int = 0, end: Int): Int {
     val middle = (start + end) / 2
 
     return when {

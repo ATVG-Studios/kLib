@@ -8,7 +8,7 @@ package klib.functions
  * @since 4.1.0
  * @author Thomas Obernosterer
  */
-fun <T: Comparable<T>> listQuicksort(items: List<T>): List<T> {
+fun <T : Comparable<T>> listQuicksort(items: List<T>): List<T> {
     if (items.size < 2) {
         return items
     }
