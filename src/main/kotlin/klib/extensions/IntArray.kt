@@ -14,7 +14,7 @@ import klib.functions.arrayBinSearch
  * @author Thomas Obernosterer
  */
 fun IntArray.binSearch(element: Int, start: Int = 0, end: Int = size): Int {
-    return arrayBinSearch(this.toTypedArray(), 0, 0, size)
+    return arrayBinSearch(this.toTypedArray(), element, start, end)
 }
 
 /**
