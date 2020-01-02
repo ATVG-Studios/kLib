@@ -13,4 +13,38 @@ steps:
   - gradle build
   - gradle shadowJar
 
+- name: lint
+  image: gradle:6.0.1-jdk8
+  commands:
+  - bash scripts/ktlint.sh
+  - ./ktlint "src/main/**/*.kt"
+
+---
+kind: pipeline
+name: test
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: test
+  image: gradle:6.0.1-jdk8
+  commands:
+  - gradle test
+
+---
+kind: pipeline
+name: docs
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: docs
+  image: gradle:6.0.1-jdk8
+  commands:
+  - gradle dokka
+
 ...
