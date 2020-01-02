@@ -1,0 +1,16 @@
+---
+kind: pipelin
+name: build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build
+  image: gradle:6.0.1-jdk8
+  commands:
+  - gradle build
+  - gradle shadowJar
+
+...
