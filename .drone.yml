@@ -1,5 +1,5 @@
 ---
-kind: pipelin
+kind: pipeline
 name: build
 
 platform:

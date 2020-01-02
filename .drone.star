@@ -1,6 +1,6 @@
 def main(ctx):
   return {
-    "kind": "pipelin",
+    "kind": "pipeline",
     "name": "build",
     "steps": [
       {
