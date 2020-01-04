@@ -378,6 +378,20 @@ fun String.fromHextoLong(): Long {
 }
 
 /**
+ * Replace the last x in String
+ *
+ * @param oldValue Old Value to be replaced
+ * @param newValue New Value to replace with
+ *
+ * @since 4.1.0
+ * @author Thomas Obernosterer
+ */
+fun String.replaceLast(oldValue: String, newValue: String, ignoreCase: Boolean = false): String {
+    val index = this.lastIndexOf(string = oldValue, ignoreCase = ignoreCase)
+    return if (index < 0 || index > this.lastIndex) this else this.replaceRange(index, index + oldValue.length, newValue)
+}
+
+/**
  * Infix wrapper for toIntOrNull
  *
  * @param or Fault Case

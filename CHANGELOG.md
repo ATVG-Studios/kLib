@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `kLibRequireMin` with a minimum only Version (Closes #6)
 - `arrayBinSearch` global function
 - `listQuicksort` global function
+- `replaceLast` extension for String
 ### Changed
 - Upgraded Kotlin from 1.3.60 to 1.3.61
 - `kLibRequire` falsely made a `lessThen` comparison
