@@ -38,7 +38,7 @@ compileTestKotlin {
 jar {
     manifest {
         attributes 'Specification-Title': "kLib"
-        attributes 'Specification-Version': "19"
+        attributes 'Specification-Version': "20"
         attributes 'Specification-Vendor': "ATVG-Studios"
         attributes 'Implementation-Title': "kLib"
         attributes 'Implementation-Version': "$klib_version"
