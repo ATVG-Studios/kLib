@@ -2,6 +2,7 @@ package klib
 
 import java.io.File
 import klib.exceptions.KonfigParseException
+import klib.extensions.replaceLast
 
 /**
  * Custom Configuration reader and generator
@@ -55,9 +56,11 @@ object Konfig {
      * @param data The data to parse
      * @return The parsed data
      *
-     * @since 0.2.2
+     * @since 0.2.2 (Konfig 19.2)
+     * @since 4.1.0 (Konfig 19.3)
      * @author Thomas Obernosterer
      */
+    @UseExperimental(ExperimentalUnsignedTypes::class)
     fun parse(data: List<String>): Map<String, Any> {
         val result: MutableMap<String, Any> = HashMap()
         var line = 0
@@ -65,7 +68,7 @@ object Konfig {
         data.forEach {
             line++
             if (it.startsWith("#")) return@forEach
-            if (it.isNullOrEmpty()) return@forEach
+            if (it.isEmpty()) return@forEach
 
             if (!it.contains("=")) throw KonfigParseException("Cannot parse line $line of $totalLines")
 
@@ -76,16 +79,41 @@ object Konfig {
 
             val value = d.joinToString("=").replaceFirst("$key=", "")
 
-            if (value.startsWith("[") && value.endsWith("]")) {
-                val valueList = value.replace("[", "")
-                                    .replace("]", "")
-                                    .split(",")
-                result[key] = valueList
-            } else {
-                result[key] = value
-            }
+            result[key] = parseValue(value)
         }
         return result
+    }
+
+    @ExperimentalUnsignedTypes
+    private fun parseValue(value: String): Any {
+        return when {
+            value.startsWith("[") -> {
+                val valueArray = value.replaceFirst("[", "")
+                    .replaceLast("]", "").split(",")
+
+                val valueList: MutableList<Any> = ArrayList()
+
+                valueArray.forEach {
+                    valueList.add(parseValue(it))
+                }
+
+                valueList // Return
+            }
+            value.startsWith("{") -> {
+                val valueList = value.replaceFirst("[", "")
+                    .replaceLast("]", "").split(",")
+
+                val valueMap: MutableMap<String, Any> = HashMap()
+
+                valueList.forEach { pairString ->
+                    val pairValue = pairString.split(":")
+                    valueMap[pairValue[0]] = parseValue(pairValue[1])
+                }
+
+                valueMap // Return
+            }
+            else -> value
+        }
     }
 
     /**
