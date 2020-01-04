@@ -57,7 +57,7 @@ object Konfig {
      * @return The parsed data
      *
      * @since 0.2.2 (Konfig 19.2)
-     * @since 4.1.0 (Konfig 19.3)
+     * @since 4.1.0 (Konfig 20.1)
      * @author Thomas Obernosterer
      */
     @UseExperimental(ExperimentalUnsignedTypes::class)
@@ -111,6 +111,9 @@ object Konfig {
                 }
 
                 valueMap // Return
+            }
+            value.startsWith("U") -> {
+                value.replace("U", "").toUIntOrNull() ?: 0
             }
             else -> value
         }
