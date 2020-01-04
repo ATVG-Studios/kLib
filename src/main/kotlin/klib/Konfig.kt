@@ -38,6 +38,18 @@ object Konfig {
     }
 
     /**
+     * Parse a data string (Split at newLine for multiple-values)
+     *
+     * @param data The string data to split
+     *
+     * @since 4.1.0
+     * @author Thomas Obernosterer
+     */
+    fun parseString(data: String): Map<String, Any> {
+        return parse(data.split("\n"))
+    }
+
+    /**
      * Parse a List<String> into a Map<String, Any>
      *
      * @param data The data to parse
