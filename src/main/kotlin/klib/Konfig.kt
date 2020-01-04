@@ -57,7 +57,7 @@ object Konfig {
      * @return The parsed data
      *
      * @since 0.2.2 (Konfig 19.2)
-     * @since 4.1.0 (Konfig 20.1)
+     * @since 4.1.0 (Konfig 20.2)
      * @author Thomas Obernosterer
      */
     @UseExperimental(ExperimentalUnsignedTypes::class)
@@ -112,6 +112,8 @@ object Konfig {
 
                 valueMap // Return
             }
+            value.toLowerCase() == "true" -> true
+            value.toLowerCase() == "false" -> false
             value.startsWith("U") -> {
                 value.replace("U", "").toUIntOrNull() ?: 0
             }

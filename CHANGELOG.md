@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `replaceLast` extension for String
 - Implement [OpenSpec Konfig 19.3](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
 - Implement [OpenSpec Konfig 20.1](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
+- Implement [OpenSpec Konfig 20.2](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
 ### Changed
 - Upgraded Kotlin from 1.3.60 to 1.3.61
 - `kLibRequire` falsely made a `lessThen` comparison
