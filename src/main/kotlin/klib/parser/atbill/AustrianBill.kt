@@ -31,7 +31,6 @@ Parsed:
     Sig Value:  NTFazirbPJifH6BGKgeJnEQwUWenNQw+E2Am+brnBT1QIKGa3CZyOwVohhszQ0XqfSMtZOCsds5S3s53+xb8+g==
  */
 
-
 /**
  * Parser for the content of a QR-Code on a Austrian Bill
  *
@@ -42,15 +41,15 @@ data class AustrianBill(
     var algorithm: String = "",
     var signTrust: String = "",
     var cashBoxId: String = "",
-    var billId:    String = "",
+    var billId: String = "",
     var timestamp: String = "",
-    var sumTaxNormal:   Double = 0.0,
+    var sumTaxNormal: Double = 0.0,
     var sumTaxReduced1: Double = 0.0,
     var sumTaxReduced2: Double = 0.0,
-    var sumTaxNone:     Double = 0.0,
-    var sumTaxSpecial:  Double = 0.0,
-    var encryptedTurnover:   String = "",
-    var signSerial:          String = "",
+    var sumTaxNone: Double = 0.0,
+    var sumTaxSpecial: Double = 0.0,
+    var encryptedTurnover: String = "",
+    var signSerial: String = "",
     var previousReceiptSign: String = "",
     var totalSum: Double = 0.0
 ) {
