@@ -14,7 +14,7 @@ import klib.kLibInf
  * @since 3.1.0
  * @author Thomas Obernosterer
  */
-class Http(private val url: String) {
+class Http(val url: String) {
     private fun openConnection(uri: String) = URL(uri).openConnection() as HttpURLConnection
 
     /**
