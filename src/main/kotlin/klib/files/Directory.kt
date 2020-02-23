@@ -13,6 +13,9 @@ import klib.extensions.replaceAllOf
  * @since 4.0.0
  * @author Thomas Obernosterer
  */
+@Deprecated(message = "This API has been replaced with Directory2 which fixes major design flaws",
+    replaceWith = ReplaceWith("Directory2", imports = arrayOf("klib.files.Directory2")),
+    level = DeprecationLevel.WARNING)
 class Directory(val directoryPath: String) {
     private val files: MutableList<File> = ArrayList()
     private val filesContent: HashMap<String, String> = HashMap()
