@@ -1,8 +1,8 @@
 package klib.files
 
+import java.io.File
 import klib.annotations.Experimental
 import klib.extensions.asFile
-import java.io.File
 
 /**
  * Enhanced Directory API (v2)
@@ -40,14 +40,14 @@ class Directory2(val path: String) {
         val f = path.asFile()
         val fileList = f.listFiles()
 
-        if(f.isDirectory && fileList != null) {
+        if (f.isDirectory && fileList != null) {
             files.clear()
             directories.clear()
 
-            for(file in fileList) {
-                if(file.isFile) {
+            for (file in fileList) {
+                if (file.isFile) {
                     files.add(file)
-                } else if(file.isDirectory) {
+                } else if (file.isDirectory) {
                     directories.add(Directory2(file.path))
                 }
             }
@@ -67,11 +67,11 @@ class Directory2(val path: String) {
     fun add(file: File, allowOverride: Boolean = false): DirectoryError {
         val hasFile = files.find { it.absolutePath == file.absolutePath } != null
 
-        if(hasFile && !allowOverride) {
+        if (hasFile && !allowOverride) {
             return DirectoryError.FileKnownButOverrideDisallowed
         }
 
-        if(hasFile) {
+        if (hasFile) {
             files.removeIf { it.absolutePath == file.absolutePath }
         }
 
@@ -94,11 +94,11 @@ class Directory2(val path: String) {
     fun add(directory2: Directory2, allowOverride: Boolean = false): DirectoryError {
         val hasDirectory = directories.find { it.path == directory2.path } != null
 
-        if(hasDirectory && !allowOverride) {
+        if (hasDirectory && !allowOverride) {
             return DirectoryError.DirectoryKnownButOverrideDisallowed
         }
 
-        if(hasDirectory) {
+        if (hasDirectory) {
             directories.removeIf { it.path == directory2.path }
         }
 
@@ -161,8 +161,8 @@ class Directory2(val path: String) {
      * @author Thomas Obernosterer
      */
     fun findDirectory(predicate: (String) -> Boolean): Directory2? {
-        for(f in directories) {
-            if(predicate(f.path)) {
+        for (f in directories) {
+            if (predicate(f.path)) {
                 return f
             }
         }
@@ -181,7 +181,7 @@ class Directory2(val path: String) {
      */
     fun updateSync(fileName: String, fileContent: ByteArray) {
         val file = files.find { it.name == fileName }
-        if(fileName in fileCache && file != null) {
+        if (fileName in fileCache && file != null) {
             fileCache[fileName] = fileContent
             file.writeBytes(fileContent)
         }
@@ -198,7 +198,7 @@ class Directory2(val path: String) {
      */
     fun update(fileName: String, fileContent: ByteArray) {
         val file = files.find { it.name == fileName }
-        if(fileName in fileCache && file != null) {
+        if (fileName in fileCache && file != null) {
             fileCache[fileName] = fileContent
         }
     }
