@@ -25,8 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `AustrianBill` Class
 ### Changed
 - Upgraded Kotlin from 1.3.60 to 1.3.61
-- **BREAKING**: Queue.enqueue `x` parameter renamed to `func`
 - **BREAKING**: Http.url property is now private
+- Queue.enqueue `x` parameter renamed to `func`
 ### Deprecated
 ### Removed
 ### Fixed
