@@ -48,6 +48,9 @@ Table created from APIs removed/changed.
 | Planed Since | Expecting Change in | Change | Reason |
 |--------------|---------------------|--------|--------|
 | 4.0.0 | 5.0.0 | Removal of kSock (`klib.net.socket.kSock`) API | Was replaced with KSocket (`klib.net.socket.KSocket`) |
+| 4.1.0 | 5.0.0 | Removal of Directory (`klib.files.Directory`) API | Was replaced with Directory2 (`klib.files.Directory2`) |
+| 5.0.0 | 5.1.0 | Copy Directory2 (`klib.files.Directory2`) to Directory (`klib.files.Directory`) | - |
+| 5.1.0 | 6.0.0 | Removal of Directory2 (`klib.files.Directory2`) | Now named Directory (`klib.files.Directory`) |
 
 ## Experimental APIs
 
@@ -55,3 +58,4 @@ Table created from APIs marked as Experimental. These may change or be removed a
 
 | Since | Change |
 |-------|--------|
+| 4.1.0 | New Rewrite Directory2 (`klib.files.Directory2`) |
