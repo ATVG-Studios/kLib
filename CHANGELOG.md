@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgraded Kotlin from 1.3.60 to 1.3.61
 - Queue.enqueue `x` parameter renamed to `func`
 ### Deprecated
+- Directory (`klib.files.Directory`)
 ### Removed
 ### Fixed
 - `kLibRequire` falsely made a `lessThen` comparison
