@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 4.1.0 - 25.02.2020 - Release 24
+
+### Added
 - `Sha512` Object
 - `asSha512` extension for ByteArray
 - `partition` extension for IntArray
@@ -23,15 +32,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implement [OpenSpec Konfig 20.1](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
 - Implement [OpenSpec Konfig 20.2](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
 - `AustrianBill` Class
+- Directory2 (`klib.files.Directory2`)
+
 ### Changed
 - Upgraded Kotlin from 1.3.60 to 1.3.61
 - Queue.enqueue `x` parameter renamed to `func`
+
 ### Deprecated
 - Directory (`klib.files.Directory`)
-### Removed
+
 ### Fixed
 - `kLibRequire` falsely made a `lessThen` comparison
-### Security
 
 ## 4.0.0 - 23.11.2019 - Release 23
 
