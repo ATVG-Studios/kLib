@@ -1,7 +1,5 @@
 package klib.annotations
 
-import kotlin.Experimental
-
 /**
  * Experimental Annotation for Experimental Public API Interfaces
  *
@@ -9,5 +7,5 @@ import kotlin.Experimental
  * @author Nils Rider
  */
 @Target(AnnotationTarget.CLASS)
-@Experimental(Experimental.Level.WARNING)
+@RequiresOptIn("Experimental API that can change at any time", level = RequiresOptIn.Level.WARNING)
 annotation class Experimental

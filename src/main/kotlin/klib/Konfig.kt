@@ -60,7 +60,7 @@ object Konfig {
      * @since 4.1.0 (Konfig 20.2)
      * @author Thomas Obernosterer
      */
-    @UseExperimental(ExperimentalUnsignedTypes::class)
+    @OptIn(ExperimentalUnsignedTypes::class)
     fun parse(data: List<String>): Map<String, Any> {
         val result: MutableMap<String, Any> = HashMap()
         var line = 0
