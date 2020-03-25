@@ -51,13 +51,6 @@ If you want to contribute, please add your name, email, company (if any) and hom
 
 Please read the [CONTRIBUTION GUIDE](CONTRIBUTING.md) before doing any dedicated development.
 
-# Third-Party Code
-
-kLib may contain code that was written by ATVG-Studios based on code by others.
-
-Copying code is strictly **NOT** allowed. Rewriting code in our in-house coding style however, may be allow as long as the
-original code is **NOT** protected by a License, Patent or Agreement.
-
 # Version Compatibility
 
 Checkout our doc about [Compatibility](Compatibility.md).  
