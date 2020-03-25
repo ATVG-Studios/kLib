@@ -72,5 +72,3 @@ All listed versions are considered Legacy and are no longer developed or support
 # License
 
 kLib is distributed under the [OSPL 20](LICENSE) License (a MPL 2.0 Fork).
-
-The usage of kLib may be written in a "Open-Source Licenses" section of a Legal Notice or a End User License Agreement (EULA). (This is **NOT** a strict requirement.)
