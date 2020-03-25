@@ -1,8 +1,7 @@
 package klib.json
 
-import net.jemzart.jsonkraken.parsers.Deserializer
-import net.jemzart.jsonkraken.parsers.Serializer
-import net.jemzart.jsonkraken.values.JsonArray
+import net.jemzart.jsonkraken.JsonArray
+import net.jemzart.jsonkraken.JsonKraken
 
 /**
  * JsonHandler
@@ -21,8 +20,7 @@ class JsonHandler : Json {
      * @author Thomas Obernosterer
      */
     override fun fromObject(data: Any): String {
-        val ser = Serializer(data, false)
-        return ser.create()
+        return JsonKraken.serialize(data)
     }
 
     /**
@@ -35,8 +33,7 @@ class JsonHandler : Json {
      * @author Thomas Obernosterer
      */
     override fun toObject(data: String): Any? {
-        val des = Deserializer(data)
-        return des.create()
+        return JsonKraken.deserialize(data)
     }
 
     override fun toArray(data: String): JsonArray? {

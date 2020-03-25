@@ -1,6 +1,6 @@
 package klib.extensions
 
-import net.jemzart.jsonkraken.values.JsonObject
+import net.jemzart.jsonkraken.JsonObject
 
 inline fun <reified T> JsonObject.toObjectOfType(): T? {
     if (this is T)

@@ -2,7 +2,7 @@ package devtests
 
 import klib.extensions.toListOfType
 import klib.kLibInf
-import net.jemzart.jsonkraken.values.JsonArray
+import net.jemzart.jsonkraken.JsonArray
 
 data class User(var id: Int, val first_name: String, val last_name: String, val email: String)
 

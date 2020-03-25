@@ -1,6 +1,6 @@
 package klib.json
 
-import net.jemzart.jsonkraken.values.JsonArray
+import net.jemzart.jsonkraken.JsonArray
 
 /**
  * Common JSON Parser Interface

@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+- JsonKraken 2.0 dependency
 ### Changed
 ### Deprecated
 ### Removed
+- JsonKraken 1.0 Source
 ### Fixed
 ### Security
 
