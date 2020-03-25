@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - kSock (`klib.net.socket.kSock`)
 - Directory (`klib.files.Directory`)
 - `asDirectory` extension for File
+- Status number from `klib.files.Directory2.DirectoryError`
 ### Fixed
 ### Security
 

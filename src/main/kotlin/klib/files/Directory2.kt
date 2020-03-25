@@ -210,9 +210,9 @@ class Directory2(val path: String) {
      * 1 means Not allowed to Override File
      * 2 means Not allowed to Override Directory
      */
-    enum class DirectoryError(status: Int) {
-        None(0), // No Error occurred, everything is fine
-        FileKnownButOverrideDisallowed(1),
-        DirectoryKnownButOverrideDisallowed(2)
+    enum class DirectoryError {
+        None, // No Error occurred, everything is fine
+        FileKnownButOverrideDisallowed,
+        DirectoryKnownButOverrideDisallowed
     }
 }
