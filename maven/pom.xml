@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.atvgstudios</groupId>
   <artifactId>klib</artifactId>
-  <version>5.0.0-dev.1</version>
+  <version>5.0.0-dev.2</version>
   <name>kLib</name>
   <description>kLib is a Generic Kotlin Library to simplify development.</description>
   <url>https://klib.atvg-studios.com/</url>

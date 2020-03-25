@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="5.0.0-dev.1"
+VERSION="5.0.0-dev.2"
 
 ATVG_DIST="file:///data/atjontv/git/maven-repo"
 
