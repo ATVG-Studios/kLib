@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - JsonKraken 1.0 Source
 - kSock (`klib.net.socket.kSock`)
 - Directory (`klib.files.Directory`)
+- `asDirectory` extension for File
 ### Fixed
 ### Security
 
