@@ -5,7 +5,7 @@
   <artifactId>klib</artifactId>
   <version>5.0.0-dev.1</version>
   <name>kLib</name>
-  <description>kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions, Extensions and Types.</description>
+  <description>kLib is a Generic Kotlin Library to simplify development.</description>
   <url>https://klib.atvg-studios.com/</url>
   <licenses>
     <license>

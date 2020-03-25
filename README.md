@@ -6,10 +6,7 @@
 | release/4.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/4.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/4.0.x) |
 | release/4.1.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/4.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/4.1.x) |
 
-kLib is a in Kotlin written Library by ATVG-Studios containing a set of useful Functions,
-Extensions and Types.
-
-kLib works as a Standard Library at ATVG-Studios containing code that can be used across many applications in a generic way.
+kLib is a Generic Kotlin Library to simplify development
 
 Checkout the Homepage over [here](https://klib.atvg-studios.com).
 
