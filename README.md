@@ -45,6 +45,37 @@ Adding the latest version of kLib using Maven:
 </dependencies>
 ```
 
+# Compiling
+
+To compile kLib yourself, first off clone the repository.
+
+Go into the kLib folder, now you have two ways to compile:
+
+###### Compile with Make (*nix Only)
+
+This is the simplest way, just run:
+
+```
+$ make
+```
+
+Uses: gradlew
+Runs: ktlint, gradle tasks: build shadowjar jar sourcejar dokka
+
+###### Compile manually with gradlew
+
+Manually run the Gradle tasks.
+
+(**Windows**: Use `./gradlew.bat` when using Powershell | Use `.\gradlew.bat` when using CMD)
+
+```
+$ ./gradlew build shadowjar
+```
+
+### Known Compiler Warnings
+
+* [Property 'dokkaRuntime' is not annotated with an input or output annotation](https://github.com/Kotlin/dokka/issues/515)
+
 # Contributing
 
 If you want to contribute, please add your name, email, company (if any) and homepage (if any) to the Authors Array in the kLibInfo.
