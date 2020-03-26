@@ -1,4 +1,4 @@
-image: gradle:6.0.1-jdk8
+image: gradle:6.3-jdk8
 
 stages:
   - build
@@ -7,13 +7,11 @@ stages:
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
-  - scripts/ktlint.sh
 
 cache:
   paths:
     - .gradle/wrapper
     - .gradle/caches
-    - ktlint
 
 build:
   stage: build
@@ -51,4 +49,4 @@ test:
 lint:
   stage: lint
   script:
-    - ./ktlint "src/main/**/*.kt"
+    - gradle lintKotlin
