@@ -1,13 +1,13 @@
 package klib.functions
 
-import org.junit.Test
 import kotlin.test.assertFalse
+import org.junit.Test
 
 class Failable {
     @Test
     fun requireOrFail() {
         requireOrFail("Not NUll") {
-            assertFalse { true}
+            assertFalse { true }
         }
 
         requireOrFail(null) {

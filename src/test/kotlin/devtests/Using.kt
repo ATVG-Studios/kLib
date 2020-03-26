@@ -1,10 +1,9 @@
 package devtests
 
-import klib.functions.using
 import java.io.File
+import klib.functions.using
 
 fun main() {
     using(File("").inputStream()) {
-
     }
 }

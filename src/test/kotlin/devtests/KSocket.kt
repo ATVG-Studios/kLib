@@ -11,8 +11,8 @@ fun useWhileLoop() {
     val socket = KSocket()
     socket.open("/tmp/kotlin-socket.sk")
 
-    while(socket.canRead) {
-        if(socket.read() >= 1) {
+    while (socket.canRead) {
+        if (socket.read() >= 1) {
             println(socket.data)
         }
 
@@ -25,7 +25,7 @@ fun useTimedLoop() {
     socket.open("/tmp/kotlin-socket2.sk")
 
     socket.readTimed { size, data ->
-        if(size >= 1) {
+        if (size >= 1) {
             println(data)
         }
     }

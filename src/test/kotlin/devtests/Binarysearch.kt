@@ -19,11 +19,11 @@ fun main() {
     println(" Kotlin time: $kotlinTotalTime ms")
     println(" kLib time: $kLibTotalTime ms")
     println("------------------------------------------")
-    println(" kLib saves ${kotlinTotalTime-kLibTotalTime} ms")
+    println(" kLib saves ${kotlinTotalTime - kLibTotalTime} ms")
 }
 
 fun binSearchList(find: Int) {
-    val sortedInput = listOf("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+    val sortedInput = listOf("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
     println("  Running with ${sortedInput.size} Items")
 
     val searchValue = sortedInput[find]

@@ -11,7 +11,7 @@ fun main() {
 
     println(Konfig.parseString(testKonfig))
 
-    if((Konfig.parseString(testKonfig)["help"] as Boolean)) {
+    if ((Konfig.parseString(testKonfig)["help"] as Boolean)) {
         println("Help was True")
     }
 }

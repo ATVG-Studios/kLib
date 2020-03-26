@@ -1,8 +1,8 @@
 package klib.extensions
 
-import org.junit.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
+import org.junit.Test
 
 open class Animal(val name: String, val isAnimal: Boolean = true)
 
@@ -10,7 +10,7 @@ class Dog(name: String, val isDog: Boolean = true) : Animal(name)
 
 class TAny {
     @Test
-    fun ofType(){
+    fun ofType() {
         var success = false
 
         val peter: Animal = Dog("Peter")

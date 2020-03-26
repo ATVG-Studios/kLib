@@ -7,5 +7,5 @@ fun main() {
     val test: String? = null
 
     println(test or "not null")
-    println(test orNullable  null)
+    println(test orNullable null)
 }

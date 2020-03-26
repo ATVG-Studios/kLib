@@ -7,7 +7,7 @@ fun main() {
         line("Counter")
         line("This will count to 100:")
 
-        for(i in 0 .. 100) {
+        for (i in 0..100) {
             + "$i,"
         }
     }

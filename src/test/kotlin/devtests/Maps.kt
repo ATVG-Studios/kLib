@@ -13,8 +13,8 @@ fun main() {
 
 fun mergeArrays() {
     val listA = mutableMapOf("a" to "b")
-    val arrayA = arrayOf("c","e","g")
-    val arrayB = arrayOf("d","f","h")
+    val arrayA = arrayOf("c", "e", "g")
+    val arrayB = arrayOf("d", "f", "h")
 
     listA.mergeArrays(arrayA, arrayB)
     println(listA)
