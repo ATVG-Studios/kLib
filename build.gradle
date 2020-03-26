@@ -58,3 +58,49 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 dokka {
     outputFormat = 'html'
 }
+
+publishing {
+    publications {
+        mavenKotlin(MavenPublication) {
+            groupId = 'com.atvgstudios'
+            artifactId = 'klib'
+            version = "$klib_version"
+            from components.java
+            pom {
+                name = 'kLib'
+                description = 'kLib is a Generic Kotlin Library to simplify development'
+                url = 'https://klib.atvg-studios.com'
+                licenses {
+                    license {
+                        name = 'OSPL20'
+                        url = 'https://gitlab.atvg-studios.com/atvg-studios/kLib/blob/master/LICENSE'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'atjontv'
+                        name = 'Thomas Obernosterer'
+                        email = 'thomas.obernosterer@atvg-studios.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://gitlab.atvg-studios.com/atvg-studios/kLib.git'
+                    developerConnection = 'scm:git:ssh://gitlab.atvg-studios.com/atvg-studios/kLib.git'
+                    url = 'https://gitlab.atvg-studios.com/atvg-studios/kLib.git'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releaseUrl = '/data/atjontv/git/maven-repo'
+            def snapshotUrl = '/data/atjontv/git/maven-repo/snapshots'
+            url = version.contains('dev') ? snapshotUrl : releaseUrl
+        }
+    }
+}
+
+signing {
+    useGpgCmd()
+    sign publishing.publications.mavenKotlin
+}

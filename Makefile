@@ -12,6 +12,9 @@ package:
 	$(GRADLE) $(GRAARG) jar
 	$(GRADLE) $(GRAARG) sourcesJar
 
+publish:
+	$(GRADLE) $(GRAARG) publish
+
 lint:
 	$(GRADLE) $(GRAARG) lintKotlin
 
