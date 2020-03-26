@@ -12,7 +12,10 @@ package:
 	$(GRADLE) sourcesJar
 
 lint:
-	$(KTLINT) "src/main/**/*.kt" -F
+	$(GRADLE) $(GRAARG) lintKotlin
+
+format:
+	$(GRADLE) $(GRAARG) formatKotlin
 
 test:
 	$(GRADLE) test
