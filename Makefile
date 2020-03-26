@@ -1,15 +1,15 @@
 GRADLE="./gradlew"
-KTLINT="./ktlint"
+GRAARG=
 
 all: lint compile package doc
 
 compile:
-	$(GRADLE) build
+	$(GRADLE) $(GRAARG) build
 
 package:
-	$(GRADLE) shadowJar
-	$(GRADLE) jar
-	$(GRADLE) sourcesJar
+	$(GRADLE) $(GRAARG) shadowJar
+	$(GRADLE) $(GRAARG) jar
+	$(GRADLE) $(GRAARG) sourcesJar
 
 lint:
 	$(GRADLE) $(GRAARG) lintKotlin
@@ -18,10 +18,10 @@ format:
 	$(GRADLE) $(GRAARG) formatKotlin
 
 test:
-	$(GRADLE) test
+	$(GRADLE) $(GRAARG) test
 
 doc:
-	$(GRADLE) dokka
+	$(GRADLE) $(GRAARG) dokka
 
 code-version:
 	find src/main/kotlin -name "*.kt" -type f -exec sed -i 's/<NEXT_VERSION>/$(VERSION)/g' {} \;
