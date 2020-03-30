@@ -2,6 +2,8 @@ package klib.extensions
 
 import java.io.File
 import java.io.FileNotFoundException
+import java.io.ObjectInputStream
+import java.io.ObjectOutputStream
 import java.net.URL
 import klib.hash.HashResult
 import klib.hash.Sha1
@@ -121,3 +123,19 @@ fun File.reset() {
 fun File.fromUrl(url: URL) {
     url.toFile(this)
 }
+
+/**
+ * Open a Object Output Stream on a File
+ *
+ * @since 5.0.0
+ * @author Thomas Obernosterer
+ */
+fun File.objectOutputStream() = ObjectOutputStream(this.outputStream())
+
+/**
+ * Open a Object Input Stream on a File
+ *
+ * @since 5.0.0
+ * @author Thomas Obernosterer
+ */
+fun File.objectInputStream() = ObjectInputStream(this.inputStream())

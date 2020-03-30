@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - JsonKraken 2.0 dependency
+- `objectOutputStream` extension for File
+- `objectInputStream` extension for File
 ### Changed
 - Upgraded Kotlin from 1.3.61 to 1.3.70
 ### Deprecated
