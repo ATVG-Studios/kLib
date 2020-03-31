@@ -8,6 +8,7 @@ import klib.exceptions.IncompatibleDatabaseException
 import klib.extensions.asFile
 import klib.extensions.objectInputStream
 import klib.extensions.objectOutputStream
+import java.lang.Exception
 
 /**
  * FlatFile DataBase
@@ -60,14 +61,10 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
         if (!storageFile.exists()) {
             storageFile.createNewFile()
         }
-        when (schemaVersion) {
-            Version.V2.version -> {
-                val data = readAllV2(storageFile.objectInputStream())
-                data.forEach {
-                    if (it != null) {
-                        writeBuffer.add(it)
-                    }
-                }
+
+        if (storageFile.length() > 0) {
+            when (schemaVersion) {
+                Version.V2.version -> preloadV2()
             }
         }
     }
@@ -237,5 +234,20 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
         }
 
         return ArrayList()
+    }
+
+    private fun preloadV2() {
+        try {
+            val data = readAllV2(storageFile.objectInputStream())
+            data.forEach {
+                if (it != null) {
+                    writeBuffer.add(it)
+                }
+            }
+        }catch (e: Exception) {
+            println("Cannot preload FFDB Buffer due to the following error, proceeding with empty Buffer.")
+            clearBuffer()
+            e.printStackTrace()
+        }
     }
 }
