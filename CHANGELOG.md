@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `asDirectory` extension for File
 - Status number from `klib.files.Directory2.DirectoryError`
 ### Fixed
+- FFDB now checks if the File exists before writing/reading
 ### Security
 
 ## 4.1.0 - 25.02.2020 - Release 24

@@ -57,6 +57,9 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      * @author Thomas Obernosterer
      */
     init {
+        if (!storageFile.exists()) {
+            storageFile.createNewFile()
+        }
         when (schemaVersion) {
             Version.V2.version -> {
                 val data = readAllV2(storageFile.objectInputStream())
