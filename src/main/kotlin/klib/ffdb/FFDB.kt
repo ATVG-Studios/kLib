@@ -3,12 +3,12 @@ package klib.ffdb
 import java.io.File
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
+import java.lang.Exception
 import klib.annotations.Experimental
 import klib.exceptions.IncompatibleDatabaseException
 import klib.extensions.asFile
 import klib.extensions.objectInputStream
 import klib.extensions.objectOutputStream
-import java.lang.Exception
 
 /**
  * FlatFile DataBase
@@ -244,7 +244,7 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
                     writeBuffer.add(it)
                 }
             }
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             println("Cannot preload FFDB Buffer due to the following error, proceeding with empty Buffer.")
             clearBuffer()
             e.printStackTrace()
