@@ -23,7 +23,16 @@ import klib.extensions.objectOutputStream
  */
 @Experimental
 class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
-    val writeBuffer: MutableList<Any> = ArrayList()
+    private val writeBuffer: MutableList<Any> = ArrayList()
+
+    /**
+     * Read only access to Buffer
+     *
+     * @since 5.0.0
+     * @author Thomas Obernosterer
+     */
+    val buffer: List<Any>
+    get() = writeBuffer
 
     companion object {
         /**
