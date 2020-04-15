@@ -144,6 +144,9 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      * @author Thomas Obernosterer
      */
     fun flush() {
+        if (writeBuffer.isEmpty()) {
+            return
+        }
         when (schemaVersion) {
             Version.V1.version -> writeV1(storageFile.objectOutputStream())
             Version.V2.version -> writeV2(storageFile.objectOutputStream())
