@@ -5,9 +5,11 @@ import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.util.Base64
+import klib.annotations.Experimental
 import klib.encoding.base.Base58e
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
+import klib.ffdb.FFDB
 import klib.hash.Sha1
 import klib.hash.Sha256
 import klib.kLibInf
@@ -415,3 +417,14 @@ infix fun String?.asLongOr(or: Long): Long {
 infix fun String?.asLongOr(or: Int): Long {
     return this.orEmpty().toLongOrNull() ?: or.toLong()
 }
+
+/**
+ * Open a String as a FFDB File
+ *
+ * @param version FFDB File Version (Default is V2)
+ *
+ * @since 5.0.0
+ * @author Thomas Obernosterer
+ */
+@OptIn(Experimental::class)
+fun String.openFFDB(version: FFDB.Version = FFDB.Version.V2) = FFDB.open(this, version.version)
