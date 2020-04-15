@@ -3,6 +3,7 @@ package klib.ffdb
 import java.io.File
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
+import java.io.OutputStream
 import java.lang.Exception
 import klib.annotations.Experimental
 import klib.exceptions.IncompatibleDatabaseException
@@ -150,6 +151,24 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
         when (schemaVersion) {
             Version.V1.version -> writeV1(storageFile.objectOutputStream())
             Version.V2.version -> writeV2(storageFile.objectOutputStream())
+        }
+    }
+
+    /**
+     * Write objects to custom Stream
+     *
+     * @param stream Output Stream target
+     *
+     * @since 5.0.0
+     * @author Thomas Obernosterer
+     */
+    fun flushToStream(stream: OutputStream) {
+        if (writeBuffer.isEmpty()) {
+            return
+        }
+        when (schemaVersion) {
+            Version.V1.version -> writeV1(ObjectOutputStream(stream))
+            Version.V2.version -> writeV2(ObjectOutputStream(stream))
         }
     }
 
