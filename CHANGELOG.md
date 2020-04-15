@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `splitBy` extension for String
 - `trimSpace` extension for String
 ### Changed
-- Upgraded Kotlin from 1.3.61 to 1.3.70
+- Upgraded Kotlin from 1.3.61 to 1.3.71
 ### Deprecated
 ### Removed
 - JsonKraken 1.0 Source
