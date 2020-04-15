@@ -112,12 +112,29 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
         }
     }
 
-    fun remove(predicate: (Any?) -> Boolean) {
-        TODO("Not Implemented")
+    /**
+     * Remove object from buffer based on Predicate
+     *
+     * @param predicate Predicate to check what shall be removed
+     *
+     * @since 5.0.0
+     * @author Thomas Obernosterer
+     */
+    fun remove(predicate: (Any) -> Boolean) {
+        writeBuffer.removeIf(predicate)
     }
 
+    /**
+     * Remove object from buffer based on Index
+     *
+     * @param index Index to remove
+     * @return Object that was removed from the Buffer
+     *
+     * @since 5.0.0
+     * @author Thomas Obernosterer
+     */
     fun removeAt(index: Int): Any? {
-        TODO("Not Implemented")
+        return writeBuffer.removeAt(index)
     }
 
     /**
