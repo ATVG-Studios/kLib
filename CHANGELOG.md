@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - FFDB (FlatFile DataBase) (`klib.ffdb.FFDB`)
 - IncompatibleDatabaseException (`klib.exceptions.IncompatibleDatabaseException`)
 - `openFFDB` extension for String
+- `splitBy` extension for String
 ### Changed
 - Upgraded Kotlin from 1.3.61 to 1.3.70
 ### Deprecated

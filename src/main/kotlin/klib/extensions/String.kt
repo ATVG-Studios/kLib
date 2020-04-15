@@ -428,3 +428,20 @@ infix fun String?.asLongOr(or: Int): Long {
  */
 @OptIn(Experimental::class)
 fun String.openFFDB(version: FFDB.Version = FFDB.Version.V2) = FFDB.open(this, version.version)
+
+/**
+ * Split string every num characters
+ *
+ * @param num The number of chars to split after
+ *
+ * @since 5.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.splitBy(num: Int = 1): List<String> {
+    val list: MutableList<String> = ArrayList()
+
+    for (i in num until length step num)
+        list.add(substring(i - num, i))
+
+    return list
+}
