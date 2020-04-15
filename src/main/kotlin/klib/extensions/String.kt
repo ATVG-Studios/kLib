@@ -445,3 +445,13 @@ fun String.splitBy(num: Int = 1): List<String> {
 
     return list
 }
+
+/**
+ * Trim ALL the Spaces
+ *
+ * @since 5.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.trimSpace(): String {
+    return this.replace(" ", "")
+}
