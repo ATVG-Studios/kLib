@@ -57,6 +57,36 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
             file: File = File.createTempFile("klib.ffdb-database", ".ffdb"),
             version: Int = Version.V2.version
         ): FFDB = FFDB(file, version)
+
+        /**
+         * Open a File and check if it has a FFDB Version
+         *
+         * @param path Path to File
+         *
+         * @since 5.0.0
+         * @author Thomas Obernosterer
+         */
+        fun peekForVersion(path: String) = peekForVersion(path.asFile())
+
+        /**
+         * Open a File and check if it has a FFDB Version
+         *
+         * @param file File handle
+         *
+         * @since 5.0.0
+         * @author Thomas Obernosterer
+         */
+        fun peekForVersion(file: File): Version {
+            val ois = file.objectInputStream()
+
+            var version = 0
+
+            ois.use {
+                version = it.readInt()
+            }
+
+            return Version.valueOf(version.toString())
+        }
     }
 
     /**
@@ -213,11 +243,28 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
     }
 
     /**
+     * Find one Object in the DB
+     *
+     * :Requires Database V2
+     *
+     * @since 5.0.0
+     * @author Thomas Obernosterer
+     */
+    fun find(filter: (Any) -> Boolean): List<Any?> {
+        return when (schemaVersion) {
+            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
+            Version.V2.version -> writeBuffer.filter(filter)
+            else -> ArrayList()
+        }
+    }
+
+    /**
      * Database Version
      *
      * @param version Version Number as Int
      */
     enum class Version(val version: Int) {
+        INVALID(0),
         V1(1),
         V2(2);
     }
