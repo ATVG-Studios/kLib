@@ -1,6 +1,6 @@
 GRADLE="./gradlew"
 GRAARG=
-GRAVER="6.3"
+GRAVER="6.4"
 
 all: lint compile package doc
 
