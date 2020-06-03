@@ -5,12 +5,13 @@
 | master | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
 | release/4.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/4.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/4.0.x) |
 | release/4.1.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/4.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/4.1.x) |
+| release/5.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/4.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.0.x) |
 
 kLib is a Generic Kotlin Library to simplify development
 
 Checkout the Homepage over [here](https://klib.atvg-studios.com).
 
-kLib is now available via a custom Maven repository.  
+kLib is available via the ATVG-Studios Maven repository.  
 You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.com/atvg-studios/maven-repository).  
 The Maven Repository itself is available here: https://mvn.atvg-studios.com
 

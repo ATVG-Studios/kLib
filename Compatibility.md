@@ -14,6 +14,7 @@ Breaking versions must be in a new row!
 | 2.0.0 | 2.1.1 |
 | 3.0.0 | 3.2.0 |
 | 4.0.0 | 4.1.0 |
+| 5.0.0 ||
 
 This means: `3.0.0` **IS upwards** compatible with `3.2.0` but **NOT downwards** compatible with `2.0.0`. (Semantic Versioning)
 

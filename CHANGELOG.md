@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](semver.md).
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 5.0.0 - 2020-06-03 - Release 25
+
+### Added
 - JsonKraken 2.0 dependency
 - `objectOutputStream` extension for File
 - `objectInputStream` extension for File
@@ -17,7 +26,6 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `trimSpace` extension for String
 ### Changed
 - Upgraded Kotlin from 1.3.61 to 1.3.71
-### Deprecated
 ### Removed
 - JsonKraken 1.0 Source
 - kSock (`klib.net.socket.kSock`)
@@ -27,7 +35,6 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Fixed
 - FFDB now checks if the File exists before writing/reading
 - FFDB now checks if the FIle is empty before reading
-### Security
 
 ## 4.1.0 - 25.02.2020 - Release 24
 
@@ -390,7 +397,9 @@ and this project adheres to [Semantic Versioning](semver.md).
 
 ## Overview
 
-* Unreleased - [Diff 4.0.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/4.0.0...master)
+* Unreleased - [Diff 4.1.0 to master](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/5.0.0...master)
+* 5.0.0 - [Diff 4.1.0 to 5.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/4.1.0...5.0.0)
+* 4.1.0 - [Diff 4.0.0 to 4.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/4.0.0...4.1.0)
 * 4.0.0 - [Diff 3.2.0 to 4.0.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.2.0...4.0.0)
 * 3.2.0 - [Diff 3.1.0 to 3.2.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.1.0...3.2.0)
 * 3.1.0 - [Diff 3.0.0 to 3.1.0](https://gitlab.atvg-studios.at/atvg-studios/kLib/compare/3.0.0...3.1.0)
