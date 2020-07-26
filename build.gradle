@@ -35,6 +35,10 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+wrapper {
+    distributionUrl = "https://services.gradle.org/distributions/gradle-${gradle_version}-all.zip"
+}
+
 jar {
     manifest {
         attributes 'Specification-Title': "kLib"
