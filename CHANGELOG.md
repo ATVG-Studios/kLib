@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](semver.md).
 - Directory as Directory2 alias
 ### Changed
 ### Deprecated
+- Queue (`klib.queue.Queue`)
+- Function (`klib.queue.Function`)
+- Function -> Any (`klib.queue.Function_Any``)
 ### Removed
 ### Fixed
 ### Security

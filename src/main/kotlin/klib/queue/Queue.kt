@@ -10,8 +10,13 @@ import java.util.TimerTask
  *
  * @since 0.1.5 (Experimental)
  * @since 0.2.1
+ * @since 5.1.0 (Deprecated)
  * @author Nils Rider
  */
+@Deprecated(message = "Due to no recent use cases for this Class it has been marked as deprecated." +
+        "It will be removed with release 6.0.0 (Probably early 2021)" +
+        "If you wish to have us keep it, please respond to https://beeit.org/klib-i32",
+    level = DeprecationLevel.WARNING)
 class Queue {
     private var queueList: MutableList<Function> = ArrayList()
 
