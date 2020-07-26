@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - Queue (`klib.queue.Queue`)
 - Function (`klib.queue.Function`)
 - Function -> Any (`klib.queue.Function_Any``)
+- Word (`klib.word.Word`)
 ### Removed
 ### Fixed
 ### Security

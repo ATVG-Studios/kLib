@@ -11,8 +11,13 @@ import kotlin.experimental.xor
  * @param w3
  *
  * @since 0.1.0
+ * @since 5.1.0 (Deprecated)
  * @author Thomas Obernosterer
  */
+@Deprecated(message = "Due to no recent use cases for this Class it has been marked as deprecated." +
+        "It will be removed with release 6.0.0 (Probably early 2021)" +
+        "If you wish to have us keep it, please respond to https://beeit.org/klib-i33",
+    level = DeprecationLevel.WARNING)
 data class Word(val w0: Byte, val w1: Byte, val w2: Byte, val w3: Byte) {
     companion object {
         /**
