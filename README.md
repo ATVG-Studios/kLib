@@ -101,6 +101,20 @@ All listed versions are considered Legacy and are no longer developed or support
 |    2.x.x     |    2.1.1     |
 |    3.x.x     |    3.2.0     |
 
+# Policy for Feature removal
+
+As removing Features is a Major breaking change, and might cause User unhappyness, we have though about how to deal with them.
+
+Features planed for removal must go through this process:
+
+* Issue opened, informing about why the removal makes sense.
+* Marking the Feature as deprecated in a Minor release.
+* Waiting for 12 Months, awaiting User feedback about the planned removal.
+* Removing the feature in the next Major release, if no user feedback on keeping the feature was received.
+* Removal of the Deprecated Status if user feedback requests to keep the feature
+
+Following this process allowes users of Features that are planed to be removed to respond, and prevent the removal.
+
 # License
 
 kLib is distributed under the [OSPL 20](LICENSE) License (a MPL 2.0 Fork).
