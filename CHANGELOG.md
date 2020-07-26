@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ## Unreleased
 
 ### Added
+- `string` extension for Random
 ### Changed
 ### Deprecated
 ### Removed
