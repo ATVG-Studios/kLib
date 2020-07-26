@@ -45,12 +45,12 @@ Table created from APIs removed/changed.
 |  4.1.0  | Renamed Queue.enqueue parameter `x` to `func` | Parameter names that make sense |
 |  5.0.0  | Removed kSock (`klib.net.socket.kSock`) API | Was replaced with KSocket (`klib.net.socket.KSocket`) |
 |  5.0.0  | Removal of Directory (`klib.files.Directory`) API | Was replaced with Directory2 (`klib.files.Directory2`) |
+|  5.1.0  | Alias Directory2 (`klib.files.Directory2`) as Directory (`klib.files.Directory`) | The new Directory2 API will be renamed as the original Directory API was removed. This is considered a Breaking change as pre-5.0 applications would not compile when moving to 5.1.0
 
 ## Upcoming Breaking Changes
 
 | Planed Since | Expecting Change in | Change | Reason |
 |--------------|---------------------|--------|--------|
-| 5.0.0 | 5.1.0 | Copy Directory2 (`klib.files.Directory2`) to Directory (`klib.files.Directory`) | - |
 | 5.1.0 | 6.0.0 | Removal of Directory2 (`klib.files.Directory2`) | Now named Directory (`klib.files.Directory`) |
 
 ## Experimental APIs

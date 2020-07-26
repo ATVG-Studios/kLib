@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 
 ### Added
 - `string` extension for Random
+- Directory as Directory2 alias
 ### Changed
 ### Deprecated
 ### Removed
