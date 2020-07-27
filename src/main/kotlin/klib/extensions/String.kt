@@ -4,6 +4,7 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
+import java.math.BigInteger
 import java.util.Base64
 import klib.annotations.Experimental
 import klib.encoding.base.Base58e
