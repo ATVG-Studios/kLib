@@ -455,3 +455,26 @@ fun String.splitBy(num: Int = 1): List<String> {
 fun String.trimSpace(): String {
     return this.replace(" ", "")
 }
+
+/**
+ * Check a String if it is Luhn valid
+ *
+ * @since 5.1.0
+ * @author Thomas Obernosterer
+ */
+fun String.luhn10(): Boolean {
+    var sum = 0
+    var alternate = false
+    for (i in length - 1 downTo 0) {
+        var n = substring(i, i + 1).toInt()
+        if (alternate) {
+            n *= 2
+            if (n > 9) {
+                n = n % 10 + 1
+            }
+        }
+        sum += n
+        alternate = !alternate
+    }
+    return sum % 10 == 0
+}
