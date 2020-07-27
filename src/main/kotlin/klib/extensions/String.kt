@@ -478,3 +478,41 @@ fun String.luhn10(): Boolean {
     }
     return sum % 10 == 0
 }
+
+/**
+ * Check if a String is Mod97 Valid
+ *
+ * @since 5.1.0
+ * @author Thomas Obernosterer
+ */
+fun String.mod97(): Boolean {
+    fun transform(src: CharSequence, srcPos: Int, srcLen: Int, dest: CharArray, destPos: Int): Int {
+        var offset = destPos
+        for (i in srcPos until srcLen) {
+            when (val c = src[i]) {
+                in '0'..'9' -> {
+                    dest[offset++] = c
+                }
+                in 'A'..'Z' -> {
+                    val tmp = 10 + (c - 'A')
+                    dest[offset++] = ('0'.toInt() + tmp / 10).toChar()
+                    dest[offset++] = ('0'.toInt() + tmp % 10).toChar()
+                }
+                in 'a'..'z' -> {
+                    val tmp = 10 + (c - 'a')
+                    dest[offset++] = ('0'.toInt() + tmp / 10).toChar()
+                    dest[offset++] = ('0'.toInt() + tmp % 10).toChar()
+                }
+                else -> require(c == ' ') { "Invalid character '$c'." }
+            }
+        }
+        return offset
+    }
+
+    val buffer = CharArray(length * 2)
+    var offset: Int = transform(this, 4, length, buffer, 0)
+    offset = transform(this, 0, 4, buffer, offset)
+    val sum = BigInteger(String(buffer, 0, offset))
+    val remainder = sum.remainder(BigInteger("97"))
+    return remainder.toInt() == 1
+}

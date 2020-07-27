@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `string` extension for Random
 - Directory as Directory2 alias
 - `luhn10` extension for String
+- `mod97` extension for String
 ### Changed
 ### Deprecated
 - Queue (`klib.queue.Queue`)
