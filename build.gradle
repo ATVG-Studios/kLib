@@ -105,8 +105,8 @@ publishing {
         maven {
             url "https://gitlab.atvg-studios.com/api/v4/projects/123/packages/maven"
             credentials(HttpHeaderCredentials) {
-                name = "Private-Token"
-                value = gitLabPrivateToken // the variable resides in ~/.gradle/gradle.properties
+                name = 'Job-Token'
+                value = System.getenv("CI_JOB_TOKEN")
             }
             authentication {
                 header(HttpHeaderAuthentication)

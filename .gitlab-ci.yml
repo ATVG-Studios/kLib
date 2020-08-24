@@ -18,6 +18,7 @@ build:
   script:
     - gradle build
     - gradle shadowJar
+    - gradle publish
   artifacts:
     paths:
       - build/libs/*.jar
