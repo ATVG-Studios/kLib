@@ -1,6 +1,5 @@
 GRADLE="./gradlew"
 GRAARG=
-GRAVER="6.4"
 
 all: lint compile package doc
 
@@ -28,7 +27,7 @@ doc:
 	$(GRADLE) $(GRAARG) dokka
 
 upgrade:
-	$(GRADLE) wrapper --gradle-version $(GRAVER)
+	$(GRADLE) wrapper
 
 code-version:
 	find src/main/kotlin -name "*.kt" -type f -exec sed -i 's/<NEXT_VERSION>/$(VERSION)/g' {} \;
