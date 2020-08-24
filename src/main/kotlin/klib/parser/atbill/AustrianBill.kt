@@ -31,13 +31,15 @@ Parsed:
     Sig Value:  NTFazirbPJifH6BGKgeJnEQwUWenNQw+E2Am+brnBT1QIKGa3CZyOwVohhszQ0XqfSMtZOCsds5S3s53+xb8+g==
  */
 
+typealias AustrianBill = RksvBill
+
 /**
  * Parser for the content of a QR-Code on a Austrian Bill
  *
  * @since 4.1.0
  * @author Thomas Obernosterer
  */
-data class AustrianBill(
+data class RksvBill(
     var algorithm: String = "",
     var signTrust: String = "",
     var cashBoxId: String = "",
@@ -58,38 +60,111 @@ data class AustrianBill(
          * Parse the content of a QR-Code
          *
          * @param input The QR-Code data
-         * @return AustrianBill Object
+         * @return RksvBill Object
          *
          * @since 4.1.0
          * @author Thomas Obernosterer
          */
-        fun parseString(input: String): AustrianBill {
-            val value = input.replaceFirst("_", " ").replace(",", ".").split("_")
-            val bill = AustrianBill()
-            val algoTrust = value[0].split("-")
+        fun parseString(input: String) = RksvBillParser.parseStringForObject(input)
+    }
 
-            var i = 0
+    object Keys {
+        final val algorithm = "algorithm"
+        final val signTrust = "sign-trust"
+        final val cashBoxId = "cash-box-id"
+        final val billId = "bill-id"
+        final val timestamp = "timestamp"
+        final val sumTaxNormal = "sum-tax-normal"
+        final val sumTaxReduced1 = "sum-tax-reduced-1"
+        final val sumTaxReduced2 = "sum-tax-reduced-2"
+        final val sumTaxNone = "sum-tax-none"
+        final val sumTaxSpecial = "sum-tax-special"
+        final val totalSum = "total-sum"
+        final val encryptedTurnover = "encrypted-turnover"
+        final val signSerial = "sign-serial"
+        final val previousReceiptSign = "previous-receipt-sign"
+    }
+}
 
-            bill.algorithm = algoTrust[0]
-            bill.signTrust = algoTrust[1]
+object RksvBillParser {
+    /**
+     * Parse the content of a QR-Code
+     *
+     * @param input The QR-Code data
+     * @return RksvBill Object
+     *
+     * @since 4.1.0
+     * @author Thomas Obernosterer
+     */
+    fun parseStringForObject(input: String): RksvBill {
+        val value = input.replaceFirst("_", " ").replace(",", ".").split("_")
+        val bill = RksvBill()
+        val algoTrust = value[0].split("-")
 
-            bill.cashBoxId = value[++i]
-            bill.billId = value[++i]
-            bill.timestamp = value[++i]
+        var i = 0
 
-            bill.sumTaxNormal = value[++i].toDoubleOrNull() ?: 0.0
-            bill.sumTaxReduced1 = value[++i].toDoubleOrNull() ?: 0.0
-            bill.sumTaxReduced2 = value[++i].toDoubleOrNull() ?: 0.0
-            bill.sumTaxNone = value[++i].toDoubleOrNull() ?: 0.0
-            bill.sumTaxSpecial = value[++i].toDoubleOrNull() ?: 0.0
+        bill.algorithm = algoTrust[0]
+        bill.signTrust = algoTrust[1]
 
-            bill.totalSum = bill.sumTaxNormal + bill.sumTaxReduced1 + bill.sumTaxReduced2 + bill.sumTaxNone + bill.sumTaxSpecial
+        bill.cashBoxId = value[++i]
+        bill.billId = value[++i]
+        bill.timestamp = value[++i]
 
-            bill.encryptedTurnover = value[++i]
-            bill.signSerial = value[++i]
-            bill.previousReceiptSign = value[++i]
+        bill.sumTaxNormal = value[++i].toDoubleOrNull() ?: 0.0
+        bill.sumTaxReduced1 = value[++i].toDoubleOrNull() ?: 0.0
+        bill.sumTaxReduced2 = value[++i].toDoubleOrNull() ?: 0.0
+        bill.sumTaxNone = value[++i].toDoubleOrNull() ?: 0.0
+        bill.sumTaxSpecial = value[++i].toDoubleOrNull() ?: 0.0
 
-            return bill
-        }
+        bill.totalSum = bill.sumTaxNormal + bill.sumTaxReduced1 + bill.sumTaxReduced2 + bill.sumTaxNone + bill.sumTaxSpecial
+
+        bill.encryptedTurnover = value[++i]
+        bill.signSerial = value[++i]
+        bill.previousReceiptSign = value[++i]
+
+        return bill
+    }
+
+    /**
+     * Parse the content of a QR-Code
+     *
+     * @param input The QR-Code data
+     * @return Map<String, Any>
+     *
+     * @since 5.1.0
+     * @author Thomas Obernosterer
+     */
+    fun parseStringForMap(input: String): Map<String, Any> {
+        val value = input.replaceFirst("_", " ").replace(",", ".").split("_")
+        val algoTrust = value[0].split("-")
+
+        val map: MutableMap<String, Any> = HashMap()
+
+        var i = 0
+
+        map[RksvBill.Keys.algorithm] = algoTrust[0]
+        map[RksvBill.Keys.signTrust] = algoTrust[1]
+
+        map[RksvBill.Keys.cashBoxId] = value[++i]
+        map[RksvBill.Keys.billId] = value[++i]
+        map[RksvBill.Keys.timestamp] = value[++i]
+
+        map[RksvBill.Keys.sumTaxNormal] = value[++i].toDoubleOrNull() ?: 0.0
+        map[RksvBill.Keys.sumTaxReduced1] = value[++i].toDoubleOrNull() ?: 0.0
+        map[RksvBill.Keys.sumTaxReduced2] = value[++i].toDoubleOrNull() ?: 0.0
+        map[RksvBill.Keys.sumTaxNone] = value[++i].toDoubleOrNull() ?: 0.0
+        map[RksvBill.Keys.sumTaxSpecial] = value[++i].toDoubleOrNull() ?: 0.0
+
+        map[RksvBill.Keys.totalSum] = map[RksvBill.Keys.sumTaxNormal] as Double +
+            map[RksvBill.Keys.sumTaxReduced1] as Double +
+            map[RksvBill.Keys.sumTaxReduced2] as Double +
+            map[RksvBill.Keys.sumTaxNone] as Double +
+            map[RksvBill.Keys.sumTaxSpecial] as Double
+
+        map[RksvBill.Keys.encryptedTurnover] = value[++i]
+        map[RksvBill.Keys.signSerial] = value[++i]
+        map[RksvBill.Keys.previousReceiptSign] = value[++i]
+
+        return map
     }
 }
