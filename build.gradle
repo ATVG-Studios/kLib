@@ -102,6 +102,16 @@ publishing {
             def snapshotUrl = '/data/atjontv/git/maven-repo/snapshots'
             url = version.contains('dev') ? snapshotUrl : releaseUrl
         }
+        maven {
+            url "https://gitlab.com/api/v4/projects/123/packages/maven"
+            credentials(HttpHeaderCredentials) {
+                name = "Private-Token"
+                value = gitLabPrivateToken // the variable resides in ~/.gradle/gradle.properties
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
     }
 }
 
