@@ -115,7 +115,7 @@ publishing {
     }
 }
 
-signing {
-    useGpgCmd()
-    sign publishing.publications.mavenKotlin
-}
+//signing {
+//    useGpgCmd()
+//    sign publishing.publications.mavenKotlin
+//}
