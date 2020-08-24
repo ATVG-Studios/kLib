@@ -12,12 +12,14 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `luhn10` extension for String
 - `mod97` extension for String
 ### Changed
-- Upgraded Kotlin from 1.3.71 to 1.4.0
+- ~~Upgraded Kotlin from 1.3.71 to 1.4.0~~ Reverted.
+- Upgraded Kotlin from 1.3.71 to 1.3.72
 ### Deprecated
 - Queue (`klib.queue.Queue`)
 - Function (`klib.queue.Function`)
 - Function -> Any (`klib.queue.Function_Any``)
 - Word (`klib.word.Word`)
+- Writing of FFDB v1 files. v1 will be made read-only in the future.
 ### Removed
 ### Fixed
 ### Security
