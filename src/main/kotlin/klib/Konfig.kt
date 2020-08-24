@@ -1,8 +1,8 @@
 package klib
 
-import java.io.File
 import klib.exceptions.KonfigParseException
 import klib.extensions.replaceLast
+import java.io.File
 
 /**
  * Custom Configuration reader and generator
@@ -84,7 +84,7 @@ object Konfig {
         return result
     }
 
-    @ExperimentalUnsignedTypes
+    @UseExperimental(kotlin.ExperimentalUnsignedTypes::class)
     private fun parseValue(value: String): Any {
         return when {
             value.startsWith("[") -> {
