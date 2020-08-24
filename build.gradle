@@ -103,7 +103,7 @@ publishing {
             url = version.contains('dev') ? snapshotUrl : releaseUrl
         }
         maven {
-            url "https://gitlab.com/api/v4/projects/123/packages/maven"
+            url "https://gitlab.atvg-studios.com/api/v4/projects/123/packages/maven"
             credentials(HttpHeaderCredentials) {
                 name = "Private-Token"
                 value = gitLabPrivateToken // the variable resides in ~/.gradle/gradle.properties
