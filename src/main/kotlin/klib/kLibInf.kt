@@ -25,11 +25,11 @@ object kLibInf {
      * @author Thomas Obernosterer
      */
     val semver: SemVer
-    get() {
-        val ver = javaClass.`package`.implementationVendor
-        return if (ver == null) SemVer(5, 0, 0, "unstable")
-        else SemVer.parse(ver)
-    }
+        get() {
+            val ver = javaClass.`package`.implementationVendor
+            return if (ver == null) SemVer(5, 0, 0, "unstable")
+            else SemVer.parse(ver)
+        }
 
     /**
      * Company creating kLib

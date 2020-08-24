@@ -8,9 +8,9 @@ import klib.functions.loadClass
 package hello
 
 class Hello {
-    fun hi() {
-        println("Hello from Hello class")
-    }
+ fun hi() {
+ println("Hello from Hello class")
+ }
 }
 
  * Compile using:

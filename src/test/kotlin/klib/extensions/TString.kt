@@ -1,8 +1,8 @@
 package klib.extensions
 
+import org.junit.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
-import org.junit.Test
 
 class TString {
     @Test

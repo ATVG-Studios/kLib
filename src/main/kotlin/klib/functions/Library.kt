@@ -1,10 +1,10 @@
 package klib.functions
 
-import java.io.FileNotFoundException
 import klib.library.LClass
 import klib.library.LFunction
 import klib.library.LibLoad
 import klib.library.Library
+import java.io.FileNotFoundException
 
 /**
  * Dynamically load a Class from a Jar File

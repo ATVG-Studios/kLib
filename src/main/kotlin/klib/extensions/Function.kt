@@ -22,6 +22,7 @@ infix fun (() -> Unit).every(delay: Long) {
                     e.printStackTrace()
                 }
             }
-        }, 0, delay
+        },
+        0, delay
     )
 }

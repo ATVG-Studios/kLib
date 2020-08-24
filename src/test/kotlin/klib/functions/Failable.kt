@@ -1,7 +1,7 @@
 package klib.functions
 
-import kotlin.test.assertFalse
 import org.junit.Test
+import kotlin.test.assertFalse
 
 class Failable {
     @Test

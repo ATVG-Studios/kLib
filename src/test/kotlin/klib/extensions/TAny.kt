@@ -1,8 +1,8 @@
 package klib.extensions
 
+import org.junit.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
-import org.junit.Test
 
 open class Animal(val name: String, val isAnimal: Boolean = true)
 
@@ -37,8 +37,10 @@ class TAny {
     @Test
     fun orFun() {
         val test: Any? = null
-        assert(test orFun {
-            true
-        } == true)
+        assert(
+            test orFun {
+                true
+            } == true
+        )
     }
 }

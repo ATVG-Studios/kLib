@@ -78,16 +78,19 @@ class KSocket {
         var size: Int
         var lastMod: Long
         val timer = Timer()
-        timer.scheduleAtFixedRate(object : TimerTask() {
-            override fun run() {
-                lastMod = file.lastModified()
-                if (lastMod != lastTime) {
-                    lastTime = lastMod
-                    size = read()
-                    block(size, data)
+        timer.scheduleAtFixedRate(
+            object : TimerTask() {
+                override fun run() {
+                    lastMod = file.lastModified()
+                    if (lastMod != lastTime) {
+                        lastTime = lastMod
+                        size = read()
+                        block(size, data)
+                    }
                 }
-            }
-        }, timeout, timeout)
+            },
+            timeout, timeout
+        )
     }
 
     private fun isReadable(): Boolean {

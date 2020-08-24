@@ -1,9 +1,9 @@
 package devtests
 
-import java.io.Serializable
 import klib.extensions.toListOfType
 import klib.kLibInf
 import net.jemzart.jsonkraken.JsonArray
+import java.io.Serializable
 
 data class User(var id: Int, val first_name: String, val last_name: String, val email: String) : Serializable
 

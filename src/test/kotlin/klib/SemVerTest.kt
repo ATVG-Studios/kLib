@@ -1,9 +1,9 @@
 package klib
 
 import klib.exceptions.InvalidTypeException
+import org.junit.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
-import org.junit.Test
 
 class SemVerTest {
     @Test

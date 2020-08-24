@@ -1,8 +1,8 @@
 package klib.extensions
 
-import java.io.File
 import klib.functions.arrayBinSearch
 import klib.functions.listQuicksort
+import java.io.File
 
 /**
  * Sorting a list using quicksort by returning the sorted list

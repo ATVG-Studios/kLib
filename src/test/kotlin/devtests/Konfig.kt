@@ -3,11 +3,12 @@ package devtests
 import klib.Konfig
 
 fun main() {
-    val testKonfig = """
+    val testKonfig =
+        """
         test=["I","need","HELP!"]
         help=false
         map={a:0,b:102}
-    """.trimIndent()
+        """.trimIndent()
 
     println(Konfig.parseString(testKonfig))
 

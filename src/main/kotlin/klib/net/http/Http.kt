@@ -1,10 +1,10 @@
 package klib.net.http
 
+import klib.extensions.readText
+import klib.kLibInf
 import java.io.DataOutputStream
 import java.net.HttpURLConnection
 import java.net.URL
-import klib.extensions.readText
-import klib.kLibInf
 
 /**
  * Simple HTTP Client

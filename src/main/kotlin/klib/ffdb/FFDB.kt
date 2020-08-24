@@ -1,15 +1,15 @@
 package klib.ffdb
 
-import java.io.File
-import java.io.ObjectInputStream
-import java.io.ObjectOutputStream
-import java.io.OutputStream
-import java.lang.Exception
 import klib.annotations.Experimental
 import klib.exceptions.IncompatibleDatabaseException
 import klib.extensions.asFile
 import klib.extensions.objectInputStream
 import klib.extensions.objectOutputStream
+import java.io.File
+import java.io.ObjectInputStream
+import java.io.ObjectOutputStream
+import java.io.OutputStream
+import java.lang.Exception
 
 /**
  * FlatFile DataBase
@@ -33,7 +33,7 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      * @author Thomas Obernosterer
      */
     val buffer: List<Any>
-    get() = writeBuffer
+        get() = writeBuffer
 
     companion object {
         /**

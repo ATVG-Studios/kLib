@@ -1,8 +1,8 @@
 package klib.extensions
 
+import klib.zip.ZipFile
 import java.io.File
 import java.io.InputStream
-import klib.zip.ZipFile
 
 /**
  * Write InputStream into File
