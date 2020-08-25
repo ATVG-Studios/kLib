@@ -179,7 +179,7 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
             return
         }
         when (schemaVersion) {
-            Version.V1.version -> writeV1(storageFile.objectOutputStream())
+            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
             Version.V2.version -> writeV2(storageFile.objectOutputStream())
         }
     }
@@ -197,7 +197,7 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
             return
         }
         when (schemaVersion) {
-            Version.V1.version -> writeV1(ObjectOutputStream(stream))
+            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
             Version.V2.version -> writeV2(ObjectOutputStream(stream))
         }
     }
@@ -265,23 +265,12 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      */
     enum class Version(val version: Int) {
         INVALID(0),
-        @Deprecated(message = "Version 1 is no longer supported. The ability to write new V1 files will be removed in the future!")
+        @Deprecated(message = "Version 1 is no longer supported. The Version 1 schema is now read-only!")
         V1(1),
         V2(2);
     }
 
     // ////// Version 1 ////////
-
-    @Deprecated(message = "This function will be removed in the future. New FFDB files must be in Version 2 or later.")
-    private fun writeV1(stream: ObjectOutputStream) = with(stream) {
-        writeInt(Version.V1.version)
-
-        writeBuffer.forEach {
-            writeObject(it)
-        }
-
-        writeBuffer.clear()
-    }
 
     private fun readV1(stream: ObjectInputStream): Any = with(stream) {
         val ver = readInt()
