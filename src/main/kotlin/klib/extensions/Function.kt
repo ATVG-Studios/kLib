@@ -23,6 +23,7 @@ infix fun (() -> Unit).every(delay: Long) {
                 }
             }
         },
-        0, delay
+        0,
+        delay
     )
 }

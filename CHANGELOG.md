@@ -12,8 +12,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `luhn10` extension for String
 - `mod97` extension for String
 ### Changed
-- ~~Upgraded Kotlin from 1.3.71 to 1.4.0~~ Reverted.
-- Upgraded Kotlin from 1.3.71 to 1.3.72
+- Upgraded Kotlin from 1.3.71 to 1.4.0
 ### Deprecated
 - Queue (`klib.queue.Queue`)
 - Function (`klib.queue.Function`)

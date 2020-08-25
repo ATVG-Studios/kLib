@@ -89,7 +89,8 @@ class KSocket {
                     }
                 }
             },
-            timeout, timeout
+            timeout,
+            timeout
         )
     }
 
