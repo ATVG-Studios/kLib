@@ -11,9 +11,14 @@ and this project adheres to [Semantic Versioning](semver.md).
 - Directory as Directory2 alias
 - `luhn10` extension for String
 - `mod97` extension for String
+- isVirtual parameter to ZipFile constructor
+- ZipFile.openVirtual to output the file to a random Stream
 ### Changed
 - Upgraded Kotlin from 1.3.71 to 1.4.0
 - FFDB v1 files are read-only. (FFDB is still Experimental so this change is acceptable)
+- fileName parameter of ZipFile constructor is Nullable (only allowed when isVirtual=true)
+- ZipFile.open only opens a file if fileName!=null; throws an error if fileName==null && isVirtual==false
+- In ZipFile all file accessors could throw a ZipTraversalNotAllowedException
 ### Deprecated
 - Queue (`klib.queue.Queue`)
 - Function (`klib.queue.Function`)
@@ -22,6 +27,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Removed
 ### Fixed
 ### Security
+- ZipFile reject all paths that seem like they could cause a traversal attack
 
 ## 5.0.0 - 2020-06-03 - Release 25
 
