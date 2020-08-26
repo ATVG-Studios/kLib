@@ -84,7 +84,7 @@ object Konfig {
         return result
     }
 
-    @UseExperimental(kotlin.ExperimentalUnsignedTypes::class)
+    @OptIn(ExperimentalUnsignedTypes::class)
     private fun parseValue(value: String): Any {
         return when {
             value.startsWith("[") -> {
