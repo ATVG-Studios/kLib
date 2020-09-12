@@ -11,11 +11,13 @@ import java.security.PrivilegedAction
  */
 object Platform {
     private val os = System.getProperty("os.name")
-    private val javaFxPlatform = AccessController.doPrivileged(PrivilegedAction {
-        System.getProperty(
-            "javafx.platform"
-        )
-    } as PrivilegedAction<String>)
+    private val javaFxPlatform = AccessController.doPrivileged(
+        PrivilegedAction {
+            System.getProperty(
+                "javafx.platform"
+            )
+        } as PrivilegedAction<String>
+    )
 
     /**
      * Check if the current OS is Android
