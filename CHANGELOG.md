@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `mod97` extension for String
 - isVirtual parameter to ZipFile constructor
 - ZipFile.openVirtual to output the file to a random Stream
+- `klib.os.Platform` object
 ### Changed
 - Upgraded Kotlin from 1.3.71 to 1.4.0
 - FFDB v1 files are read-only. (FFDB is still Experimental so this change is acceptable)
