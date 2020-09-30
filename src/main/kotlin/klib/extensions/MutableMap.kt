@@ -38,10 +38,12 @@ fun <K, V> MutableMap<K, V>.smartMerge(other: Map<K, Any>, convertIt: (Any) -> V
  *
  * @param keys The Keys
  * @param values The Values
+ * @throws IncompatibleArrayLengthException when keys and values arrays have different sizes
  *
  * @since 3.0.0
  * @author Thomas Obernosterer
  */
+@Throws(IncompatibleArrayLengthException::class)
 fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<V>) {
     if (keys.size == values.size) {
         for (i in keys.indices) {
@@ -49,6 +51,8 @@ fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<V>) {
                 this[keys[i]] = values[i]
             }
         }
+    } else {
+        throw IncompatibleArrayLengthException()
     }
 }
 
@@ -58,10 +62,12 @@ fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<V>) {
  * @param keys The Keys
  * @param values The Values
  * @param convertIt Converter function to put Any to type 2
+ * @throws IncompatibleArrayLengthException when keys and values arrays have different sizes
  *
  * @since 3.1.0
  * @author Thomas Obernosterer
  */
+@Throws(IncompatibleArrayLengthException::class)
 fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<Any>, convertIt: (Any) -> V) {
     if (keys.size == values.size) {
         for (i in keys.indices) {
@@ -69,6 +75,8 @@ fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<Any>, conv
                 this[keys[i]] = convertIt(values[i])
             }
         }
+    } else {
+        throw IncompatibleArrayLengthException()
     }
 }
 
