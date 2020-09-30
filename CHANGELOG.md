@@ -15,12 +15,15 @@ and this project adheres to [Semantic Versioning](semver.md).
 - ZipFile.openVirtual to output the file to a random Stream
 - `klib.os.Platform` object
 - Platform Extensions for System
+- `IncompatibleArrayLengthException`
+- `onConflict` to Map.`smartMerge` and Map.`mergeArrays`
 ### Changed
-- Upgraded Kotlin from 1.3.71 to 1.4.0
+- Upgraded Kotlin from 1.3.71 to 1.4.10
 - FFDB v1 files are read-only. (FFDB is still Experimental so this change is acceptable)
 - fileName parameter of ZipFile constructor is Nullable (only allowed when isVirtual=true)
 - ZipFile.open only opens a file if fileName!=null; throws an error if fileName==null && isVirtual==false
 - In ZipFile all file accessors could throw a ZipTraversalNotAllowedException
+- Map.`mergeArrays` throws `IncompatibleArrayLengthException` when arrays have different sizes 
 ### Deprecated
 - Queue (`klib.queue.Queue`)
 - Function (`klib.queue.Function`)
@@ -28,6 +31,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - Word (`klib.word.Word`)
 ### Removed
 ### Fixed
+- String.`toUpperCaseOnUnderscore` was rewritten and works propperly now
 ### Security
 - ZipFile reject all paths that seem like they could cause a traversal attack
 
