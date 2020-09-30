@@ -17,7 +17,6 @@ class TMap {
         assertEquals("{a=b, c=d, e=f, g=h}", listA.toString())
     }
 
-
     @Test
     fun `Test merging with Arrays of different size`() {
         val listA = mutableMapOf("a" to "b")

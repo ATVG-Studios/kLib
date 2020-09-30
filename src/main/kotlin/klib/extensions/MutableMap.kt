@@ -31,9 +31,11 @@ fun <K, V> MutableMap<K, V>.smartMerge(other: Map<K, V>, onConflict: (V?, V) -> 
  * @since 3.1.0
  * @author Thomas Obernosterer
  */
-fun <K, V> MutableMap<K, V>.smartMerge(other: Map<K, Any>,
-                                       onConflict: (V?, V) -> V = { x, y -> x ?: y },
-                                       convertIt: (Any) -> V) {
+fun <K, V> MutableMap<K, V>.smartMerge(
+    other: Map<K, Any>,
+    onConflict: (V?, V) -> V = { x, y -> x ?: y },
+    convertIt: (Any) -> V
+) {
     other.forEach { (key, value) ->
         val newValue = convertIt(value)
         if (key !in this) {
@@ -57,8 +59,11 @@ fun <K, V> MutableMap<K, V>.smartMerge(other: Map<K, Any>,
  * @author Thomas Obernosterer
  */
 @Throws(IncompatibleArrayLengthException::class)
-fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<V>,
-                                        onConflict: (V?, V) -> V = { x, y -> x ?: y}) {
+fun <K, V> MutableMap<K, V>.mergeArrays(
+    keys: Array<K>,
+    values: Array<V>,
+    onConflict: (V?, V) -> V = { x, y -> x ?: y }
+) {
     if (keys.size == values.size) {
         for (i in keys.indices) {
             if (keys[i] !in this) {
@@ -86,9 +91,12 @@ fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<V>,
  * @author Thomas Obernosterer
  */
 @Throws(IncompatibleArrayLengthException::class)
-fun <K, V> MutableMap<K, V>.mergeArrays(keys: Array<K>, values: Array<Any>,
-                                        onConflict: (V?, V) -> V = { x, y -> x ?: y},
-                                        convertIt: (Any) -> V) {
+fun <K, V> MutableMap<K, V>.mergeArrays(
+    keys: Array<K>,
+    values: Array<Any>,
+    onConflict: (V?, V) -> V = { x, y -> x ?: y },
+    convertIt: (Any) -> V
+) {
     if (keys.size == values.size) {
         for (i in keys.indices) {
             val newValue = convertIt(values[i])

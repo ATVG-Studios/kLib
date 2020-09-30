@@ -41,10 +41,14 @@ class TString {
     fun `toUpperCaseOnUnderscore replaces underscores correctly`() {
         assertEquals("Word word W", "word word_w".toUpperCaseOnUnderscore())
 
-        assertEquals("This Is a Small Test to See if It works",
-            "this_is a_small_test to_see if_it works".toUpperCaseOnUnderscore())
+        assertEquals(
+            "This Is a Small Test to See if It works",
+            "this_is a_small_test to_see if_it works".toUpperCaseOnUnderscore()
+        )
 
-        assertEquals("This*Is a*Small*Test to*See if*It works",
-            "this_is a_small_test to_see if_it works".toUpperCaseOnUnderscore("*"))
+        assertEquals(
+            "This*Is a*Small*Test to*See if*It works",
+            "this_is a_small_test to_see if_it works".toUpperCaseOnUnderscore("*")
+        )
     }
 }

@@ -59,8 +59,8 @@ fun String.toUpperCaseOnUnderscore(replaceWith: String = " "): String {
     var skip = false
 
     // Loop over every character in the String
-    for(i in this.indices) {
-        if(skip) {
+    for (i in this.indices) {
+        if (skip) {
             skip = false
             continue
         }
@@ -68,15 +68,15 @@ fun String.toUpperCaseOnUnderscore(replaceWith: String = " "): String {
         val char = this[i]
 
         // Check if the Char is a _
-        val str = if(char == '_') {
+        val str = if (char == '_') {
             // Get the letter after _ and make it uppercase
-            val letter = this[i+1].toUpperCase()
+            val letter = this[i + 1].toUpperCase()
             skip = true
             // Apply _ replacement and add uppercase letter
             "$replaceWith$letter"
         } else {
             // Otherwise if its the fist char in the String
-            if(i == 0) {
+            if (i == 0) {
                 // Make it uppercase too
                 char.toUpperCase().toString()
             } else {
