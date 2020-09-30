@@ -28,7 +28,8 @@ import java.util.Base64
  * @author Thomas Obernosterer
  */
 fun String.isEmail(): Boolean {
-    return Regex("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$").matches(this)
+    return Regex("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+        .matches(this)
 }
 
 /**
@@ -48,20 +49,46 @@ fun String.toFirstLetterUpperCase(): String {
  *
  * @param replaceWith The character to replace the underscore with (Default is space; Underscore not allowed)
  * @return The string with first letter and every character after a underscore in uppercase
- * @throws InvalidValueException Thrown if replaceWith contains "_"; This protects against a infinite loop
  *
  * @since 0.1.3
+ * @since 5.1.0 - Rewritten to fix Bugs; '_' is now a valid replaceWith argument
  * @author Thomas Obernosterer
  */
 fun String.toUpperCaseOnUnderscore(replaceWith: String = " "): String {
-    replaceWith deny "_"
-    var bigAfterUnderscore = this.toFirstLetterUpperCase()
+    var finalString = ""
+    var skip = false
 
-    while (bigAfterUnderscore.contains("_")) {
-        bigAfterUnderscore = bigAfterUnderscore.replaceAfter("_", bigAfterUnderscore.substringAfter("_").toFirstLetterUpperCase()).replaceFirst("_", replaceWith)
+    // Loop over every character in the String
+    for(i in this.indices) {
+        if(skip) {
+            skip = false
+            continue
+        }
+
+        val char = this[i]
+
+        // Check if the Char is a _
+        val str = if(char == '_') {
+            // Get the letter after _ and make it uppercase
+            val letter = this[i+1].toUpperCase()
+            skip = true
+            // Apply _ replacement and add uppercase letter
+            "$replaceWith$letter"
+        } else {
+            // Otherwise if its the fist char in the String
+            if(i == 0) {
+                // Make it uppercase too
+                char.toUpperCase().toString()
+            } else {
+                // Just add the char to the string
+                char.toString()
+            }
+        }
+
+        // Add the char or string to the final string
+        finalString += str
     }
-
-    return bigAfterUnderscore
+    return finalString
 }
 
 /**
