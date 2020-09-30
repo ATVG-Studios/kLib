@@ -69,20 +69,20 @@ data class RksvBill(
     }
 
     object Keys {
-        final val algorithm = "algorithm"
-        final val signTrust = "sign-trust"
-        final val cashBoxId = "cash-box-id"
-        final val billId = "bill-id"
-        final val timestamp = "timestamp"
-        final val sumTaxNormal = "sum-tax-normal"
-        final val sumTaxReduced1 = "sum-tax-reduced-1"
-        final val sumTaxReduced2 = "sum-tax-reduced-2"
-        final val sumTaxNone = "sum-tax-none"
-        final val sumTaxSpecial = "sum-tax-special"
-        final val totalSum = "total-sum"
-        final val encryptedTurnover = "encrypted-turnover"
-        final val signSerial = "sign-serial"
-        final val previousReceiptSign = "previous-receipt-sign"
+        const val algorithm = "algorithm"
+        const val signTrust = "sign-trust"
+        const val cashBoxId = "cash-box-id"
+        const val billId = "bill-id"
+        const val timestamp = "timestamp"
+        const val sumTaxNormal = "sum-tax-normal"
+        const val sumTaxReduced1 = "sum-tax-reduced-1"
+        const val sumTaxReduced2 = "sum-tax-reduced-2"
+        const val sumTaxNone = "sum-tax-none"
+        const val sumTaxSpecial = "sum-tax-special"
+        const val totalSum = "total-sum"
+        const val encryptedTurnover = "encrypted-turnover"
+        const val signSerial = "sign-serial"
+        const val previousReceiptSign = "previous-receipt-sign"
     }
 }
 
