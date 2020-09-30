@@ -1,8 +1,16 @@
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//        jcenter()
+//    }
+//}
+
 plugins {
     id 'com.github.johnrengelman.shadow' version "$shadow_version"
     id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
     id 'org.jetbrains.dokka' version "$dokka_version"
     id "org.jmailen.kotlinter" version "$kotlinter_version"
+//    id "io.gitlab.arturbosch.detekt" version "$detekt_version"
     id 'maven-publish'
     id 'signing'
 }
@@ -12,6 +20,7 @@ version "$klib_version"
 
 repositories {
     mavenCentral()
+    jcenter()
     maven { url 'https://dl.bintray.com/kotlin/dokka' }
 }
 
@@ -27,6 +36,8 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
 }
 
+//tasks.detekt.jvmTarget = "1.8"
+
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
@@ -38,6 +49,20 @@ compileTestKotlin {
 wrapper {
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradle_version}-all.zip"
 }
+
+//detekt {
+//    failFast = false // fail build on any finding
+//    buildUponDefaultConfig = true // preconfigure defaults
+////    config = files("$projectDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
+////    baseline = file("$projectDir/config/baseline.xml") // a way of suppressing issues before introducing detekt
+//
+//    reports {
+//        html.enabled = true // observe findings in your browser with structure and code snippets
+//        xml.enabled = false // checkstyle like format mainly for integrations like Jenkins
+//        txt.enabled = true // similar to the console output, contains issue signature to manually edit baseline files
+//    }
+//}
+
 
 jar {
     manifest {
