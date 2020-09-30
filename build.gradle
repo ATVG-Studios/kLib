@@ -64,6 +64,9 @@ dokka {
     outputFormat = 'html'
 }
 
+def buildEnvironment = System.getenv("BUILD_ENVIRONMENT")
+def buildEnvGitlab = "Gitlab-CI"
+
 publishing {
     publications {
         mavenKotlin(MavenPublication) {
@@ -97,25 +100,30 @@ publishing {
         }
     }
     repositories {
-        maven {
-            def releaseUrl = '/data/atjontv/git/maven-repo'
-            def snapshotUrl = '/data/atjontv/git/maven-repo/snapshots'
-            url = version.contains('dev') ? snapshotUrl : releaseUrl
-        }
-        maven {
-            url "https://gitlab.atvg-studios.com/api/v4/projects/123/packages/maven"
-            credentials(HttpHeaderCredentials) {
-                name = 'Job-Token'
-                value = System.getenv("CI_JOB_TOKEN")
+        if(buildEnvironment == buildEnvGitlab) {
+            maven {
+                url "https://gitlab.atvg-studios.com/api/v4/projects/123/packages/maven"
+                credentials(HttpHeaderCredentials) {
+                    name = 'Job-Token'
+                    value = System.getenv("CI_JOB_TOKEN")
+                }
+                authentication {
+                    header HttpHeaderAuthentication
+                }
             }
-            authentication {
-                header(HttpHeaderAuthentication)
+        } else {
+            maven {
+                def releaseUrl = '/data/atjontv/git/maven-repo'
+                def snapshotUrl = '/data/atjontv/git/maven-repo/snapshots'
+                url = (version.contains('dev') || version.contains('rc')) ? snapshotUrl : releaseUrl
             }
         }
     }
 }
 
-//signing {
-//    useGpgCmd()
-//    sign publishing.publications.mavenKotlin
-//}
+if(buildEnvironment != buildEnvGitlab) {
+    signing {
+        useGpgCmd()
+        sign publishing.publications.mavenKotlin
+    }
+}
