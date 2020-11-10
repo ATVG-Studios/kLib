@@ -53,7 +53,7 @@ pages:
     - mv build/reports/tests/test public/tests
     - mv build/libs/*.jar public/jars/
     - echo "<html><body><h1>Directory listing:</h1>" > public/jars/index.html
-    - find -exec echo "<a href='{}'>{}</a><br/>" \; >> public/jars/index.html
+    - find public/jars/ -exec echo "<a href='{}'>{}</a><br/>" \; >> public/jars/index.html
     - echo "</body></html>" >> public/jars/index.html
   artifacts:
     paths:
