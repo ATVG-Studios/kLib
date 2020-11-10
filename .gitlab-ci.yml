@@ -1,9 +1,9 @@
 image: gradle:6.6-jdk8
 
 stages:
-  - build
-  - test
   - lint
+  - test
+  - build
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
@@ -12,32 +12,6 @@ cache:
   paths:
     - .gradle/wrapper
     - .gradle/caches
-
-build:
-  stage: build
-  script:
-    - gradle build
-    - gradle shadowJar
-    - gradle publish
-  artifacts:
-    paths:
-      - build/libs/*.jar
-    expire_in: 1 week
-  only:
-    refs:
-      - tags
-
-docs:
-  stage: build
-  script:
-    - gradle dokka
-  artifacts:
-    paths:
-      - build/dokka
-    expire_in: 1 week
-  only:
-    refs:
-      - tags
 
 test:
   stage: test
@@ -51,3 +25,21 @@ lint:
   stage: lint
   script:
     - gradle lintKotlin
+
+build:
+  stage: build
+  script:
+    - gradle build
+    - gradle shadowJar
+    - gradle publish
+  artifacts:
+    paths:
+      - build/libs/*.jar
+
+docs:
+  stage: build
+  script:
+    - gradle dokka
+  artifacts:
+    paths:
+      - build/dokka
