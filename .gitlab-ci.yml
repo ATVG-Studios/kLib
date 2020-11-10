@@ -4,6 +4,7 @@ stages:
   - lint
   - test
   - build
+  - deploy
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
@@ -43,3 +44,14 @@ docs:
   artifacts:
     paths:
       - build/dokka
+
+pages:
+  stage: deploy
+  script:
+    - mv _pages public
+    - mv build/dokka public/docs
+    - mv build/reports/tests/test public/tests
+    - mv build/libs/*.jar public/jars/
+  artifacts:
+    paths:
+      - public
