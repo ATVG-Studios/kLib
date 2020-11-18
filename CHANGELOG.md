@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Security
 - ZipFile reject all paths that seem like they could cause a traversal attack
 
-## 5.0.0 - 2020-06-03 - Release 25
+## 5.0.0 - 2020-06-03
 
 ### Added
 - JsonKraken 2.0 dependency
@@ -58,7 +58,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - FFDB now checks if the File exists before writing/reading
 - FFDB now checks if the FIle is empty before reading
 
-## 4.1.0 - 25.02.2020 - Release 24
+## 4.1.0 - 2020-02-25
 
 ### Added
 - `Sha512` Object
@@ -89,7 +89,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Fixed
 - `kLibRequire` falsely made a `lessThen` comparison
 
-## 4.0.0 - 23.11.2019 - Release 23
+## 4.0.0 - 2019-11-23
 
 ### Added
 - KSocket (`klib.net.socket.KSocket`)
@@ -127,7 +127,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `toObject(json, type)` function from Json interface
 - `binSearch` extension from MutableList
 
-## 3.2.0 - 12.09.2019 - Release 22
+## 3.2.0 - 2019-09-12
 
 ### Added
 - `print` Top-Level Function
@@ -142,7 +142,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - Extended Http.post with headers parameter
 - Default JsonHandler now uses JSON Parser and actually works
 
-## 3.1.0 - 12.06.2019 - Release 21
+## 3.1.0 - 2019-06-12
 
 ### Added
 - `smartMerge` extension to MutableMap (With value type converter)
@@ -164,7 +164,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Changed
 - Moved Library API from Experimental to Stable
 
-## 3.0.0 - 08.06.2019 - Release 20
+## 3.0.0 - 2019-06-08
 
 ### IMPORTANT NOTICE
 - kLib is now licensed under the OSPL20 (a MPL 2.0 Fork), kLib prior to 3.0 will stay MIT!
@@ -187,12 +187,12 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Fixed
 - Fixed bug in SemVer parsing crashing when preRelease and buildMetadata was not given
 
-## 2.1.1 - 01.06.2019 - Release 19
+## 2.1.1 - 2019-06-01
 
 ### Fixed
 - Removed Experimental Annotations from ZipFile functions/classes
 
-## 2.1.0 - 28.05.2019 - Release 18
+## 2.1.0 - 2019-05-28
 
 ### Added
 - `new` function to LClass (To be used with `is` and `as` and Interfaces)
@@ -210,14 +210,14 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Fixed
 - `println` ran in infinite loop
 
-## 2.0.1 - 27.05.2019 - Release 17
+## 2.0.1 - 2019-05-27
 
 ### Fixed
 - `String.deny` failing on empty strings
 - `String.require` not considering empty strings
 - `kLibInf.version` having the wrong version number
 
-## 2.0.0 - 27.05.2019 - Release 16
+## 2.0.0 - 2019-05-27
 
 ### Added
 - `checksum` property for HashResult
@@ -242,7 +242,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `String.deny` failed on empty string or param; Now only fails on empty param
 - `Konfig.parse` crashing on empty lines
 
-## 1.4.0 - 22.05.2019 - Release 15
+## 1.4.0 - 2019-05-22
 
 ### Changed
 - Extended Experimental Library implementation
@@ -254,7 +254,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Fixed
 - `zipPath` not being used when using `addFiles` on ZipFile
 
-## 1.3.0 - 21.05.2019 - Release 14
+## 1.3.0 - 2019-05-21
 
 ### Added
 - `Library` Object Class
@@ -265,7 +265,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `loadAsLibraryWithFunction` extension for File
 - `loadAsLibraryWithFunction` extension for String
 
-## 1.2.0 - 17.05.2019 - Release 13
+## 1.2.0 - 2019-05-17
 
 ### Added
 - `toJson` extension for Any
@@ -276,7 +276,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `toFileInZipFile` extension for InputStream
 - `addToZipFile` extension for File
 
-## 1.1.0 - 16.05.2019 - Release 12
+## 1.1.0 - 2019-05-16
 
 ### Added
 - `abs` property for Int
@@ -290,7 +290,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Deprecated
 - `KonfParseException` Exception
 
-## 1.0.0 - 13.05.2019 - Release 11
+## 1.0.0 - 2019-05-13
 
 ### Added
 - `asInt` extension for Boolean
@@ -301,7 +301,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `fourth` property for Int
 - `tenth` property for Int
 
-## 0.2.2 - 11.05.2019 - Release 10
+## 0.2.2 - 2019-05-11
 
 ### Added
 - `quicksort` extension for MutableList
@@ -311,17 +311,17 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `startTimedExecution` Function to Queue
 - `Konfig` Object Class (Experimental API)
 
-## 0.2.1 - 05.05.2019 - Release 9
+## 0.2.1 - 2019-05-05
 
 ### Changed
 - Make `Queue` non-experimental
 
-## 0.2.0 - 03.05.2019 - Release 8
+## 0.2.0 - 2019-05-03
 
 ## Changed
 - Renamed Package `com.atvgstudios.klib` to `klib`
 
-## 0.1.6 - 03.05.2019 - Release 7
+## 0.1.6 - 2019-05-03
 
 ### Added
 - `requireOrFail` Top-Level Function
@@ -336,7 +336,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Fixed
 - Removed Implementation of removed `toObject` in dummy.JsonHandler
 
-## 0.1.5 - 29.04.2019 - Release 6
+## 0.1.5 - 2019-04-29
 
 ### Added
 - `Experimental` Annotation Class
@@ -357,7 +357,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Removed
 - `Json` Object (com.atvgstudios.klib.objects.json.Json)
 
-## 0.1.4 - 27.04.2019 - Release 5
+## 0.1.4 - 2019-04-27
 
 ### Added
 - `ofType` extension for Any
@@ -370,7 +370,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `popEnd` extension for MutableList
 - `prepend` extension for MutableList
 
-## 0.1.3 - 27.04.2019 - Release 4
+## 0.1.3 - 2019-04-27
 
 ### Added
 - `kLibRequire` a function that allows you to only make the application run on a supported kLib version
@@ -393,7 +393,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Deprecated
 - `Json` Object (com.atvgstudios.klib.objects.json.Json)
 
-## 0.1.2 - 23.04.2019 - Release 3
+## 0.1.2 - 2019-04-23
 
 ### Added
 - Integer `timesAs` Extension
@@ -407,12 +407,12 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Changed
 - Moved `UniqueID` Object from Types to Objects package
 
-## 0.1.1 - 21.04.2019 - Release 2
+## 0.1.1 - 2019-04-21
 
 ### Fixed
 - Sematic issues shown by lint
 
-## 0.1.0 - 21.04.2019 - Release 1
+## 0.1.0 - 2019-04-21
 
 ### Added
 - First implementation
