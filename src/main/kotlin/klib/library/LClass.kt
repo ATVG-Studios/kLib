@@ -19,13 +19,19 @@ class LClass(
     init {
         var clazz: Class<*>? = sourceClass
 
+        // Loop as long as clazz is not null (Superclassess available)
         while (clazz != null) {
+            // Loop over all delared methods
             for (method in clazz.declaredMethods) {
+                // Get the modifiers of the method to do checks
                 val mods = method.modifiers
-                if (Modifier.isPrivate(mods) || Modifier.isPublic(mods)) {
+                // Check if the method is Public, Private, Protected or Native
+                if (Modifier.isProtected(mods) || Modifier.isPrivate(mods) || Modifier.isPublic(mods) || Modifier.isNative(mods)) {
+                    // Add the method to our known list of methods
                     methods.add(method)
                 }
             }
+            // Set the super as next clazz
             clazz = clazz.superclass
         }
     }
