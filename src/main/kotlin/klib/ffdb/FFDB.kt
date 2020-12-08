@@ -164,7 +164,7 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      * @since 5.0.0
      * @author Thomas Obernosterer
      */
-    fun removeAt(index: Int): Any? {
+    fun removeAt(index: Int): Any {
         return writeBuffer.removeAt(index)
     }
 
