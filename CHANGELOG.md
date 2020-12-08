@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](semver.md).
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 5.1.0 - 2020-12-08
+
+### Added
 - `string` extension for Random
 - Directory as Directory2 alias
 - `luhn10` extension for String
@@ -29,7 +38,6 @@ and this project adheres to [Semantic Versioning](semver.md).
 - Function (`klib.queue.Function`)
 - Function -> Any (`klib.queue.Function_Any``)
 - Word (`klib.word.Word`)
-### Removed
 ### Fixed
 - String.`toUpperCaseOnUnderscore` was rewritten and works propperly now
 ### Security
