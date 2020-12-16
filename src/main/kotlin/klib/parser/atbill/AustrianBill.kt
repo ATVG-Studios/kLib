@@ -31,12 +31,19 @@ Parsed:
     Sig Value:  NTFazirbPJifH6BGKgeJnEQwUWenNQw+E2Am+brnBT1QIKGa3CZyOwVohhszQ0XqfSMtZOCsds5S3s53+xb8+g==
  */
 
+/**
+ * @since 4.1.0
+ * @since 5.2.0 (DEPRECATED)
+ */
+@Deprecated("Renamed! Use RksvBill instead", level = DeprecationLevel.WARNING,
+    replaceWith = ReplaceWith("RksvBill"))
 typealias AustrianBill = RksvBill
 
 /**
  * Parser for the content of a QR-Code on a Austrian Bill
  *
- * @since 4.1.0
+ * @since 4.1.0 (named AustrainBill)
+ * @since 5.1.0
  * @author Thomas Obernosterer
  */
 data class RksvBill(
@@ -52,6 +59,7 @@ data class RksvBill(
     var sumTaxSpecial: Double = 0.0,
     var encryptedTurnover: String = "",
     var signSerial: String = "",
+    var previousBillLink: String = "",
     var previousReceiptSign: String = "",
     var totalSum: Double = 0.0
 ) {
@@ -82,6 +90,7 @@ data class RksvBill(
         const val totalSum = "total-sum"
         const val encryptedTurnover = "encrypted-turnover"
         const val signSerial = "sign-serial"
+        const val previousBillLink = "link-value"
         const val previousReceiptSign = "previous-receipt-sign"
     }
 }
@@ -120,6 +129,7 @@ object RksvBillParser {
 
         bill.encryptedTurnover = value[++i]
         bill.signSerial = value[++i]
+        bill.previousBillLink = value[++i]
         bill.previousReceiptSign = value[++i]
 
         return bill
@@ -163,6 +173,7 @@ object RksvBillParser {
 
         map[RksvBill.Keys.encryptedTurnover] = value[++i]
         map[RksvBill.Keys.signSerial] = value[++i]
+        map[RksvBill.Keys.previousBillLink] = value[++i]
         map[RksvBill.Keys.previousReceiptSign] = value[++i]
 
         return map

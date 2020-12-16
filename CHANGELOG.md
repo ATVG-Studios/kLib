@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](semver.md).
 ## Unreleased
 
 ### Added
+* Link Value to RksvBill
 ### Changed
 ### Deprecated
+* AustrianBill, use RksvBill instead
 ### Removed
 ### Fixed
 ### Security
