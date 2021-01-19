@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](semver.md).
 * `alphanumericalRegex` global function
 * `replaceAllOf` extension for String
 * `normalize' extension for String
+* `klib.influx.Influx` object
+* `klib.influx.InfluxData` data class
 * `toSimpleString` extension for Map
 ### Changed
 ### Deprecated
