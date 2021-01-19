@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 * `klib.influx.InfluxData` data class
 * `toSimpleString` extension for Map
 ### Changed
+* Allow access to Protected and Native methods in LClass
 ### Deprecated
 * AustrianBill, use RksvBill instead
 ### Removed
