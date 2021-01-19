@@ -544,3 +544,20 @@ fun String.mod97(): Boolean {
     val remainder = sum.remainder(BigInteger("97"))
     return remainder.toInt() == 1
 }
+
+/**
+ *  Replaces the left side of the Map with the right side
+ *
+ *  @param replacers Map with replaces
+ *  @return String with everything replaced as specified by the replaces Map
+ *
+ * @since 5.2.0
+ * @author Thomas Obernosterer
+ */
+fun String.replaceAllOf(replacers: Map<String, String> = mapOf(" " to "_")): String {
+    var cleaned = this
+    replacers.forEach { (k, v) ->
+        cleaned = cleaned.replace(k, v)
+    }
+    return cleaned
+}
