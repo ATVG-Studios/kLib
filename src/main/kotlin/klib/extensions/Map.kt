@@ -8,4 +8,4 @@ package klib.extensions
  * @since 5.2.0
  * @author Thomas Obernosterer
  */
-fun Map<*,*>.toSimpleString(): String = this.map { "${it.key.toString().normalize()}=${it.value.toString().normalize()}" }.joinToString(",")
+fun Map<*, *>.toSimpleString(): String = this.map { "${it.key.toString().normalize()}=${it.value.toString().normalize()}" }.joinToString(",")

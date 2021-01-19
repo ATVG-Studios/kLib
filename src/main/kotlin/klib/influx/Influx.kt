@@ -17,7 +17,7 @@ object Influx {
 
         val measurement = leftParts[0]
         val tagsList = leftParts.subList(1, leftParts.size)
-        val timestamp = parts[parts.size-1]
+        val timestamp = parts[parts.size - 1]
 
         val tags = tagsList.map {
             val tagParts = it.trim().split("=")
