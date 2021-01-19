@@ -5,6 +5,7 @@ import klib.encoding.base.Base58e
 import klib.exceptions.InvalidValueException
 import klib.exceptions.RequireValueException
 import klib.ffdb.FFDB
+import klib.functions.alphanumericalRegex
 import klib.hash.Sha1
 import klib.hash.Sha256
 import klib.kLibInf
@@ -560,4 +561,14 @@ fun String.replaceAllOf(replacers: Map<String, String> = mapOf(" " to "_")): Str
         cleaned = cleaned.replace(k, v)
     }
     return cleaned
+}
+
+/**
+ *  Normalizes a String into Alphanumerical
+ *
+ * @since 5.2.0
+ * @author Thomas Obernosterer
+ */
+fun String.normalize(): String {
+    return alphanumericalRegex().replace(this, "")
 }

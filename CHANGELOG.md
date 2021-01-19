@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 * Link Value to RksvBill
 * `alphanumericalRegex` global function
 * `replaceAllOf` extension for String
+* `normalize' extension for String
 ### Changed
 ### Deprecated
 * AustrianBill, use RksvBill instead
