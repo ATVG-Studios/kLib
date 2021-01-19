@@ -35,8 +35,11 @@ Parsed:
  * @since 4.1.0
  * @since 5.2.0 (DEPRECATED)
  */
-@Deprecated("Renamed! Use RksvBill instead", level = DeprecationLevel.WARNING,
-    replaceWith = ReplaceWith("RksvBill"))
+@Deprecated(
+    "Renamed! Use RksvBill instead",
+    level = DeprecationLevel.WARNING,
+    replaceWith = ReplaceWith("RksvBill")
+)
 typealias AustrianBill = RksvBill
 
 /**
