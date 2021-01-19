@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 * `alphanumericalRegex` global function
 * `replaceAllOf` extension for String
 * `normalize' extension for String
+* `toSimpleString` extension for Map
 ### Changed
 ### Deprecated
 * AustrianBill, use RksvBill instead
