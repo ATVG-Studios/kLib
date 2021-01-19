@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 
 ### Added
 * Link Value to RksvBill
+* `alphanumericalRegex` global function
 ### Changed
 ### Deprecated
 * AustrianBill, use RksvBill instead
