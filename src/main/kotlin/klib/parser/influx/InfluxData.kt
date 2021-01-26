@@ -1,4 +1,4 @@
-package klib.influx
+package klib.parser.influx
 
 import klib.extensions.toSimpleString
 import java.io.Serializable
