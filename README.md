@@ -3,9 +3,9 @@
 | Branch | Status |
 |--------|--------|
 | master | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
-| release/4.1.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/4.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/4.1.x) |
 | release/5.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.0.x) |
 | release/5.1.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.1.x) |
+| release/5.2.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
 
 kLib is a Generic Kotlin Library to simplify development
 
@@ -100,7 +100,7 @@ All listed versions are considered Legacy and are no longer developed or support
 |    1.x.x     |    1.4.0     |
 |    2.x.x     |    2.1.1     |
 |    3.x.x     |    3.2.0     |
-|    4.0.x     |    4.0.0     |
+|    4.x.x     |    4.1.0     |
 
 # Policy for Feature removal
 
@@ -118,4 +118,4 @@ Following this process allowes users of Features that are planed to be removed t
 
 # License
 
-kLib is distributed under the [OSPL 20](LICENSE) License (a MPL 2.0 Fork).
+kLib is distributed under the [MPL 2.0](/LICENSE).

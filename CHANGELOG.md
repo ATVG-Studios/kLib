@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](semver.md).
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 5.2.0 - 2021-02-01
+
+### Added
 * Link Value to RksvBill
 * `alphanumericalRegex` global function
 * `replaceAllOf` extension for String
@@ -18,9 +27,6 @@ and this project adheres to [Semantic Versioning](semver.md).
 * Allow access to Protected and Native methods in LClass
 ### Deprecated
 * AustrianBill, use RksvBill instead
-### Removed
-### Fixed
-### Security
 
 ## 5.1.0 - 2020-12-08
 
