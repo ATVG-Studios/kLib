@@ -104,7 +104,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
 
         if (storageFile.length() > 0) {
             when (schemaVersion) {
-                Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
                 Version.V2.version -> preloadV2()
             }
         }
@@ -221,7 +220,7 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      */
     fun readOne(): Any? {
         return when (schemaVersion) {
-            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
+            Version.V1.version -> readV1(storageFile.objectInputStream())
             Version.V2.version -> readV2(storageFile.objectInputStream())
             else -> null
         }
@@ -273,7 +272,13 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
 
     // ////// Version 1 ////////
 
-    // REMOVED
+    private fun readV1(stream: ObjectInputStream): Any = with(stream) {
+        val ver = readInt()
+
+        if (ver == Version.V1.version) {
+            return readObject()
+        }
+    }
 
     // ////// Version 2 ////////
 
