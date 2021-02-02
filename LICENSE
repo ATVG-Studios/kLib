@@ -1,16 +1,5 @@
-ATVG-Studios Open Source Project License 20 (Version 2.0, Release Jun 2019)
+Mozilla Public License Version 2.0
 ==================================
-
-0. License Origin
-------------------
-
-This is to note that the Open Source Project License 20 and later,
-originate from the Mozilla Public License, v. 2.0.
-
-The original steward, Mozilla Foundation, has been replaced with
-ATVG-Studios.
-
-This note was created in reference to 10.3 of this license.
 
 1. Definitions
 --------------
@@ -39,7 +28,7 @@ This note was created in reference to 10.3 of this license.
         in Exhibit B to the Covered Software; or
 
     (b) that the Covered Software was made available under the terms of
-        version 1.4 or earlier of the License, but not also under the
+        version 1.1 or earlier of the License, but not also under the
         terms of a Secondary License.
 
 1.6. "Executable Form"
@@ -336,7 +325,7 @@ shall not be used to construe this License against a Contributor.
 
 10.1. New Versions
 
-ATVG-Studios is the license steward. Except as provided in Section
+Mozilla Foundation is the license steward. Except as provided in Section
 10.3, no one other than the license steward has the right to modify or
 publish new versions of this License. Each version will be given a
 distinguishing version number.
@@ -366,10 +355,9 @@ notice described in Exhibit B of this License must be attached.
 Exhibit A - Source Code Form License Notice
 -------------------------------------------
 
-  This Source Code Form is subject to the terms of the ATVG-Studios Open
-  Source Project License 20. If a copy of the OSPL was not
-  distributed with this file, You can obtain one at
-  https://atvg-studios.com/ospl/ospl20.
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 If it is not possible or desirable to put the notice in a particular
 file, then You may include the notice in a location (such as a LICENSE
@@ -382,4 +370,4 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 ---------------------------------------------------------
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
-  defined by the ATVG-Studios Open Source Project License 20.
+  defined by the Mozilla Public License, v. 2.0.
