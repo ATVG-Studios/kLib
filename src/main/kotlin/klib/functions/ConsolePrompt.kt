@@ -20,11 +20,13 @@ import java.util.Date
  * @since 5.3.0
  * @author Thomas Obernosterer
  */
-inline fun <reified T> prompt(text: String, default: T? = null,
-                              reader: () -> String? = ::readLine,
-                              printer: (String) -> Unit = ::print,
-                              dateFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd")): T?
-{
+inline fun <reified T> prompt(
+    text: String,
+    default: T? = null,
+    reader: () -> String? = ::readLine,
+    printer: (String) -> Unit = ::print,
+    dateFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
+): T? {
     try {
         // Print out the Prompt Text
         printer(text)
@@ -33,12 +35,12 @@ inline fun <reified T> prompt(text: String, default: T? = null,
         val input = reader()
 
         // When nothing read, return default
-        if(input == null || input.isEmpty()) {
+        if (input == null || input.isEmpty()) {
             return default
         }
 
         // Try to find out what is asked and return it
-        return when(T::class) {
+        return when (T::class) {
             Date::class -> dateFormat.parse(input) as T?
             Int::class -> input.toIntOrNull() as T?
             Long::class -> input.toLongOrNull() as T?
@@ -46,7 +48,7 @@ inline fun <reified T> prompt(text: String, default: T? = null,
             String::class -> input as T?
             else -> default
         }
-    }catch (e: Exception) {
+    } catch (e: Exception) {
         // We just catch exceptions during input and parsing so that its not bubbling up to the caller
         // as we get a default value (either a real value or a null value) we can just return that on error
     }

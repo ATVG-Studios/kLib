@@ -117,7 +117,6 @@ class TablePrinter(var tHeader: TableHeader = TableHeader(), var tBody: TableBod
         return tBody
     }
 
-
     /**
      * Prints the Table to the PrintStream (Default System.out)
      *
@@ -130,22 +129,22 @@ class TablePrinter(var tHeader: TableHeader = TableHeader(), var tBody: TableBod
         val columnSize: MutableMap<String, Int> = mutableMapOf()
 
         // Loop over everything we know to find the biggest column width
-        for(cIndex in 0 until tHeader.columns.size) {
+        for (cIndex in 0 until tHeader.columns.size) {
             val colName = tHeader.columns[cIndex]
 
             columnSize[colName] = colName.length
 
-            for(row in tBody.rows) {
-                for(rIndex in 0 until row.data.size) {
+            for (row in tBody.rows) {
+                for (rIndex in 0 until row.data.size) {
                     val data = row.data[cIndex].toString()
-                    columnSize[colName] = if(columnSize[colName]!! > data.length) (columnSize[colName] ?: colName.length) else data.length
+                    columnSize[colName] = if (columnSize[colName]!! > data.length) (columnSize[colName] ?: colName.length) else data.length
                 }
             }
         }
 
         // Print out Table Header
         // Loop over all columns and print the column name with padding
-        for(cIndex in 0 until tHeader.columns.size) {
+        for (cIndex in 0 until tHeader.columns.size) {
             val colName = tHeader.columns[cIndex]
             val colSize = columnSize[colName]?.minus(colName.length) ?: colName.length
             stream.print(colName + " ".times(colSize) + "\t")
@@ -155,9 +154,9 @@ class TablePrinter(var tHeader: TableHeader = TableHeader(), var tBody: TableBod
         stream.print("\n")
 
         // Print out Table Body
-        for(row in tBody.rows) {
+        for (row in tBody.rows) {
             // Loop over all columns and print the data with padding
-            for(cIndex in 0 until row.data.size) {
+            for (cIndex in 0 until row.data.size) {
                 val colName = tHeader.columns[cIndex]
                 val data = row.data[cIndex].toString()
                 val colSize = columnSize[colName]?.minus(data.length) ?: data.length

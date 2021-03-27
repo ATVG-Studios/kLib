@@ -584,7 +584,7 @@ fun String.normalize(): String {
  */
 infix fun String.times(times: Int): String {
     var newString = ""
-    for(i in 0 until times) {
+    for (i in 0 until times) {
         newString += this
     }
     return newString
