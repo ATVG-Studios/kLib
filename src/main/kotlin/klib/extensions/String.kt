@@ -572,3 +572,20 @@ fun String.replaceAllOf(replacers: Map<String, String> = mapOf(" " to "_")): Str
 fun String.normalize(): String {
     return alphanumericalRegex().replace(this, "")
 }
+
+/**
+ * Repeat the string x times
+ *
+ * @param times Times to repeat this
+ * @return String x times
+ *
+ * @since 5.3.0
+ * @author Thomas Obernosterer
+ */
+infix fun String.times(times: Int): String {
+    var newString = ""
+    for(i in 0 until times) {
+        newString += this
+    }
+    return newString
+}
