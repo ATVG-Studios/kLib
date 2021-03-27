@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 
 ### Added
 * `times` extension for String
+* `TablePrinter` and table DSL to print Text Tables to any PrintStream
 ### Changed
 * `isNumeric` extension on String uses start and end in regex `^\d+$`
 ### Deprecated
