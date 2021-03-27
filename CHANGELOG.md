@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Added
 * `times` extension for String
 ### Changed
+* `isNumeric` extension on String uses start and end in regex `^\d+$`
 ### Deprecated
 ### Removed
 ### Fixed

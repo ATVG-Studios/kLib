@@ -217,7 +217,7 @@ infix fun String.count(sub: String): Int {
  * @author Thomas Obernosterer
  */
 fun String.isNumeric(): Boolean {
-    return Regex("\\d+").matches(this)
+    return Regex("^\\d+$").matches(this)
 }
 
 /**
