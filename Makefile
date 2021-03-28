@@ -11,7 +11,7 @@ package:
 	$(GRADLE) $(GRAARG) jar
 	$(GRADLE) $(GRAARG) sourcesJar
 
-publish:
+publish: compile package
 	$(GRADLE) $(GRAARG) publish
 
 lint:
