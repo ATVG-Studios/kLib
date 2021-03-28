@@ -2,6 +2,10 @@ package klib.extensions
 
 import klib.kLibInf
 import klib.queue.Function_Any
+import kotlin.reflect.KMutableProperty
+import kotlin.reflect.KProperty
+import kotlin.reflect.full.isSupertypeOf
+import kotlin.reflect.full.memberProperties
 
 /**
  * Type Check and Type Cast made easy
@@ -70,4 +74,36 @@ fun Any.toJson(): String {
  */
 infix fun Any?.orNullable(something: Any?): Any? {
     return this ?: something
+}
+
+/**
+ * Utility function to copy properties from one object to another using reflections
+ *
+ * Only copies Properties that exist on both Object, are Mutable and Type compatible
+ *
+ * Source from https://stackoverflow.com/a/49043283
+ *
+ * @param fromObject Object to copy from
+ * @param props Whitelist of Properties to copy, specify none to copy all possible
+ *
+ * @since 5.3.0
+ * @author Strelok (https://stackoverflow.com/users/2788/strelok)
+ * @author Thomas Obernosterer
+ */
+fun <T : Any, R : Any> T.copyFrom(fromObject: R, vararg props: KProperty<*>) {
+    // get all mutable properties
+    val mutableProps = this::class.memberProperties.filterIsInstance<KMutableProperty<*>>()
+
+    // if source list is provided use that otherwise use all available properties
+    val sourceProps = if (props.isEmpty()) fromObject::class.memberProperties else props.toList()
+
+    // copy all matching properties
+    mutableProps.forEach { targetProp ->
+        sourceProps.find {
+            // make sure properties have same name and compatible types
+            it.name == targetProp.name && targetProp.returnType.isSupertypeOf(it.returnType)
+        }?.let { matchingProp ->
+            targetProp.setter.call(this, matchingProp.getter.call(fromObject))
+        }
+    }
 }

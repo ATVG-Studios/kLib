@@ -26,6 +26,7 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
     dokkaRuntime "org.jetbrains.dokka:dokka-fatjar:$dokka_version"
 
     implementation "net.jemzart:jsonkraken:$jsonkraken_version"

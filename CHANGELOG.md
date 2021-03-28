@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 * `times` extension for String
 * `TablePrinter` and table DSL to print Text Tables to any PrintStream
 * `prompt<T>` global function as Text Prompt with type parsing
+* `copyFrom` extension for anything that inherits from Any
 ### Changed
 * `isNumeric` extension on String uses start and end in regex `^\d+$`
 ### Deprecated
