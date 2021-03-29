@@ -45,6 +45,7 @@ inline fun <reified T> prompt(
             Int::class -> input.toIntOrNull() as T?
             Long::class -> input.toLongOrNull() as T?
             BigDecimal::class -> input.toBigDecimalOrNull() as T?
+            Boolean::class -> (input.toLowerCase() == "y" || input.toLowerCase() == "j" || input.toLowerCase() == "n") as T?
             String::class -> input as T?
             else -> default
         }
