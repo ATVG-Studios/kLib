@@ -1,5 +1,6 @@
 package klib.functions
 
+import org.joda.time.DateTime
 import java.math.BigDecimal
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -42,6 +43,7 @@ inline fun <reified T> prompt(
         // Try to find out what is asked and return it
         return when (T::class) {
             Date::class -> dateFormat.parse(input) as T?
+            DateTime::class -> DateTime.parse(input) as T?
             Int::class -> input.toIntOrNull() as T?
             Long::class -> input.toLongOrNull() as T?
             BigDecimal::class -> input.toBigDecimalOrNull() as T?

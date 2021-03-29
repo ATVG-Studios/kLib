@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 * `TablePrinter` and table DSL to print Text Tables to any PrintStream
 * `prompt<T>` global function as Text Prompt with type parsing
 * `copyFrom` extension for anything that inherits from Any
+* **Added JodaTime as a Dependency** (Adds ~600 KB to FAT jar)
 ### Changed
 * `isNumeric` extension on String uses start and end in regex `^\d+$`
 ### Deprecated
