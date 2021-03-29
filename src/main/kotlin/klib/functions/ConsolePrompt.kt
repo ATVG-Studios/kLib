@@ -47,7 +47,15 @@ inline fun <reified T> prompt(
             Int::class -> input.toIntOrNull() as T?
             Long::class -> input.toLongOrNull() as T?
             BigDecimal::class -> input.toBigDecimalOrNull() as T?
-            Boolean::class -> (input.toLowerCase() == "y" || input.toLowerCase() == "j" || input.toLowerCase() == "n") as T?
+            Boolean::class -> {
+                if(input.toLowerCase() == "y" || input.toLowerCase() == "j") {
+                    true as T?
+                } else if(input.toLowerCase() == "n") {
+                    false as T?
+                } else {
+                    null
+                }
+            }
             String::class -> input as T?
             else -> default
         }
