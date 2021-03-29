@@ -48,9 +48,9 @@ inline fun <reified T> prompt(
             Long::class -> input.toLongOrNull() as T?
             BigDecimal::class -> input.toBigDecimalOrNull() as T?
             Boolean::class -> {
-                if(input.toLowerCase() == "y" || input.toLowerCase() == "j") {
+                if (input.toLowerCase() == "y" || input.toLowerCase() == "j") {
                     true as T?
-                } else if(input.toLowerCase() == "n") {
+                } else if (input.toLowerCase() == "n") {
                     false as T?
                 } else {
                     null
