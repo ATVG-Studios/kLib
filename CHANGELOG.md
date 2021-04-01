@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](semver.md).
 ## Unreleased
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 5.3.0 - 2021-04-01
+
+### Added
 * `times` extension for String
 * `TablePrinter` and table DSL to print Text Tables to any PrintStream
 * `prompt<T>` global function as Text Prompt with type parsing
@@ -14,10 +23,6 @@ and this project adheres to [Semantic Versioning](semver.md).
 * **Added JodaTime as a Dependency** (Adds ~600 KB to FAT jar)
 ### Changed
 * `isNumeric` extension on String uses start and end in regex `^\d+$`
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## 5.2.0 - 2021-02-01
 
