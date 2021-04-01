@@ -3,9 +3,9 @@
 | Branch | Status |
 |--------|--------|
 | master | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
-| release/5.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.0.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.0.x) |
 | release/5.1.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.1.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.1.x) |
 | release/5.2.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
+| release/5.3.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
 
 kLib is a Generic Kotlin Library to simplify development
 
@@ -91,7 +91,8 @@ Also what breaking changes where made when and which will come up in near future
 
 ## Outdated Versions
 
-All listed versions are considered Legacy and are no longer developed or supported.
+All listed versions are considered Legacy and are no longer developed or supported.  
+Versions later then the "Last Version" listed are still supported.
 
 | Version Tree | Last Version |
 |--------------|--------------|
@@ -101,6 +102,7 @@ All listed versions are considered Legacy and are no longer developed or support
 |    2.x.x     |    2.1.1     |
 |    3.x.x     |    3.2.0     |
 |    4.x.x     |    4.1.0     |
+|    5.x.x     |    5.0.0     |
 
 # Policy for Feature removal
 
@@ -110,7 +112,7 @@ Features planed for removal must go through this process:
 
 * Issue opened, informing about why the removal makes sense.
 * Marking the Feature as deprecated in a Minor release.
-* Waiting for 12 Months, awaiting User feedback about the planned removal.
+* Waiting for 9 Months, awaiting User feedback about the planned removal.
 * Removing the feature in the next Major release, if no user feedback on keeping the feature was received.
 * Removal of the Deprecated Status if user feedback requests to keep the feature
 

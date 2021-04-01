@@ -11,10 +11,10 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Deprecated
 ### Removed
 * AustrianBill, use RksvBill instead
-- Queue (`klib.queue.Queue`)
-- Function (`klib.queue.Function`)
-- Function -> Any (`klib.queue.Function_Any``)
-- Word (`klib.word.Word`)
+* Queue (`klib.queue.Queue`)
+* Function (`klib.queue.Function`)
+* Function -> Any (`klib.queue.Function_Any`)
+* Word (`klib.word.Word`)
 ### Fixed
 ### Security
 

@@ -14,7 +14,8 @@ Breaking versions must be in a new row!
 | 2.0.0 | 2.1.1 |
 | 3.0.0 | 3.2.0 |
 | 4.0.0 | 4.1.0 |
-| 5.0.0 | 5.2.0 |
+| 5.0.0 | 5.3.0 |
+| 6.0.0 ||
 
 This means: `3.0.0` **IS upwards** compatible with `3.2.0` but **NOT downwards** compatible with `2.0.0`. (Semantic Versioning)
 
@@ -46,13 +47,17 @@ Table created from APIs removed/changed.
 |  5.0.0  | Removed kSock (`klib.net.socket.kSock`) API | Was replaced with KSocket (`klib.net.socket.KSocket`) |
 |  5.0.0  | Removal of Directory (`klib.files.Directory`) API | Was replaced with Directory2 (`klib.files.Directory2`) |
 |  5.1.0  | Alias Directory2 (`klib.files.Directory2`) as Directory (`klib.files.Directory`) | The new Directory2 API will be renamed as the original Directory API was removed. This is considered a Breaking change as pre-5.0 applications would not compile when moving to 5.1.0
+|  6.0.0  | Removed AustrianBill alias (`klib.parser.atbill.AustrianBill`) | Renamed RksvBill |
+|  6.0.0  | Removed Queue (`klib.queue.Queue`) | Seemingly Unused |
+|  6.0.0  | Removed Function (`klib.queue.Function`) | Seemingly Unused |
+|  6.0.0  | Removed Function_Any (`klib.queue.Function_Any`) | Seemingly Unused |
+|  6.0.0  | Removed Word (`klib.word.Word`) | Seemingly Unused |
+|  6.0.0  | Removed Directory2 (`klib.files.Directory2`) | Now named just Directory (`klib.files.Directory`) |
 
 ## Upcoming Breaking Changes
 
 | Planed Since | Expecting Change in | Change | Reason |
 |--------------|---------------------|--------|--------|
-| 5.1.0 | 6.0.0 | Removal of Directory2 (`klib.files.Directory2`) | Now named Directory (`klib.files.Directory`) |
-| 5.2.0 | 6.0.0 | Removal of AustrianBill | Renamed to RksvBill |
 
 ## Experimental APIs
 
@@ -60,4 +65,4 @@ Table created from APIs marked as Experimental. These may change or be removed a
 
 | Since | Change |
 |-------|--------|
-| 4.1.0 | New Rewrite Directory2 (`klib.files.Directory2`) |
+| 4.1.0 / 6.0.0 | New Rewrite Directory (`klib.files.Directory`) |
