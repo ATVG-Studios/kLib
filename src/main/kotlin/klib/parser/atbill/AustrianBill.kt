@@ -32,17 +32,6 @@ Parsed:
  */
 
 /**
- * @since 4.1.0
- * @since 5.2.0 (DEPRECATED)
- */
-@Deprecated(
-    "Renamed! Use RksvBill instead",
-    level = DeprecationLevel.WARNING,
-    replaceWith = ReplaceWith("RksvBill")
-)
-typealias AustrianBill = RksvBill
-
-/**
  * Parser for the content of a QR-Code on a Austrian Bill
  *
  * @since 4.1.0 (named AustrainBill)

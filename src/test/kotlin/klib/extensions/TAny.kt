@@ -39,16 +39,6 @@ class TAny {
     }
 
     @Test
-    fun orFun() {
-        val test: Any? = null
-        assert(
-            test orFun {
-                true
-            } == true
-        )
-    }
-
-    @Test
     fun copyFrom() {
         val source = DemoModelA("Hello")
         val target = DemoModelB()

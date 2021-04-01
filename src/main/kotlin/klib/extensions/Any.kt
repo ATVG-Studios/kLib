@@ -1,7 +1,6 @@
 package klib.extensions
 
 import klib.kLibInf
-import klib.queue.Function_Any
 import kotlin.reflect.KMutableProperty
 import kotlin.reflect.KProperty
 import kotlin.reflect.full.isSupertypeOf
@@ -19,21 +18,6 @@ inline fun <reified T> Any.ofType(block: (T) -> Unit) {
     if (this is T) {
         block(this as T)
     }
-}
-
-/**
- * Any? or Function
- *
- * @param block The function to execute when Any is null
- *
- * @since 0.1.6
- * @author Thomas Obernosterer
- */
-infix fun Any?.orFun(block: Function_Any): Any? {
-    if (this == null) {
-        return block()
-    }
-    return this
 }
 
 /**

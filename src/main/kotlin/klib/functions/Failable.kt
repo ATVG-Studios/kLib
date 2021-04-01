@@ -1,7 +1,5 @@
 package klib.functions
 
-import klib.queue.Function
-
 /**
  * Require something to be not null; Else execute onError
  *
@@ -11,7 +9,7 @@ import klib.queue.Function
  * @since 0.1.6
  * @author Thomas Obernosterer
  */
-fun requireOrFail(something: Any?, onError: Function) {
+fun requireOrFail(something: Any?, onError: () -> Unit) {
     if (something == null)
         onError()
 }
@@ -25,7 +23,7 @@ fun requireOrFail(something: Any?, onError: Function) {
  * @since 0.1.6
  * @author Thomas Obernosterer
  */
-fun requireAllOrFail(vararg somethings: Any?, onError: Function) {
+fun requireAllOrFail(vararg somethings: Any?, onError: () -> Unit) {
     somethings.forEach {
         if (it == null)
             onError()
