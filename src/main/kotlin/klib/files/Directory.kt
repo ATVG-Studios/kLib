@@ -16,9 +16,9 @@ import java.io.File
  * @author Thomas Obernosterer
  */
 @Experimental
-class Directory2(val path: String) {
+class Directory(val path: String) {
     private val files: MutableList<File> = ArrayList()
-    private val directories: MutableList<Directory2> = ArrayList()
+    private val directories: MutableList<Directory> = ArrayList()
     private val fileCache: MutableMap<String, ByteArray> = HashMap()
 
     init {
@@ -43,7 +43,7 @@ class Directory2(val path: String) {
                 if (file.isFile) {
                     files.add(file)
                 } else if (file.isDirectory) {
-                    directories.add(Directory2(file.path))
+                    directories.add(Directory(file.path))
                 }
             }
         }
@@ -79,26 +79,26 @@ class Directory2(val path: String) {
     /**
      * Add a Directory to the base Directory
      *
-     * @param directory2 Directory to add
+     * @param directory Directory to add
      * @param allowOverride If true, allows to override/reload existing Subdirectories; If false reutrns an error
      * @return ==0 on Success; >=1 on Error
      *
      * @since 4.1.0
      * @author Thomas Obernosterer
      */
-    fun add(directory2: Directory2, allowOverride: Boolean = false): DirectoryError {
-        val hasDirectory = directories.find { it.path == directory2.path } != null
+    fun add(directory: Directory, allowOverride: Boolean = false): DirectoryError {
+        val hasDirectory = directories.find { it.path == directory.path } != null
 
         if (hasDirectory && !allowOverride) {
             return DirectoryError.DirectoryKnownButOverrideDisallowed
         }
 
         if (hasDirectory) {
-            directories.removeIf { it.path == directory2.path }
+            directories.removeIf { it.path == directory.path }
         }
 
-        directory2.scan()
-        directories.add(directory2)
+        directory.scan()
+        directories.add(directory)
 
         return DirectoryError.None
     }
@@ -155,7 +155,7 @@ class Directory2(val path: String) {
      * @since 4.1.0
      * @author Thomas Obernosterer
      */
-    fun findDirectory(predicate: (String) -> Boolean): Directory2? {
+    fun findDirectory(predicate: (String) -> Boolean): Directory? {
         for (f in directories) {
             if (predicate(f.path)) {
                 return f

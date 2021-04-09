@@ -1,7 +1,6 @@
 package klib.ffdb
 
 import klib.annotations.Experimental
-import klib.exceptions.IncompatibleDatabaseException
 import klib.extensions.asFile
 import klib.extensions.objectInputStream
 import klib.extensions.objectOutputStream
@@ -79,7 +78,7 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
         fun peekForVersion(file: File): Version {
             val ois = file.objectInputStream()
 
-            var version = 0
+            var version: Int
 
             ois.use {
                 version = it.readInt()
@@ -104,7 +103,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
 
         if (storageFile.length() > 0) {
             when (schemaVersion) {
-                Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
                 Version.V2.version -> preloadV2()
             }
         }
@@ -180,7 +178,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
             return
         }
         when (schemaVersion) {
-            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
             Version.V2.version -> writeV2(storageFile.objectOutputStream())
         }
     }
@@ -198,7 +195,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
             return
         }
         when (schemaVersion) {
-            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
             Version.V2.version -> writeV2(ObjectOutputStream(stream))
         }
     }
@@ -221,7 +217,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      */
     fun readOne(): Any? {
         return when (schemaVersion) {
-            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
             Version.V2.version -> readV2(storageFile.objectInputStream())
             else -> null
         }
@@ -237,7 +232,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      */
     fun readAll(): List<Any?> {
         return when (schemaVersion) {
-            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
             Version.V2.version -> readAllV2(storageFile.objectInputStream())
             else -> ArrayList()
         }
@@ -253,7 +247,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      */
     fun find(filter: (Any) -> Boolean): List<Any?> {
         return when (schemaVersion) {
-            Version.V1.version -> throw IncompatibleDatabaseException(schemaVersion.toString(), "2")
             Version.V2.version -> writeBuffer.filter(filter)
             else -> ArrayList()
         }
@@ -266,8 +259,6 @@ class FFDB(val storageFile: File, val schemaVersion: Int = Version.V2.version) {
      */
     enum class Version(val version: Int) {
         INVALID(0),
-        @Deprecated(message = "Version 1 is no longer supported. The Version 1 schema is now read-only!")
-        V1(1),
         V2(2);
     }
 

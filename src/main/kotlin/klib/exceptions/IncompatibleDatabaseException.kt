@@ -9,4 +9,5 @@ package klib.exceptions
  * @since 5.0.0
  * @author Thomas Obernosterer
  */
-class IncompatibleDatabaseException(current: String, required: String) : Exception("Database with version $current cannot perform a version $required action!")
+class IncompatibleDatabaseException(current: String, required: String) :
+    Exception("Database with version $current cannot perform a version $required action!")

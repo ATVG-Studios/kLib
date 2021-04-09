@@ -14,7 +14,9 @@ import java.io.File
  * @author Thomas Obernosterer
  */
 fun <T> MutableList<T>.swap(index: Int, with: Int) {
-    if (index >= size || index < 0 || with >= size || with < 0 || index == with) throw IllegalArgumentException()
+    if (index >= size || index < 0) throw IllegalArgumentException("Index of item to swap cannot be out of bounds!")
+    if (with >= size || with < 0) throw IllegalArgumentException("Index of item to swap with cannot be out of bounds!")
+    if (index == with) throw IllegalArgumentException("Index of item to swap and item to swap with cannot be the same!")
 
     val tmp = this[index]
     this[index] = this[with]

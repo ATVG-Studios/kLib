@@ -1,5 +1,6 @@
 package klib
 
+import klib.exceptions.FileNotWritableException
 import klib.exceptions.KonfigParseException
 import klib.extensions.replaceLast
 import java.io.File
@@ -142,11 +143,13 @@ object Konfig {
      * @param data The data to write
      * @param file The file to write to
      *
+     * @throws FileNotWritableException
+     *
      * @since 0.2.2
      * @author Thomas Obernosterer
      */
     fun writeFile(data: Map<String, Any>, file: File) {
-        if (!file.canWrite()) throw Exception("Cannot write to file ${file.name}")
+        if (!file.canWrite()) throw FileNotWritableException(file.name)
 
         file.writeText(createKonfig(data).joinToString("\n"))
     }

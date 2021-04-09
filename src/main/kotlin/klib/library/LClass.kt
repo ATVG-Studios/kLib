@@ -1,8 +1,8 @@
 package klib.library
 
+import klib.extensions.isCallableMethodModifier
 import java.io.FileNotFoundException
 import java.lang.reflect.Method
-import java.lang.reflect.Modifier
 
 /**
  * Custom Class to handle Dynamically loaded Classes
@@ -26,7 +26,7 @@ class LClass(
                 // Get the modifiers of the method to do checks
                 val mods = method.modifiers
                 // Check if the method is Public, Private, Protected or Native
-                if (Modifier.isProtected(mods) || Modifier.isPrivate(mods) || Modifier.isPublic(mods) || Modifier.isNative(mods)) {
+                if (mods.isCallableMethodModifier()) {
                     // Add the method to our known list of methods
                     methods.add(method)
                 }

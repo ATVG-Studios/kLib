@@ -11,7 +11,7 @@ import java.math.BigInteger
  * @author Thomas Obernosterer
  */
 object Base58e {
-    private val ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+    private const val ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     private val BASE = BigInteger.valueOf(58)
 
     /**

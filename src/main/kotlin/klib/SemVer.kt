@@ -114,43 +114,45 @@ class SemVer(
             preRelease.isNullOrEmpty() && other.preRelease.isNullOrEmpty() -> 0
             preRelease!!.isNotEmpty() && other.preRelease.isNullOrEmpty() -> -1
             preRelease.isNullOrEmpty() && other.preRelease!!.isNotEmpty() -> 1
-            else -> {
-                val parts = preRelease.orEmpty().split(".")
-                val otherParts = other.preRelease.orEmpty().split(".")
-                val endIndex = Math.min(parts.size, otherParts.size) - 1
+            else -> checkPreRelease(other)
+        }
+    }
 
-                for (i in 0..endIndex) {
-                    val part = parts[i]
-                    val otherPart = otherParts[i]
+    private fun checkPreRelease(other: SemVer): Int {
+        val parts = preRelease.orEmpty().split(".")
+        val otherParts = other.preRelease.orEmpty().split(".")
+        val endIndex = parts.size.coerceAtMost(otherParts.size) - 1
 
-                    if (part == otherPart) continue
+        for (i in 0..endIndex) {
+            val part = parts[i]
+            val otherPart = otherParts[i]
 
-                    val partIsNumeric = part.isNumeric()
-                    val otherPartIsNumeric = otherPart.isNumeric()
+            if (part == otherPart) continue
 
-                    return when {
-                        partIsNumeric && !otherPartIsNumeric -> -1
-                        !partIsNumeric && otherPartIsNumeric -> 1
-                        !partIsNumeric && !otherPartIsNumeric -> {
-                            if (part > otherPart) return 1
-                            if (part < otherPart) return -1
-                            0
-                        }
-                        else -> {
-                            val partInt = part.toInt()
-                            val otherPartInt = otherPart.toInt()
+            val partIsNumeric = part.isNumeric()
+            val otherPartIsNumeric = otherPart.isNumeric()
 
-                            if (partInt > otherPartInt) return 1
-                            if (partInt < otherPartInt) return -1
-                            0
-                        }
-                    }
+            return when {
+                partIsNumeric && !otherPartIsNumeric -> -1
+                !partIsNumeric && otherPartIsNumeric -> 1
+                !partIsNumeric && !otherPartIsNumeric -> {
+                    if (part > otherPart) return 1
+                    if (part < otherPart) return -1
+                    0
                 }
+                else -> {
+                    val partInt = part.toInt()
+                    val otherPartInt = otherPart.toInt()
 
-                if (parts.size == endIndex + 1 && otherParts.size > endIndex + 1) return -1
-                if (parts.size > endIndex + 1 && otherParts.size == endIndex + 1) return 1
-                0
+                    if (partInt > otherPartInt) return 1
+                    if (partInt < otherPartInt) return -1
+                    0
+                }
             }
         }
+
+        if (parts.size == endIndex + 1 && otherParts.size > endIndex + 1) return -1
+        if (parts.size > endIndex + 1 && otherParts.size == endIndex + 1) return 1
+        return 0
     }
 }

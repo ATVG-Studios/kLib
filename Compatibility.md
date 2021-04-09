@@ -53,11 +53,13 @@ Table created from APIs removed/changed.
 |  6.0.0  | Removed Function_Any (`klib.queue.Function_Any`) | Seemingly Unused |
 |  6.0.0  | Removed Word (`klib.word.Word`) | Seemingly Unused |
 |  6.0.0  | Removed Directory2 (`klib.files.Directory2`) | Now named just Directory (`klib.files.Directory`) |
+|  6.0.0  | Fully Removed FFDB V1 support | Use V2 instead |
 
 ## Upcoming Breaking Changes
 
 | Planed Since | Expecting Change in | Change | Reason |
 |--------------|---------------------|--------|--------|
+| 6.0.0 | 7.0.0 | Removal of `ZipFile.addFiles(vararg newFiles: File)` | Function used spread-operator which may cause performance impacts |
 
 ## Experimental APIs
 

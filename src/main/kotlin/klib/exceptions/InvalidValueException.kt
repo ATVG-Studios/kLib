@@ -10,4 +10,5 @@ package klib.exceptions
  * @since 0.1.3
  * @author Thomas Obernosterer
  */
-class InvalidValueException(notAllowed: String, inString: String, type: String = "String") : Exception("$type '$notAllowed' is not allowed in value '$inString'")
+class InvalidValueException(notAllowed: String, inString: String, type: String = "String") :
+    Exception("$type '$notAllowed' is not allowed in value '$inString'")

@@ -10,4 +10,5 @@ package klib.exceptions
  * @since 0.1.3
  * @author Thomas Obernosterer
  */
-class RequireValueException(required: String, inString: String, type: String = "String") : Exception("$type '$required' is required in value '$inString'")
+class RequireValueException(required: String, inString: String, type: String = "String") :
+    Exception("$type '$required' is required in value '$inString'")

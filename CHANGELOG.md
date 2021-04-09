@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](semver.md).
 ## Unreleased
 
 ### Added
+* `ZipFile.addFiles(newFiles: List<File>)` which doesn't use spread-operator
+* `isCallableMethodModifier` extension on Int
 ### Changed
+* Multiple internal API changes based on Detekt findings
+* `Konfig.writeFile` now throws FileNotWritableException instead of generic Exception
 ### Deprecated
+* `ZipFile.addFiles(vararg newFiles: File)`, use `ZipFile.addFiles(newFiles: List<File>)` instead
 ### Removed
 * AustrianBill, use RksvBill instead
 * Queue (`klib.queue.Queue`)

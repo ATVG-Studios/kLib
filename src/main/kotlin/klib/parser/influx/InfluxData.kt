@@ -9,7 +9,12 @@ import java.io.Serializable
  * @since 5.2.0
  * @author Thomas Obernosterer
  */
-data class InfluxData(val measurement: String, val tags: Map<String, Any>, val fields: Map<String, Any>, val timestamp: String) :
+data class InfluxData(
+    val measurement: String,
+    val tags: Map<String, Any>,
+    val fields: Map<String, Any>,
+    val timestamp: String
+) :
     Serializable {
     override fun toString(): String {
         return "$measurement,${tags.toSimpleString()} ${fields.toSimpleString()} $timestamp"

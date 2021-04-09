@@ -27,7 +27,7 @@ import java.util.zip.ZipOutputStream
  * @author Thomas Obernosterer
  */
 class ZipFile(private val fileName: String?, private val safeMode: Boolean = true, private val isVirtual: Boolean = false) {
-    private lateinit var zipFile: ZipOutputStream
+    private lateinit var zipOutputStream: ZipOutputStream
     private var fileOpen = false
 
     /**
@@ -62,7 +62,7 @@ class ZipFile(private val fileName: String?, private val safeMode: Boolean = tru
         }
 
         val fileWriter = FileOutputStream(file)
-        zipFile = ZipOutputStream(fileWriter)
+        zipOutputStream = ZipOutputStream(fileWriter)
         fileOpen = true
     }
 
@@ -78,7 +78,7 @@ class ZipFile(private val fileName: String?, private val safeMode: Boolean = tru
     fun openVirtual(outputStream: OutputStream?) {
         if (fileOpen) return
 
-        zipFile = ZipOutputStream(outputStream)
+        zipOutputStream = ZipOutputStream(outputStream)
         fileOpen = true
     }
 
@@ -116,8 +116,14 @@ class ZipFile(private val fileName: String?, private val safeMode: Boolean = tru
      * @throws ZipTraversalNotAllowedException
      *
      * @since 1.2.0
+     * @since 6.0.0 (DEPRECATED)
      * @author Thomas Obernosterer
      */
+    @Deprecated(
+        message = "Function uses spread-operator which might cause performance issues. Will be removed in kLib 7.0!",
+        replaceWith = ReplaceWith("addFiles(listOf())"),
+        level = DeprecationLevel.WARNING
+    )
     fun addFiles(vararg newFiles: File, zipPath: String = "") {
         if (safeMode) {
             try {
@@ -129,6 +135,31 @@ class ZipFile(private val fileName: String?, private val safeMode: Boolean = tru
             }
         } else {
             addFilesUnsafe(*newFiles, zipPath = zipPath)
+        }
+    }
+
+    /**
+     * Add Files respecting the safeMode option
+     *
+     * @param newFiles The files to add
+     * @param zipPath The path inside the zip file for the new files
+     * @throws Exception (Without SafeMode)
+     * @throws ZipTraversalNotAllowedException
+     *
+     * @since 6.0.0
+     * @author Thomas Obernosterer
+     */
+    fun addFiles(newFiles: List<File>, zipPath: String = "") {
+        if (safeMode) {
+            try {
+                open()
+                addFilesUnsafe(newFiles, zipPath = zipPath)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                close()
+            }
+        } else {
+            addFilesUnsafe(newFiles, zipPath = zipPath)
         }
     }
 
@@ -164,8 +195,8 @@ class ZipFile(private val fileName: String?, private val safeMode: Boolean = tru
      * @author Thomas Obernosterer
      */
     fun close() {
-        zipFile.flush()
-        zipFile.close()
+        zipOutputStream.flush()
+        zipOutputStream.close()
         fileOpen = false
     }
 
@@ -250,6 +281,23 @@ class ZipFile(private val fileName: String?, private val safeMode: Boolean = tru
     /**
      * Add File without protection of errors
      *
+     * @param newFiles The files to add
+     * @param zipPath The path inside the zip file for the new files
+     * @throws Exception
+     * @throws ZipTraversalNotAllowedException
+     *
+     * @since 6.0.0
+     * @author Thomas Obernosterer
+     */
+    private fun addFilesUnsafe(newFiles: List<File>, zipPath: String = "") {
+        for (file in newFiles) {
+            addFileUnsafe(file, zipPath)
+        }
+    }
+
+    /**
+     * Add File without protection of errors
+     *
      * @param newFile The file to add
      * @param zipPath The path inside the zip file for the new file
      * @throws Exception
@@ -271,14 +319,14 @@ class ZipFile(private val fileName: String?, private val safeMode: Boolean = tru
 
         checkPathForTraversalAttack(newPath)
 
-        zipFile.putNextEntry(ZipEntry("$newPath${newFile.name}"))
+        zipOutputStream.putNextEntry(ZipEntry("$newPath${newFile.name}"))
 
         while (true) {
             val len = fileInputStream.read(buffer)
             if (len <= 0) {
                 break
             }
-            zipFile.write(buffer, 0, len)
+            zipOutputStream.write(buffer, 0, len)
         }
     }
 
