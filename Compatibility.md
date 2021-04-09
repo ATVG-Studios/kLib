@@ -19,7 +19,8 @@ Breaking versions must be in a new row!
 
 This means: `3.0.0` **IS upwards** compatible with `3.2.0` but **NOT downwards** compatible with `2.0.0`. (Semantic Versioning)
 
-To see why these versions are incompatible, checkout the **Breaking Changes** section below.
+To see why these versions are incompatible, checkout the **Breaking Changes** section below.  
+You may also want to look at the [CHANGELOG](/CHANGELOG.md).
 
 ## What does Compatible mean?
 
