@@ -9,9 +9,13 @@ and this project adheres to [Semantic Versioning](semver.md).
 ### Added
 * `ZipFile.addFiles(newFiles: List<File>)` which doesn't use spread-operator
 * `isCallableMethodModifier` extension on Int
+* DataTypes.GRAPHQL (`klib.net.http.Http.DataTypes`) to send `application/graphql` Content-Type Header
+* DataTypes.PLAIN (`klib.net.http.Http.DataTypes`) to send `text/plain` Content-Type Header
+* DataTypes.NONE (`klib.net.http.Http.DataTypes`) to send no Content-Type Header
 ### Changed
 * Multiple internal API changes based on Detekt findings
 * `Konfig.writeFile` now throws FileNotWritableException instead of generic Exception
+* Http.post (`klib.net.http.Http`) defaults to JSON for DataType
 ### Deprecated
 * `ZipFile.addFiles(vararg newFiles: File)`, use `ZipFile.addFiles(newFiles: List<File>)` instead
 ### Removed

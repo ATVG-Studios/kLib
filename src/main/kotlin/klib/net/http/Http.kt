@@ -48,14 +48,14 @@ class Http(val url: String) {
      * Send post Request
      *
      * @param data Data to send
-     * @param datatype Content-Type Header
+     * @param datatype Content-Type Header, Default: JSON (text/plain)
      * @param headers Map of Headers
      * @return Request Response
      *
      * @since 3.1.0
      * @author Thomas Obernosterer
      */
-    fun post(data: String, datatype: DataTypes, headers: Map<String, String> = HashMap()): String {
+    fun post(data: String, datatype: DataTypes = DataTypes.JSON, headers: Map<String, String> = HashMap()): String {
         val connection = openConnection(url)
 
         connection.doOutput = true
@@ -69,10 +69,15 @@ class Http(val url: String) {
         }
 
         when (datatype) {
+            DataTypes.NONE -> { /* Does nothing */ }
             DataTypes.JSON ->
                 connection.setRequestProperty("Content-Type", "application/json")
             DataTypes.FORM ->
                 connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
+            DataTypes.GRAPHQL ->
+                connection.setRequestProperty("Content-Type", "application/graphql")
+            DataTypes.PLAIN ->
+                connection.setRequestProperty("Content-Type", "text/plain")
         }
 
         DataOutputStream(connection.outputStream).writeBytes(data)
@@ -119,6 +124,7 @@ class Http(val url: String) {
      * Supported Data Types
      */
     enum class DataTypes {
+        NONE,
         /**
          * HTML Form data (application/x-www-form-urlencoded)
          */
@@ -126,6 +132,14 @@ class Http(val url: String) {
         /**
          * JSON data (application/json)
          */
-        JSON
+        JSON,
+        /**
+         * GRAPHQL data (application/graphql)
+         */
+        GRAPHQL,
+        /**
+         * PLAIN data (text/plain)
+         */
+        PLAIN
     }
 }
