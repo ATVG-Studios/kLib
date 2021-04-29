@@ -45,7 +45,7 @@ object kLibInf {
      * @since 0.1.0
      * @author Thomas Obernosterer
      */
-    const val license = "OSPL20/MPL2.0"
+    const val license = "MPL2.0"
 
     /**
      * List of Authors
