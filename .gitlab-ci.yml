@@ -5,6 +5,17 @@ stages:
   - test
   - build
   - deploy
+  - review
+  - dast
+  - staging
+  - canary
+  - production
+  - incremental rollout 10%
+  - incremental rollout 25%
+  - incremental rollout 50%
+  - incremental rollout 100%
+  - performance
+  - cleanup
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
@@ -58,3 +69,8 @@ pages:
   artifacts:
     paths:
       - public
+
+sast:
+  stage: test
+include:
+- template: Auto-DevOps.gitlab-ci.yml
