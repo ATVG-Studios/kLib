@@ -24,7 +24,7 @@ test:
 	$(GRADLE) $(GRAARG) test
 
 doc:
-	$(GRADLE) $(GRAARG) dokka
+	$(GRADLE) $(GRAARG) dokkaHtml
 
 upgrade:
 	$(GRADLE) wrapper

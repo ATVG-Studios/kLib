@@ -42,7 +42,7 @@ build:
 docs:
   stage: build
   script:
-    - gradle dokka
+    - gradle dokkaHtml
   artifacts:
     paths:
       - build/dokka

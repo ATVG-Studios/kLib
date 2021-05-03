@@ -20,7 +20,8 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-    dokkaRuntime "org.jetbrains.dokka:dokka-fatjar:$dokka_version"
+
+    dokkaHtmlPlugin "org.jetbrains.dokka:kotlin-as-java-plugin:$dokka_version"
 
     implementation "net.jemzart:jsonkraken:$jsonkraken_version"
     implementation "joda-time:joda-time:$jodatime_version"
@@ -76,10 +77,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
-}
-
-dokka {
-    outputFormat = 'html'
 }
 
 def buildEnvironment = System.getenv("BUILD_ENVIRONMENT")

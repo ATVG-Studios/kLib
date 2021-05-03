@@ -37,7 +37,7 @@ def docs():
         "name": "docs",
         "image": "gradle:7.0-jdk8",
         "commands": [
-          "gradle dokka",
+          "gradle dokkaHtml",
         ]
       }
     ]
