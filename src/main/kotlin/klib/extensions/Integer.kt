@@ -1,5 +1,6 @@
 package klib.extensions
 
+import java.util.Locale
 import kotlin.math.abs
 
 /**
@@ -44,7 +45,7 @@ infix fun Int.power(n: Int): Int {
  * @author Thomas Obernosterer
  */
 fun Int.toHex(upperCase: Boolean = false): String {
-    return if (upperCase) this.toString(16).toUpperCase() else this.toString(16)
+    return if (upperCase) this.toString(16).uppercase(Locale.getDefault()) else this.toString(16)
 }
 
 /**

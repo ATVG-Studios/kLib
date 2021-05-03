@@ -1,6 +1,7 @@
 package klib.hash
 
 import org.junit.Test
+import java.util.Locale
 import kotlin.test.assertEquals
 
 class Sha1Test {
@@ -11,13 +12,13 @@ class Sha1Test {
     fun `SHA1 from String`() {
         val sha = Sha1.hash(unhashedValue).hex
 
-        assertEquals(hashedValue, sha.toUpperCase())
+        assertEquals(hashedValue, sha.uppercase(Locale.getDefault()))
     }
 
     @Test
     fun `SHA1 from ByteArray`() {
         val sha = Sha1.hash(unhashedValue.toByteArray()).hex
 
-        assertEquals(hashedValue, sha.toUpperCase())
+        assertEquals(hashedValue, sha.uppercase(Locale.getDefault()))
     }
 }

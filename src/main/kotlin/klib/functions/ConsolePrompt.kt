@@ -4,6 +4,7 @@ import org.joda.time.DateTime
 import java.math.BigDecimal
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 
 /**
  * Text Prompt generic
@@ -48,9 +49,9 @@ inline fun <reified T> prompt(
             Long::class -> input.toLongOrNull() as T?
             BigDecimal::class -> input.toBigDecimalOrNull() as T?
             Boolean::class -> {
-                if (input.toLowerCase() == "y" || input.toLowerCase() == "j") {
+                if (input.lowercase(Locale.getDefault()) == "y" || input.lowercase(Locale.getDefault()) == "j") {
                     true as T?
-                } else if (input.toLowerCase() == "n") {
+                } else if (input.lowercase(Locale.getDefault()) == "n") {
                     false as T?
                 } else {
                     null

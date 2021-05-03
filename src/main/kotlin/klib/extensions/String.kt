@@ -19,6 +19,7 @@ import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.math.BigInteger
 import java.util.Base64
+import java.util.Locale
 
 /**
  * Check string is valid email
@@ -42,7 +43,7 @@ fun String.isEmail(): Boolean {
  * @author Thomas Obernosterer
  */
 fun String.toFirstLetterUpperCase(): String {
-    return this.replaceFirst(this.substring(0, 1), this.substring(0, 1).toUpperCase())
+    return this.replaceFirst(this.substring(0, 1), this.substring(0, 1).uppercase(Locale.getDefault()))
 }
 
 /**
@@ -71,7 +72,7 @@ fun String.toUpperCaseOnUnderscore(replaceWith: String = " "): String {
         // Check if the Char is a _
         val str = if (char == '_') {
             // Get the letter after _ and make it uppercase
-            val letter = this[i + 1].toUpperCase()
+            val letter = this[i + 1].uppercaseChar()
             skip = true
             // Apply _ replacement and add uppercase letter
             "$replaceWith$letter"
@@ -79,7 +80,7 @@ fun String.toUpperCaseOnUnderscore(replaceWith: String = " "): String {
             // Otherwise if its the fist char in the String
             if (i == 0) {
                 // Make it uppercase too
-                char.toUpperCase().toString()
+                char.uppercaseChar().toString()
             } else {
                 // Just add the char to the string
                 char.toString()
@@ -107,14 +108,14 @@ fun String.toSnakeCase(): String {
     for (i in this.indices) {
         when {
             this[i].isUpperCase() && i != 0 && !ignoreUpper -> {
-                newString += "_${this[i].toLowerCase()}"
+                newString += "_${this[i].lowercaseChar()}"
             }
             this[i] == ' ' -> {
                 newString += '_'
                 ignoreUpper = true
             }
             else -> {
-                newString += this[i].toLowerCase()
+                newString += this[i].lowercaseChar()
                 ignoreUpper = false
             }
         }
@@ -524,13 +525,13 @@ fun String.mod97(): Boolean {
                 }
                 in 'A'..'Z' -> {
                     val tmp = 10 + (c - 'A')
-                    dest[offset++] = ('0'.toInt() + tmp / 10).toChar()
-                    dest[offset++] = ('0'.toInt() + tmp % 10).toChar()
+                    dest[offset++] = ('0'.code + tmp / 10).toChar()
+                    dest[offset++] = ('0'.code + tmp % 10).toChar()
                 }
                 in 'a'..'z' -> {
                     val tmp = 10 + (c - 'a')
-                    dest[offset++] = ('0'.toInt() + tmp / 10).toChar()
-                    dest[offset++] = ('0'.toInt() + tmp % 10).toChar()
+                    dest[offset++] = ('0'.code + tmp / 10).toChar()
+                    dest[offset++] = ('0'.code + tmp % 10).toChar()
                 }
                 else -> require(c == ' ') { "Invalid character '$c'." }
             }

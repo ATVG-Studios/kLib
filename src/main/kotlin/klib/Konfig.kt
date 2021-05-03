@@ -4,6 +4,7 @@ import klib.exceptions.FileNotWritableException
 import klib.exceptions.KonfigParseException
 import klib.extensions.replaceLast
 import java.io.File
+import java.util.Locale
 
 /**
  * Custom Configuration reader and generator
@@ -113,8 +114,8 @@ object Konfig {
 
                 valueMap // Return
             }
-            value.toLowerCase() == "true" -> true
-            value.toLowerCase() == "false" -> false
+            value.lowercase(Locale.getDefault()) == "true" -> true
+            value.lowercase(Locale.getDefault()) == "false" -> false
             value.startsWith("U") -> {
                 value.replace("U", "").toUIntOrNull() ?: 0
             }
