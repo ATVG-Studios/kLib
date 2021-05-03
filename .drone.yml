@@ -8,13 +8,13 @@ platform:
 
 steps:
 - name: build
-  image: gradle:6.3-jdk8
+  image: gradle:7.0-jdk8
   commands:
   - gradle build
   - gradle shadowJar
 
 - name: lint
-  image: gradle:6.3-jdk8
+  image: gradle:7.0-jdk8
   commands:
   - gradle lintKotlin
 
@@ -28,7 +28,7 @@ platform:
 
 steps:
 - name: test
-  image: gradle:6.3-jdk8
+  image: gradle:7.0-jdk8
   commands:
   - gradle test
 
@@ -42,7 +42,7 @@ platform:
 
 steps:
 - name: docs
-  image: gradle:6.3-jdk8
+  image: gradle:7.0-jdk8
   commands:
   - gradle dokka
 

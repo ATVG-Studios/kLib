@@ -12,7 +12,7 @@ def build():
     "steps": [
       {
         "name": "build",
-        "image": "gradle:6.3-jdk8",
+        "image": "gradle:7.0-jdk8",
         "commands": [
           "gradle build",
           "gradle shadowJar"
@@ -20,7 +20,7 @@ def build():
       },
       {
         "name": "lint",
-        "image": "gradle:6.3-jdk8",
+        "image": "gradle:7.0-jdk8",
         "commands": [
           "gradle lintKotlin"
         ]
@@ -35,7 +35,7 @@ def docs():
     "steps": [
       {
         "name": "docs",
-        "image": "gradle:6.3-jdk8",
+        "image": "gradle:7.0-jdk8",
         "commands": [
           "gradle dokka",
         ]
@@ -50,7 +50,7 @@ def test():
     "steps": [
       {
         "name": "test",
-        "image": "gradle:6.3-jdk8",
+        "image": "gradle:7.0-jdk8",
         "commands": [
           "gradle test",
         ]
