@@ -34,7 +34,6 @@ class KStringTest {
         assertEquals(wantedString, stringBuilder.toString())
     }
 
-
     @Test
     fun `Build String 3`() {
         val wantedString = "Hello!\nHow are you doing?\nAny news?"
