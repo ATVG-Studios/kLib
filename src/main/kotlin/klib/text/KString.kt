@@ -18,7 +18,7 @@ class KString {
      * @author Thomas Obernosterer
      */
     fun line(value: String) {
-        stringBuilder.appendln(value)
+        stringBuilder.appendLine(value)
     }
 
     /**
