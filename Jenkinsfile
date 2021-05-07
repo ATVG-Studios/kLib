@@ -1,28 +1,28 @@
 pipeline {
     agent any
-    environment {
-        GARGS="GRADLE=gradle"
+    tools {
+        gradle "Gradle 7.0"
     }
     stages {
         stage("Lint") {
             steps {
-                sh("make lint $GARGS")
+                sh("gradle lintKotlin")
             }
         }
         stage("Build") {
             steps {
-                sh("make compile $GARGS")
+                sh("gradle build")
             }
         }
         stage("Test") {
             steps {
-                sh("make compile test $GARGS")
+                sh("gradle test")
                 junit 'build/test-results/test/*.xml'
             }
         }
         stage("Package") {
             steps {
-                sh("make package $GARGS")
+                sh("gradle shadowJar jar sourceJar")
                 archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
             }
         }
