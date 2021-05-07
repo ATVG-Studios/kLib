@@ -1,9 +1,14 @@
 pipeline {
     agent any
     tools {
-        gradle "Gradle 7.0"
+        gradle "Gradle 7"
     }
     stages {
+        stage("Clean") {
+            steps {
+                sh("gradle clean")
+            }
+        }
         stage("Lint") {
             steps {
                 sh("gradle lintKotlin")
@@ -25,11 +30,6 @@ pipeline {
                 sh("gradle shadowJar jar sourceJar")
                 archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
             }
-        }
-    }
-    post {
-        always{
-            deleteDir()
         }
     }
 }
