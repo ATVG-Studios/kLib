@@ -6,7 +6,7 @@ all: lint compile package doc
 compile:
 	$(GRADLE) $(GRAARG) build
 
-package:
+package: compile
 	$(GRADLE) $(GRAARG) shadowJar
 	$(GRADLE) $(GRAARG) jar
 	$(GRADLE) $(GRAARG) sourcesJar
@@ -20,7 +20,7 @@ lint:
 format:
 	$(GRADLE) $(GRAARG) formatKotlin
 
-test:
+test: compile
 	$(GRADLE) $(GRAARG) test
 
 doc:
