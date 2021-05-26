@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](semver.md).
 * DataTypes.GRAPHQL (`klib.net.http.Http.DataTypes`) to send `application/graphql` Content-Type Header
 * DataTypes.PLAIN (`klib.net.http.Http.DataTypes`) to send `text/plain` Content-Type Header
 * DataTypes.NONE (`klib.net.http.Http.DataTypes`) to send no Content-Type Header
+* `ul` property for Long
+* BaseBlock (`klib.blockchain.BaseBlock`)
+* Block (`klib.blockchain.Block` as BaseBlock<String>)
 ### Changed
 * Multiple internal API changes based on Detekt findings
 * `Konfig.writeFile` now throws FileNotWritableException instead of generic Exception
