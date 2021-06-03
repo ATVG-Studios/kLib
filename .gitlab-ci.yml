@@ -51,7 +51,7 @@ pages:
   stage: deploy
   script:
     - mv _pages public
-    - mv build/dokka public/docs
+    - mv build/dokka/html public/docs
     - mv build/reports/tests/test public/tests
     - mv build/libs/*.jar public/jars/
     - echo "<html><body><h1>Directory listing:</h1>" > public/jars/index.html
