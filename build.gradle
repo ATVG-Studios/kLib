@@ -141,6 +141,16 @@ publishing {
                     header HttpHeaderAuthentication
                 }
             }
+            maven {
+                url "https://gitlab.atvg-studios.com/api/v4/projects/121/packages/maven"
+                credentials(HttpHeaderCredentials) {
+                    name = 'Job-Token'
+                    value = System.getenv("CI_JOB_TOKEN")
+                }
+                authentication {
+                    header HttpHeaderAuthentication
+                }
+            }
         } else {
             maven {
                 def releaseUrl = '/data/atjontv/git/maven-repo'
