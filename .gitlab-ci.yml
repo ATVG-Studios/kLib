@@ -52,8 +52,13 @@ pages:
   stage: deploy
   script:
     - mv _pages public
+    # Move Dokka Documentation
     - mv build/dokka/html public/docs
+    # Move JUnit Test results
     - mv build/reports/tests/test public/tests
+    # Move JaCoCo Coverage results
+    - mv build/reports/jacoco/test/html public/coverage
+    # Move Jar files
     - mv build/libs/*.jar public/jars/
     - echo "<html><body><h1>Directory listing:</h1>" > public/jars/index.html
     - find public/jars/ -exec echo "<a href='{}'>{}</a><br/>" \; >> public/jars/index.html
