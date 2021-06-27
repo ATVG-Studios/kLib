@@ -74,10 +74,6 @@ Manually run the Gradle tasks.
 $ ./gradlew build shadowjar
 ```
 
-### Known Compiler Warnings
-
-* [Property 'dokkaRuntime' is not annotated with an input or output annotation](https://github.com/Kotlin/dokka/issues/515)
-
 # Contributing
 
 If you want to contribute, please add your name, email, company (if any) and homepage (if any) to the Authors Array in the kLibInfo.
