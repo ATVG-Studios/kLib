@@ -62,7 +62,7 @@ pages:
     # Move Jar files
     - mv build/libs/*.jar public/jars/
     # BEGIN - Create directory listing
-    - pushd build/jars
+    - pushd public/jars
     - echo "<html><body><h1>Directory listing:</h1>" > index.html
     - find . -exec echo "<a href='{}'>{}</a><br/>" \; >> index.html
     - echo "</body></html>" >> index.html
