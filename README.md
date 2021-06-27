@@ -6,6 +6,7 @@
 | release/5.2.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
 | release/5.3.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
 | release/6.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/6.0.x) |
+| Coverage | [![coverage report](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/coverage.svg)](https://gitlab.atvg-studios.com/atvg-studios/kLib/-/commits/master) |
 
 kLib is a Generic Kotlin Library to simplify development
 
