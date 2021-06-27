@@ -14,8 +14,10 @@ plugins {
     id 'org.jetbrains.dokka' version "$dokka_version"
     id "org.jmailen.kotlinter" version "$kotlinter_version"
     id "io.gitlab.arturbosch.detekt" version "$detekt_version"
+    id 'org.barfuin.gradle.jacocolog' version "$jacocolog_version"
     id 'maven-publish'
     id 'signing'
+    id 'jacoco'
 }
 
 group 'klib'
@@ -88,6 +90,24 @@ task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
 }
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+check.dependsOn jacocoTestReport
 
 def buildEnvironment = System.getenv("BUILD_ENVIRONMENT")
 def buildEnvGitlab = "Gitlab-CI"
