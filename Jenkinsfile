@@ -23,6 +23,11 @@ pipeline {
             steps {
                 sh("gradle test")
                 junit 'build/test-results/test/*.xml'
+                publishCoverage(
+                    adapters: [
+                        jacocoAdapter(path: 'build/reports/jacoco/test/jacocoTestReport.xml')
+                    ]
+                )
             }
         }
         stage("Package") {
