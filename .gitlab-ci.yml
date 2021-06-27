@@ -22,6 +22,7 @@ test:
   artifacts:
     paths:
       - build/reports/tests/test
+      - build/reports/jacoco/test/html
     reports:
       junit: build/test-results/test/**/TEST-*.xml
 
