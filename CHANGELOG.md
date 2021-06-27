@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 * Multiple internal API changes based on Detekt findings
 * `Konfig.writeFile` now throws FileNotWritableException instead of generic Exception
 * Http.post (`klib.net.http.Http`) defaults to JSON for DataType
+* SemVer is now Spec compliant in pre-release vs release comparison (1.0.0 > 1.0.0-rc.1)
 ### Deprecated
 * `ZipFile.addFiles(vararg newFiles: File)`, use `ZipFile.addFiles(newFiles: List<File>)` instead
 ### Removed

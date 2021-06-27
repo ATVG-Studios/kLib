@@ -63,9 +63,9 @@ class SemVer(
             if (buildMetadata != null && buildMetadata.isEmpty()) buildMetadata = null
 
             return SemVer(
-                major = result.groupValues[1].toIntOrNull() ?: 0,
-                minor = result.groupValues[2].toIntOrNull() ?: 0,
-                patch = result.groupValues[3].toIntOrNull() ?: 0,
+                major = result.groupValues[1].toInt(),
+                minor = result.groupValues[2].toInt(),
+                patch = result.groupValues[3].toInt(),
                 preRelease = preRelease,
                 buildMetadata = buildMetadata
             )
@@ -122,8 +122,8 @@ class SemVer(
             patch > other.patch -> 1
             patch < other.patch -> -1
             preRelease.isNullOrEmpty() && other.preRelease.isNullOrEmpty() -> 0
-            preRelease!!.isNotEmpty() && other.preRelease.isNullOrEmpty() -> -1
-            preRelease.isNullOrEmpty() && other.preRelease!!.isNotEmpty() -> 1
+            preRelease?.isNotEmpty() ?: false && other.preRelease.isNullOrEmpty() -> -1
+            preRelease.isNullOrEmpty() && other.preRelease?.isNotEmpty() ?: false -> 1
             else -> checkPreRelease(other)
         }
     }
