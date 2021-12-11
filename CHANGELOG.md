@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](semver.md).
 * Block (`klib.blockchain.Block` as BaseBlock<String>)
 * `anagrams` infix extension on String
 * `isAnagramOf` extension on String
+* Writer (`klib.text.Writer`) Interface
+* ErrorOnlyWriter (`klib.text.ErrorOnlyWriter`) instance of Writer without write() implemented
+* DefaultWriter (`klib.text.DefaultWriter`) (default) instance of Writer
 ### Changed
 * Multiple internal API changes based on Detekt findings
 * `Konfig.writeFile` now throws FileNotWritableException instead of generic Exception
