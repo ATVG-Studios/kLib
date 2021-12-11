@@ -600,3 +600,30 @@ infix fun String.times(times: Int): String {
     }
     return newString
 }
+
+/**
+ * Checks if two Strings are Anagrams of each other
+ *
+ * @param other String to compare this to
+ * @return True if 'this' and 'other' are anagrams
+ *
+ * @since 6.0.0
+ * @author Thomas Obernosterer
+ */
+infix fun String.anagrams(other: String): Boolean {
+    return this.toCharArray().sorted() == other.toCharArray().sorted()
+}
+
+/**
+ * Checks if two Strings are Anagrams of each other
+ *
+ * @param other String to compare this to
+ * @return True if 'this' and 'other' are anagrams
+ * @see String.anagrams Implementation
+ *
+ * @since 6.0.0
+ * @author Thomas Obernosterer
+ */
+fun String.isAnagramOf(other: String): Boolean {
+    return this anagrams other
+}
