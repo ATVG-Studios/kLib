@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](semver.md).
 * `ul` property for Long
 * BaseBlock (`klib.blockchain.BaseBlock`)
 * Block (`klib.blockchain.Block` as BaseBlock<String>)
+* BlockChain (`klib.blockchain.BlockChain`)
 * `anagrams` infix extension on String
 * `isAnagramOf` extension on String
 * Writer (`klib.text.Writer`) Interface

@@ -1,8 +1,8 @@
 /*
  * This file belongs to the source code of: kLib
  *
- * Copyright© 2015-2021 Thomas Obernosterer, ATVG-Studios
- * Copyright© 2019-2021 all kLib Contributors
+ * Copyright© 2015-2022 Thomas Obernosterer, ATVG-Studios
+ * Copyright© 2019-2022 all kLib Contributors
  *
  * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
  * If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
@@ -10,8 +10,6 @@
 
 package klib.blockchain
 
-import klib.extensions.times
-import klib.extensions.ul
 import klib.hash.Sha256
 
 /**
@@ -24,10 +22,15 @@ import klib.hash.Sha256
  */
 open class BaseBlock<T>(
     var id: Int,
-    var nonce: ULong = 0L.ul,
     var data: T,
     var prevBlock: String
 ) {
+    val hash: String
+
+    init {
+        hash = calculateHash()
+    }
+
     /**
      * Calculate SHA256 Hash from Block
      *
@@ -36,26 +39,8 @@ open class BaseBlock<T>(
      * @since 6.0.0
      * @author Thomas Obernosterer
      */
-    fun hash(): String {
+    fun calculateHash(): String {
         return Sha256.hash(toString()).hex
-    }
-
-    /**
-     * Using a simple while loop the block can be mined
-     *
-     * @param zerosRequired Required count of leading Zeros (Default: 4)
-     * @return Block when mined
-     *
-     * @since 6.0.0
-     * @author Thomas Obernosterer
-     */
-    fun mine(zerosRequired: Int = 4): BaseBlock<T> {
-        var hash = hash()
-        while (!hash.startsWith("0" times zerosRequired)) {
-            nonce++
-            hash = hash()
-        }
-        return this
     }
 
     /**
@@ -67,7 +52,7 @@ open class BaseBlock<T>(
      * @author Thomas Obernosterer
      */
     override fun toString(): String {
-        return "$id+$prevBlock+$data+$nonce"
+        return "$id:$prevBlock:$data"
     }
 
     /**
@@ -92,7 +77,7 @@ open class BaseBlock<T>(
         if (other !is BaseBlock<*>) return false
 
         // Compare the hashes
-        return other.hash() == hash()
+        return other.hash == hash
     }
 
     /**
@@ -100,7 +85,6 @@ open class BaseBlock<T>(
      *
      * Formula:
      *   hash = id
-     *   hash = 31 * hash + nonce.hashCode()
      *   hash = 31 * hash + data.hashCode() or ((id + 5) * 3)
      *   hash = 31 * hash + prevBlock.hashCode()
      *
@@ -109,7 +93,6 @@ open class BaseBlock<T>(
      */
     override fun hashCode(): Int {
         var result = id
-        result = 31 * result + nonce.hashCode()
         result = 31 * result + (data?.hashCode() ?: ((id + 5) * 3))
         result = 31 * result + prevBlock.hashCode()
         return result
