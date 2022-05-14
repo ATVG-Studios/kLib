@@ -2,18 +2,18 @@
 
 | Branch | Status |
 |--------|--------|
-| master | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
-| release/5.2.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
-| release/5.3.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
-| release/6.0.x | [![pipeline status](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/6.0.x) |
-| Coverage | [![coverage report](https://gitlab.atvg-studios.com/atvg-studios/kLib/badges/master/coverage.svg)](https://gitlab.atvg-studios.com/atvg-studios/kLib/-/commits/master) |
+| master | [![pipeline status](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/badges/master/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/master) |
+| release/5.2.x | [![pipeline status](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
+| release/5.3.x | [![pipeline status](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/5.2.x) |
+| release/6.0.x | [![pipeline status](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/badges/release/5.2.x/pipeline.svg)](https://gitlab.atvg-studios.at/atvg-studios/kLib/commits/release/6.0.x) |
+| Coverage | [![coverage report](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/badges/master/coverage.svg)](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/-/commits/master) |
 
 kLib is a Generic Kotlin Library to simplify development
 
 Checkout the Homepage over [here](https://klib.atvg-studios.com).
 
 kLib is available via the ATVG-Studios Maven repository.  
-You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.com/atvg-studios/maven-repository).  
+You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/maven-repository).  
 The Maven Repository itself is available here: https://mvn.atvg-studios.com
 
 Adding the latest version of kLib using Gradle:
