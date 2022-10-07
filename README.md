@@ -10,17 +10,15 @@
 
 kLib is a Generic Kotlin Library to simplify development
 
-Checkout the Homepage over [here](https://klib.atvg-studios.com).
-
 kLib is available via the ATVG-Studios Maven repository.  
 You can find the Git repository that hosts the Maven data [here](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/maven-repository).  
-The Maven Repository itself is available here: https://mvn.atvg-studios.com
+The Maven Repository itself is available here: https://atvg-studios.pages.atvg.cloud/maven-repository
 
 Adding the latest version of kLib using Gradle:
 
 ```
 repositories {
-    maven { url 'https://mvn.atvg-studios.com' }
+    maven { url 'https://atvg-studios.pages.atvg.cloud/maven-repository' }
 }
 
 dependencies {
@@ -35,7 +33,7 @@ Adding the latest version of kLib using Maven:
   <repository>
     <id>atvg-studios</id>
     <name>ATVG-Studios Maven</name>
-    <url>https://mvn.atvg-studios.com</url>
+    <url>https://atvg-studios.pages.atvg.cloud/maven-repository</url>
   </repository>
 </repositories>
 <dependencies>
