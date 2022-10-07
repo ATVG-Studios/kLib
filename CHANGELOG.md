@@ -132,9 +132,9 @@ and this project adheres to [Semantic Versioning](semver.md).
 - `arrayBinSearch` global function
 - `listQuicksort` global function
 - `replaceLast` extension for String
-- Implement [OpenSpec Konfig 19.3](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
-- Implement [OpenSpec Konfig 20.1](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
-- Implement [OpenSpec Konfig 20.2](https://gitlab.atvg-studios.com/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
+- Implement [OpenSpec Konfig 19.3](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
+- Implement [OpenSpec Konfig 20.1](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
+- Implement [OpenSpec Konfig 20.2](https://gitlab.atvg-studios.atvg.cloud/atvg-studios/openspec/blob/master/Konfig/Konfig.pdf)
 - `AustrianBill` Class
 - Directory2 (`klib.files.Directory2`)
 

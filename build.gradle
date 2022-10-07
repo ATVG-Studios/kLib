@@ -1,8 +1,8 @@
 /*
  * This file belongs to the source code of: kLib
  *
- * Copyright© 2015-2021 Thomas Obernosterer, ATVG-Studios
- * Copyright© 2019-2021 all kLib Contributors
+ * Copyright© 2015-2022 Thomas Obernosterer, ATVG-Studios
+ * Copyright© 2019-2022 all kLib Contributors
  *
  * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
  * If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
@@ -125,11 +125,11 @@ publishing {
             pom {
                 name = 'kLib'
                 description = 'kLib is a Generic Kotlin Library to simplify development'
-                url = 'https://klib.atvg-studios.com'
+                url = 'https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib'
                 licenses {
                     license {
                         name = 'OSPL20'
-                        url = 'https://gitlab.atvg-studios.com/atvg-studios/kLib/blob/master/LICENSE'
+                        url = 'https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/blob/master/LICENSE'
                     }
                 }
                 developers {
@@ -140,9 +140,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = 'scm:git:git://gitlab.atvg-studios.com/atvg-studios/kLib.git'
-                    developerConnection = 'scm:git:ssh://gitlab.atvg-studios.com/atvg-studios/kLib.git'
-                    url = 'https://gitlab.atvg-studios.com/atvg-studios/kLib.git'
+                    connection = 'scm:git:git://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib.git'
+                    developerConnection = 'scm:git:ssh://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib.git'
+                    url = 'https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib.git'
                 }
             }
         }
