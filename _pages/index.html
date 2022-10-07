@@ -1,18 +1,32 @@
 <!--
   ~ This file belongs to the source code of: kLib
   ~
-  ~ Copyright© 2015-2021 Thomas Obernosterer, ATVG-Studios
-  ~ Copyright© 2019-2021 all kLib Contributors
+  ~ Copyright© 2015-2022 Thomas Obernosterer, ATVG-Studios
+  ~ Copyright© 2019-2022 all kLib Contributors
   ~
   ~ This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
   ~ If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
   -->
-
-<h1>Welcome to the auto-deployed page of kLib!</h1>
-<p>This page contains a few links to the build artifacts of the latest kLib build.<br>These pages exist here to allow you to easily access Unit Test results, JAR artifacts or the Dokka documentation of WIP code.<p>
-<ul>
-<li><a href="docs">Dokka Documentation</a></li>
-<li><a href="tests">Unit Test results</a></li>
-<li><a href="coverage">Coverage results</a></li>
-<li><a href="jars">Build JARs</a></li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kLib by ATVG-Studios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="ml-8 mt-2">
+    <h1 class="text-xl font-bold mb-2">Welcome to the auto-deployed page of kLib!</h1>
+    <p>Documentation, JARs and Test results are from the master branch, and may contain unstable code.<p>
+    <p>Read more about kLib <a class="font-bold underline" href="https://gitlab.atvg-studios.atvg.cloud/atvg-studios/kLib/-/blob/master/README.md">here.</a></p>
+  </div>
+  <div class="ml-8 mt-4">
+    <a href="docs" class="p-2 bg-amber-500 text-white rounded">Documentation</a>
+    <a href="jars" class="p-2 bg-amber-500 text-white rounded">JARs</a>
+    <a href="tests" class="p-2 bg-lime-500 text-white rounded">Unit Test</a>
+    <a href="coverage" class="p-2 bg-lime-500 text-white rounded">Coverage</a>
+  </div>
+</body>
+</html>
